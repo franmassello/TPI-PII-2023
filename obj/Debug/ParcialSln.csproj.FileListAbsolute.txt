@@ -1,0 +1,10 @@
+C:\Users\NC\Desktop\Test\bin\Debug\ParcialApp.exe.config
+C:\Users\NC\Desktop\Test\bin\Debug\ParcialApp.exe
+C:\Users\NC\Desktop\Test\bin\Debug\ParcialApp.pdb
+C:\Users\NC\Desktop\Test\obj\Debug\ParcialSln.csproj.AssemblyReference.cache
+C:\Users\NC\Desktop\Test\obj\Debug\ParcialSln.csproj.SuggestedBindingRedirects.cache
+C:\Users\NC\Desktop\Test\obj\Debug\ParcialApp.Properties.Resources.resources
+C:\Users\NC\Desktop\Test\obj\Debug\ParcialSln.csproj.GenerateResource.cache
+C:\Users\NC\Desktop\Test\obj\Debug\ParcialSln.csproj.CoreCompileInputs.cache
+C:\Users\NC\Desktop\Test\obj\Debug\ParcialApp.exe
+C:\Users\NC\Desktop\Test\obj\Debug\ParcialApp.pdb
