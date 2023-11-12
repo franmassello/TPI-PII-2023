@@ -1,0 +1,10 @@
+H:\UTN\Tecnicatura\Repos\temp\CineArt\CineArt\bin\Debug\CineArt.exe.config
+H:\UTN\Tecnicatura\Repos\temp\CineArt\CineArt\bin\Debug\CineArt.exe
+H:\UTN\Tecnicatura\Repos\temp\CineArt\CineArt\bin\Debug\CineArt.pdb
+H:\UTN\Tecnicatura\Repos\temp\CineArt\CineArt\obj\Debug\CineArt.csproj.AssemblyReference.cache
+H:\UTN\Tecnicatura\Repos\temp\CineArt\CineArt\obj\Debug\CineArt.csproj.SuggestedBindingRedirects.cache
+H:\UTN\Tecnicatura\Repos\temp\CineArt\CineArt\obj\Debug\CineArt.Properties.Resources.resources
+H:\UTN\Tecnicatura\Repos\temp\CineArt\CineArt\obj\Debug\CineArt.csproj.GenerateResource.cache
+H:\UTN\Tecnicatura\Repos\temp\CineArt\CineArt\obj\Debug\CineArt.csproj.CoreCompileInputs.cache
+H:\UTN\Tecnicatura\Repos\temp\CineArt\CineArt\obj\Debug\CineArt.exe
+H:\UTN\Tecnicatura\Repos\temp\CineArt\CineArt\obj\Debug\CineArt.pdb
