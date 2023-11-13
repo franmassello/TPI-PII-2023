@@ -1,6 +1,6 @@
 ﻿namespace CineArt.Forms
 {
-    partial class Login
+    partial class Principal
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Login1";
+            this.Text = "Principal1";
         }
 
         #endregion
