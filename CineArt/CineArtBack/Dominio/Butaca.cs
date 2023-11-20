@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CineArtBack.Dominio
 {
-    internal class Butaca
+    public class Butaca
     {
         public int IdButaca { get; set; }
         public int IdSala { get; set; }

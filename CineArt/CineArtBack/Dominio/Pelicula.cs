@@ -11,20 +11,20 @@ namespace CineArtBack.Dominio
         int id;
         string titulo;
         string descripcion;
-        int genero;
+        string genero;
         DateTime fechaEstreno;
-        int idioma;
-        int formato;
+        string idioma;
+        string formato;
 
         public int pId { get => id; set => id = value; }
         public string pTitulo { get => titulo; set => titulo = value; }
         public string pDescripcion { get => descripcion; set => descripcion = value; }
-        public int pGenero { get => genero; set => genero = value; }
+        public string pGenero { get => genero; set => genero = value; }
         public DateTime pFechaEstreno { get => fechaEstreno; set => fechaEstreno = value; }
-        public int pIdioma { get => idioma; set => idioma = value; }
-        public int pFormato { get => formato; set => formato = value; }
+        public string pIdioma { get => idioma; set => idioma = value; }
+        public string pFormato { get => formato; set => formato = value; }
 
-        public Pelicula(int id, string titulo, string descripcion, int genero, DateTime fechaEstreno, int idioma, int formato)
+        public Pelicula(int id, string titulo, string descripcion, string genero, DateTime fechaEstreno, string idioma, string formato)
         {
             this.id = id;
             this.titulo = titulo;
@@ -39,10 +39,10 @@ namespace CineArtBack.Dominio
             this.id = 0;
             this.titulo = "";
             this.descripcion = "";
-            this.genero = 0;
+            this.genero = "";
             this.fechaEstreno = DateTime.Today;
-            this.idioma = 0;
-            this.formato = 0;
+            this.idioma = "";
+            this.formato = "";
         }
 
         public override string ToString()

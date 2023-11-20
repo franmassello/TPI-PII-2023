@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CineArtBack.Dominio
 {
-    internal class Idioma
+    public class Idioma
     { 
     public int Id_idioma { get; set; }
     public string Lenguaje { get; set; }

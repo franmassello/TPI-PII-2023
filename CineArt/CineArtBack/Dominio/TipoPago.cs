@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CineArtBack.Dominio
 {
-    internal class TipoPago
+    public class TipoPago
     {
         public int IdTipoPago { get; set; }
         public string Descripcion { get; set; }

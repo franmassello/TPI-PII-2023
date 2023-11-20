@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CineArtBack.Dominio
 {
-    internal class Funcion
+    public class Funcion
     {
         public Funcion(int id_funcion, int id_sala, int id_pelicula, DateTime horario, string dia)
         {

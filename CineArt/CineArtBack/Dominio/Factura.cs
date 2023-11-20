@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace CineArtBack.Dominio
 {
-    internal class Factura
+    public class Factura
     {
         public int Id_factura { get; set; }
         public DateTime Fecha { get; set; }
         public TimeSpan Hora { get; set; }
         public int Id_cliente { get; set; }
         public int Id_forma_pago { get; set; }
+        public List<DetalleFactura> DetalleFactura { get; set; }
+
         public Factura(int id_factura, DateTime fecha, TimeSpan hora, int id_cliente, int id_forma_pago)
         {
             this.Id_factura = id_factura;
@@ -22,6 +24,20 @@ namespace CineArtBack.Dominio
             this.Id_forma_pago = id_forma_pago;
         }
 
-        
+        public void agregarDetalle(DetalleFactura detalle)
+        {
+            DetalleFactura.Add(detalle);
+        }
+        public void quitarDetalle(int index)
+        {
+            DetalleFactura.RemoveAt(index);
+        }
+        public double CalcularTotal()
+        {
+            double total = 0;
+            foreach (DetalleFactura item in DetalleFactura)
+                total += item.CalcularSubTotal();
+            return total;
+        }
     }
 }

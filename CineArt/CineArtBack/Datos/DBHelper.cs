@@ -21,52 +21,43 @@ namespace CineArtBack.Datos
             return instancia;
         }
         #region combos
-        public DataTable comboCliente()
+
+        public DataTable comboIdioma()
         {
             comando.Parameters.Clear();
             conectar();
-            comando.CommandText = "cargarCliente";
+            comando.CommandText = "cargarIdiomas";
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+            desconectar();
+            return tabla;
+        }
+        public DataTable comboFormato()
+        {
+            comando.Parameters.Clear();
+            conectar();
+            comando.CommandText = "cargarFormatos";
             DataTable tabla = new DataTable();
             tabla.Load(comando.ExecuteReader());
             desconectar();
             return tabla;
         }
 
-        public DataTable comboFormaPago()
+        public DataTable comboGenero()
         {
             comando.Parameters.Clear();
             conectar();
-            comando.CommandText = "cargarForma_Pago";
+            comando.CommandText = "cargarGeneros";
             DataTable tabla = new DataTable();
             tabla.Load(comando.ExecuteReader());
             desconectar();
             return tabla;
         }
-        public DataTable comboProducto()
+        public DataTable comboPeliculas()
         {
             comando.Parameters.Clear();
             conectar();
-            comando.CommandText = "cargarProducto";
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            desconectar();
-            return tabla;
-        }
-        public DataTable comboTipoCliente()
-        {
-            comando.Parameters.Clear();
-            conectar();
-            comando.CommandText = "tipoCliente";
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            desconectar();
-            return tabla;
-        }
-        public DataTable grillaFactura()
-        {
-            comando.Parameters.Clear();
-            conectar();
-            comando.CommandText = "consultaFactura";
+            comando.CommandText = "cargarPeliculas";
             DataTable tabla = new DataTable();
             tabla.Load(comando.ExecuteReader());
             desconectar();
@@ -115,12 +106,9 @@ namespace CineArtBack.Datos
                 comando.Transaction = t;
                 comando.CommandText = "insert_Factura";
                 comando.Parameters.AddWithValue("@fecha", factura.Fecha);
-                comando.Parameters.AddWithValue("@cod_vendedor", factura.CodVendedor);
-                comando.Parameters.AddWithValue("@cod_cliente", factura.CodCliente);
-                comando.Parameters.AddWithValue("@forma_entrega", factura.FormaEntrega);
-                comando.Parameters.AddWithValue("@forma_pedido", factura.FormaPedido);
-                comando.Parameters.AddWithValue("@forma_pago", factura.FormaPago);
-                comando.Parameters.AddWithValue("@total", factura.CalcularTotal());
+                comando.Parameters.AddWithValue("@hora", factura.Hora);
+                comando.Parameters.AddWithValue("@id_cliente", factura.Id_cliente);
+                comando.Parameters.AddWithValue("@id_forma_pago", factura.Id_forma_pago);
                 SqlParameter parametro = new SqlParameter("@id", SqlDbType.Int);
                 parametro.Direction = ParameterDirection.Output;
                 comando.Parameters.Add(parametro);
@@ -130,9 +118,13 @@ namespace CineArtBack.Datos
                 {
                     comando.Parameters.Clear();
                     comando.CommandText = "insert_Detalle";
-                    comando.Parameters.AddWithValue("@nro_factura", idFactura);
+                    comando.Parameters.AddWithValue("@id_factura", idFactura);
+                    comando.Parameters.AddWithValue("@precio", detalle.Precio);
+                    comando.Parameters.AddWithValue("@id_funcion", detalle.Id_Funcion);
+                    comando.Parameters.AddWithValue("@descuento", detalle.Descuento);
+                    comando.Parameters.AddWithValue("@id_butaca", detalle.Id_Butaca);
                     comando.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
-                    comando.Parameters.AddWithValue("@cod_producto", detalle.Producto.IdProducto);
+
                     comando.ExecuteNonQuery();
                 }
                 t.Commit();
@@ -149,7 +141,10 @@ namespace CineArtBack.Datos
             }
             return ok;
         }
-        public bool updateFactura(int numero, Factura factura)
+        
+  
+       
+        public bool insertPelicula(Pelicula pelicula)
         {
             bool ok = true;
             SqlTransaction t = null;
@@ -159,43 +154,13 @@ namespace CineArtBack.Datos
                 comando.Parameters.Clear();
                 t = conexion.BeginTransaction();
                 comando.Transaction = t;
-                comando.CommandText = "updateFactura";
-                comando.Parameters.AddWithValue("@formaentrega", factura.FormaEntrega);
-                comando.Parameters.AddWithValue("@nrofactura", numero);
-                comando.ExecuteNonQuery();
-                t.Commit();
-            }
-            catch (Exception)
-            {
-                t.Rollback();
-                ok = false;
-
-            }
-            finally
-            {
-                desconectar();
-            }
-            return ok;
-        }
-        public bool insertCliente(Cliente cliente)
-        {
-            bool ok = true;
-            SqlTransaction t = null;
-            try
-            {
-                conectar();
-                comando.Parameters.Clear();
-                t = conexion.BeginTransaction();
-                comando.Transaction = t;
-                comando.CommandText = "insertCliente";
-                comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
-                comando.Parameters.AddWithValue("@calle", cliente.Calle);
-                comando.Parameters.AddWithValue("@altura", cliente.Altura);
-                comando.Parameters.AddWithValue("@telefono", cliente.Telefono);
-                comando.Parameters.AddWithValue("@tipocliente", cliente.Idtipo);
-                comando.Parameters.AddWithValue("@idbarrio", cliente.IdBarrio);
-                comando.Parameters.AddWithValue("@tipodoc", cliente.IdTipoDoc);
-                comando.Parameters.AddWithValue("@nrodoc", cliente.NroDoc);
+                comando.CommandText = "insertPelicula";
+                comando.Parameters.AddWithValue("@titulo", pelicula.pTitulo);
+                comando.Parameters.AddWithValue("@descripcion", pelicula.pDescripcion);
+                comando.Parameters.AddWithValue("@id_genero", pelicula.pGenero);
+                comando.Parameters.AddWithValue("@fecha_estreno", pelicula.pFechaEstreno);
+                comando.Parameters.AddWithValue("@id_idioma", pelicula.pIdioma);
+                comando.Parameters.AddWithValue("@id_formato", pelicula.pFormato);
                 comando.ExecuteNonQuery();
                 t.Commit();
             }
@@ -210,7 +175,7 @@ namespace CineArtBack.Datos
             }
             return ok;
         }
-        public bool deleteCliente(int numero)
+        public bool deletePelicula(int numero)
         {
             bool ok = true;
             SqlTransaction t = null;
@@ -220,8 +185,8 @@ namespace CineArtBack.Datos
                 comando.Parameters.Clear();
                 t = conexion.BeginTransaction();
                 comando.Transaction = t;
-                comando.CommandText = "eliminarCliente";
-                comando.Parameters.AddWithValue("@idcliente", numero);
+                comando.CommandText = "eliminarPelicula";
+                comando.Parameters.AddWithValue("@id_pelicula", numero);
                 comando.ExecuteNonQuery();
                 t.Commit();
             }
@@ -236,119 +201,7 @@ namespace CineArtBack.Datos
             }
             return ok;
         }
-        public bool deleteFactura(int numero)
-        {
-            bool ok = true;
-            SqlTransaction t = null;
-            try
-            {
-                conectar();
-                comando.Parameters.Clear();
-                t = conexion.BeginTransaction();
-                comando.Transaction = t;
-                comando.CommandText = "deleteFactura";
-                comando.Parameters.AddWithValue("@nrofactura", numero);
-                comando.ExecuteNonQuery();
-
-
-
-
-                t.Commit();
-            }
-            catch (Exception)
-            {
-                t.Rollback();
-                ok = false;
-            }
-            finally
-            {
-                desconectar();
-            }
-            return ok;
-        }
-        public bool updateCliente(int numero, Cliente cliente)
-        {
-            bool ok = true;
-            SqlTransaction t = null;
-            try
-            {
-                conectar();
-                comando.Parameters.Clear();
-                t = conexion.BeginTransaction();
-                comando.Transaction = t;
-                comando.CommandText = "editarCliente";
-                comando.Parameters.AddWithValue("@idcliente", numero);
-                comando.Parameters.AddWithValue("@telefono", cliente.Telefono);
-                comando.Parameters.AddWithValue("@calle", cliente.Calle);
-                comando.Parameters.AddWithValue("@altura", cliente.Altura);
-                comando.ExecuteNonQuery();
-                t.Commit();
-            }
-            catch (Exception)
-            {
-                t.Rollback();
-                ok = false;
-            }
-            finally
-            {
-                desconectar();
-            }
-            return ok;
-        }
-        public bool insertProducto(Producto producto)
-        {
-            bool ok = true;
-            SqlTransaction t = null;
-            try
-            {
-                conectar();
-                comando.Parameters.Clear();
-                t = conexion.BeginTransaction();
-                comando.Transaction = t;
-                comando.CommandText = "insertProducto";
-                comando.Parameters.AddWithValue("@nombre", producto.Descripcion);
-                comando.Parameters.AddWithValue("@precio", producto.Precio);
-                comando.ExecuteNonQuery();
-                t.Commit();
-            }
-            catch (Exception)
-            {
-                t.Rollback();
-                ok = false;
-            }
-            finally
-            {
-                desconectar();
-            }
-            return ok;
-        }
-        public bool deleteProducto(int numero)
-        {
-            bool ok = true;
-            SqlTransaction t = null;
-            try
-            {
-                conectar();
-                comando.Parameters.Clear();
-                t = conexion.BeginTransaction();
-                comando.Transaction = t;
-                comando.CommandText = "eliminarProducto";
-                comando.Parameters.AddWithValue("@idProducto", numero);
-                comando.ExecuteNonQuery();
-                t.Commit();
-            }
-            catch (Exception)
-            {
-                t.Rollback();
-                ok = false;
-            }
-            finally
-            {
-                desconectar();
-            }
-            return ok;
-        }
-        public bool updateProducto(int numero, Producto producto)
+        public bool updatePelicula(int numero, Pelicula pelicula)
         {
             bool ok = true;
             SqlTransaction t = null;
@@ -359,8 +212,13 @@ namespace CineArtBack.Datos
                 t = conexion.BeginTransaction();
                 comando.Transaction = t;
                 comando.CommandText = "editarProducto";
-                comando.Parameters.AddWithValue("@idproducto", numero);
-                comando.Parameters.AddWithValue("@precio", producto.Precio);
+                comando.Parameters.AddWithValue("@id_pelicula", numero);
+                comando.Parameters.AddWithValue("@titulo", pelicula.pTitulo);
+                comando.Parameters.AddWithValue("@descripcion", pelicula.pDescripcion);
+                comando.Parameters.AddWithValue("@id_genero", pelicula.pGenero);
+                comando.Parameters.AddWithValue("@fecha_estreno", pelicula.pFechaEstreno);
+                comando.Parameters.AddWithValue("@id_idioma", pelicula.pIdioma);
+                comando.Parameters.AddWithValue("@id_formato", pelicula.pFormato);
                 comando.ExecuteNonQuery();
                 t.Commit();
             }

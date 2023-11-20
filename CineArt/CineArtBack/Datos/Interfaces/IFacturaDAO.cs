@@ -10,23 +10,14 @@ namespace CineArtBack.Datos.Interfaces
 {
     public interface IFacturaDAO
     {
-        List<Cliente> getComboCliente();
-        List<FormaEntrega> getComboFormaEntrega();
-        List<MedioPedido> getComboMedioPedido();
-        List<FormaPago> getComboFormaPago();
-        List<Producto> getComboProducto();
-        bool getInsertFactura(Factura factura);
-        Factura getFactura(int nro);
-        List<Factura> getFacturas();
-        bool getInsertCliente(Cliente cliente);
-        bool getDeleteCliente(int numero);
-        bool getUpdateCliente(int numero, Cliente cliente);
-        bool getInsertProducto(Producto producto);
-        bool getDeleteProducto(int numero);
-        bool getUpdateProducto(int numero, Producto producto);
-        bool getUpdateFactura(int numero, Factura factura);
-        bool getDeleteFactura(int numero);
+        List<Pelicula> getComboPelicula();
+        List<GeneroPelicula> getComboGenero();
+        List<Idioma> getComboIdioma();
+        List<FormatoPelicula> getComboFormato();
+        bool insertFactura(Factura factura);
+        bool getInsertPelicula(Pelicula pelicula);
+        bool getDeletePelicula(int numero);
+        bool getUpdatePelicula(int numero, Pelicula pelicula);
         int getProximaFactura();
-        List<Usuario> getUsuario();
     }
 }
