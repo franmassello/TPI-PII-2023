@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gOOY1CdV9dIxLbKCrJWfLACFik09INmdSrg8/QM7k/E5HCANNJfC56OM9VI6BTwfm2Dq5bnB06MOmTHt8SyNBA==",
+  "dgSpecHash": "6N7H2PGZOvHXaOmUlr012UYQUTvPJPZ/2LSd/gS6qA8sb/GzTgEfa0sMZd3CEwEzXHYpekq1lCBYjPPgTWoZ+g==",
   "success": true,
-  "projectFilePath": "H:\\UTN\\Tecnicatura\\Repos\\tempTPI\\CineArt\\CineArtAPI\\CineArtAPI.csproj",
+  "projectFilePath": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtAPI\\CineArtAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NC\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\NC\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

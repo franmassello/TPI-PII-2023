@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\UTN\\Tecnicatura\\Repos\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj": {}
+    "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj": {}
   },
   "projects": {
-    "H:\\UTN\\Tecnicatura\\Repos\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj": {
+    "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\UTN\\Tecnicatura\\Repos\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj",
+        "projectUniqueName": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj",
         "projectName": "CineArtBack",
-        "projectPath": "H:\\UTN\\Tecnicatura\\Repos\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj",
+        "projectPath": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj",
         "packagesPath": "C:\\Users\\NC\\.nuget\\packages\\",
-        "outputPath": "H:\\UTN\\Tecnicatura\\Repos\\tempTPI\\CineArt\\CineArtBack\\obj\\",
+        "outputPath": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -54,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
