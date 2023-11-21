@@ -17,5 +17,6 @@ namespace CineArtBack.Fachada
         bool getInsertPelicula(Pelicula pelicula);
         bool getDeletePelicula(int numero);
         bool getUpdatePelicula(int numero, Pelicula pelicula);
+        bool postLogin(string user, string password);
     }
 }

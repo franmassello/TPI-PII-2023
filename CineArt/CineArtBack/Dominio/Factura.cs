@@ -32,12 +32,5 @@ namespace CineArtBack.Dominio
         {
             DetalleFactura.RemoveAt(index);
         }
-        public double CalcularTotal()
-        {
-            double total = 0;
-            foreach (DetalleFactura item in DetalleFactura)
-                total += item.CalcularSubTotal();
-            return total;
-        }
     }
 }

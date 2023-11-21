@@ -1,9 +1,29 @@
-﻿namespace CineArtAPI.Controllers
+﻿using CineArtBack.Fachada;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CineArtAPI.Controllers
 {
-    public class MainController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class MainController : ControllerBase
     {
-        // aca va la ruta del login
+        private IData data;
+        public MainController()
+        {
+            data = new DataLib();
+        }
 
-
+        [HttpPost("/login")]
+        public IActionResult postLogin(string user, string password)
+        {
+            try
+            {
+                return Ok(data.postLogin(user,password));
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
     }
 }

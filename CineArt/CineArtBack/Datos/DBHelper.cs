@@ -63,15 +63,24 @@ namespace CineArtBack.Datos
             desconectar();
             return tabla;
         }
-        public DataTable Login()
+        public bool Login(string user, string password)
         {
             comando.Parameters.Clear();
             conectar();
-            comando.CommandText = "SP_USUARIOS";
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
+            comando = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Username = @username AND Password = @password", conexion);
+            comando.Parameters.AddWithValue("@username", user);
+            comando.Parameters.AddWithValue("@password", password);
+            int count = (int)comando.ExecuteScalar();
             desconectar();
-            return tabla;
+
+            if (count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public DataTable ConsultaSQL(string spNombre, List<Parametro> values)
         {

@@ -51,5 +51,9 @@ namespace CineArtBack.Fachada
             return dao.getUpdatePelicula(numero, pelicula);
         }
 
+        public bool postLogin(string user, string password)
+        {
+            return dao.postLogin(user, password);
+        }
     }
 }

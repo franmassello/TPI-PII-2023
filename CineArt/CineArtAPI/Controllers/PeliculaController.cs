@@ -16,10 +16,10 @@ namespace CineArtAPI.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductoController : ControllerBase
+    public class PeliculaController : ControllerBase
     {
         private IData data;
-        public ProductoController()
+        public PeliculaController()
         {
             data = new DataLib();
         }

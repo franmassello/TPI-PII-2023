@@ -88,5 +88,11 @@ namespace CineArtBack.Datos.Implementaciones
             return DBHelper.obtenerInstancia().updatePelicula(numero, pelicula);
 
         }
+
+        public bool postLogin(string user, string password)
+        {
+            return DBHelper.obtenerInstancia().Login(user, password);
+
+        }
     }
 }
