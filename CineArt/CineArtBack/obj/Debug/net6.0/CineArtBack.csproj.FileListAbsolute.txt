@@ -11,3 +11,29 @@ C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtBack\obj\Debug\net6.0\CineA
 C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtBack\obj\Debug\net6.0\refint\CineArtBack.dll
 C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.pdb
 C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtBack\obj\Debug\net6.0\ref\CineArtBack.dll
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\bin\Debug\net6.0\CineArtBack.deps.json
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\bin\Debug\net6.0\CineArtBack.dll
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\bin\Debug\net6.0\CineArtBack.pdb
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.csproj.AssemblyReference.cache
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.AssemblyInfoInputs.cache
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.AssemblyInfo.cs
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.csproj.CoreCompileInputs.cache
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.sourcelink.json
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.dll
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\refint\CineArtBack.dll
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.pdb
+C:\Users\NC\Desktop\Nueva carpeta\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\ref\CineArtBack.dll
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\bin\Debug\net6.0\CineArtBack.deps.json
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\bin\Debug\net6.0\CineArtBack.dll
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\bin\Debug\net6.0\CineArtBack.pdb
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.csproj.AssemblyReference.cache
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.GeneratedMSBuildEditorConfig.editorconfig
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.AssemblyInfoInputs.cache
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.AssemblyInfo.cs
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.csproj.CoreCompileInputs.cache
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.sourcelink.json
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.dll
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\refint\CineArtBack.dll
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\CineArtBack.pdb
+H:\UTN\Tecnicatura\Repos\TPI-PII-2023\CineArt\CineArtBack\obj\Debug\net6.0\ref\CineArtBack.dll

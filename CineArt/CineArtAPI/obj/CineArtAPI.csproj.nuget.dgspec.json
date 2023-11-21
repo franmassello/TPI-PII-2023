@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtAPI\\CineArtAPI.csproj": {}
+    "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtAPI\\CineArtAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtAPI\\CineArtAPI.csproj": {
+    "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtAPI\\CineArtAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtAPI\\CineArtAPI.csproj",
+        "projectUniqueName": "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtAPI\\CineArtAPI.csproj",
         "projectName": "CineArtAPI",
-        "projectPath": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtAPI\\CineArtAPI.csproj",
+        "projectPath": "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtAPI\\CineArtAPI.csproj",
         "packagesPath": "C:\\Users\\NC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtAPI\\obj\\",
+        "outputPath": "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj": {
-                "projectPath": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj"
+              "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj": {
+                "projectPath": "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj"
               }
             }
           }
@@ -44,6 +44,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+              "target": "Package",
+              "version": "[140.1000.523, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -72,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj": {
+    "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj",
+        "projectUniqueName": "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
         "projectName": "CineArtBack",
-        "projectPath": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\CineArtBack.csproj",
+        "projectPath": "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
         "packagesPath": "C:\\Users\\NC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NC\\Desktop\\TPI-PROG2\\tempTPI\\CineArt\\CineArtBack\\obj\\",
+        "outputPath": "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtBack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -108,6 +112,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+              "target": "Package",
+              "version": "[140.340.80, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineArtFront", "CineArtFront\CineArtFront.csproj", "{DE150907-0560-4346-8E23-3A0A85E94258}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineArtAPI", "CineArtAPI\CineArtAPI.csproj", "{6B48D828-A6B4-4B74-BA0E-6480948DA2C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineArtReportes", "CineArtReportes\CineArtReportes.csproj", "{15FF8F98-3A7E-4B34-AA69-A228F07F2DFF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineArtBack", "CineArtBack\CineArtBack.csproj", "{8EB059B2-A914-4263-89DC-76A679F1DF31}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineArtReportes", "CineArtReportes\CineArtReportes.csproj", "{462F9482-72E6-490D-9EC9-58746F2D6398}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineArtFront", "CineArt\CineArtFront.csproj", "{9FBBAA0B-4360-4D4E-90BA-77F3B1307A26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,20 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE150907-0560-4346-8E23-3A0A85E94258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE150907-0560-4346-8E23-3A0A85E94258}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE150907-0560-4346-8E23-3A0A85E94258}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B48D828-A6B4-4B74-BA0E-6480948DA2C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6B48D828-A6B4-4B74-BA0E-6480948DA2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B48D828-A6B4-4B74-BA0E-6480948DA2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B48D828-A6B4-4B74-BA0E-6480948DA2C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{15FF8F98-3A7E-4B34-AA69-A228F07F2DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15FF8F98-3A7E-4B34-AA69-A228F07F2DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15FF8F98-3A7E-4B34-AA69-A228F07F2DFF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8EB059B2-A914-4263-89DC-76A679F1DF31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8EB059B2-A914-4263-89DC-76A679F1DF31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EB059B2-A914-4263-89DC-76A679F1DF31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EB059B2-A914-4263-89DC-76A679F1DF31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462F9482-72E6-490D-9EC9-58746F2D6398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462F9482-72E6-490D-9EC9-58746F2D6398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462F9482-72E6-490D-9EC9-58746F2D6398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462F9482-72E6-490D-9EC9-58746F2D6398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FBBAA0B-4360-4D4E-90BA-77F3B1307A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FBBAA0B-4360-4D4E-90BA-77F3B1307A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FBBAA0B-4360-4D4E-90BA-77F3B1307A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FBBAA0B-4360-4D4E-90BA-77F3B1307A26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,0 @@
-C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtFront\bin\Debug\CineArtFront.exe.config
-C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtFront\bin\Debug\CineArtFront.exe
-C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtFront\bin\Debug\CineArtFront.pdb
-C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtFront\obj\Debug\CineArtFront.csproj.AssemblyReference.cache
-C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtFront\obj\Debug\CineArtFront.Properties.Resources.resources
-C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtFront\obj\Debug\CineArtFront.csproj.GenerateResource.cache
-C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtFront\obj\Debug\CineArtFront.csproj.CoreCompileInputs.cache
-C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtFront\obj\Debug\CineArtFront.exe
-C:\Users\NC\Desktop\TPI-PROG2\tempTPI\CineArt\CineArtFront\obj\Debug\CineArtFront.pdb
