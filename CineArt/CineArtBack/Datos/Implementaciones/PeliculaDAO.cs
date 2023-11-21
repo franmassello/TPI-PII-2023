@@ -18,11 +18,11 @@ namespace CineArtBack.Datos.Implementaciones
             DataTable tabla = DBHelper.obtenerInstancia().comboPeliculas();
             foreach (DataRow dr in tabla.Rows)
             {
-                int id = int.Parse(dr["id_producto"].ToString());
+                int id = int.Parse(dr["id_pelicula"].ToString());
                 string titulo = dr["titulo"].ToString();
                 string descripcion = dr["descripcion"].ToString();
                 string genero = dr["genero"].ToString();
-                string fechaEstrenoString = dr["fechaEstreno"].ToString();
+                string fechaEstrenoString = dr["fecha_estreno"].ToString();
                 DateTime fechaEstreno = DateTime.Parse(fechaEstrenoString);
                 string idioma = dr["idioma"].ToString();
                 string formato = dr["formato"].ToString();
@@ -49,16 +49,24 @@ namespace CineArtBack.Datos.Implementaciones
         }
         public List<Idioma> getComboIdioma() 
         {
-            List<Idioma> list = new List<Idioma>();
-            DataTable tabla = DBHelper.obtenerInstancia().comboGenero();
-            foreach (DataRow dr in tabla.Rows)
+            try
             {
-                int id = int.Parse(dr["id_idioma"].ToString());
-                string nombre = dr["idioma"].ToString();
-                Idioma aux = new Idioma(id, nombre);
-                list.Add(aux);
+                List<Idioma> list = new List<Idioma>();
+                DataTable tabla = DBHelper.obtenerInstancia().comboIdioma();
+                foreach (DataRow dr in tabla.Rows)
+                {
+                    int id = int.Parse(dr["id_idioma"].ToString());
+                    string nombre = dr["idioma"].ToString();
+                    Idioma aux = new Idioma(id, nombre);
+                    list.Add(aux);
+                }
+                return list;
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
             }
-            return list;
+            
         }
         public List<FormatoPelicula> getComboFormato()
         {

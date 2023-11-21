@@ -20,65 +20,100 @@ namespace CineArtBack.Datos
             }
             return instancia;
         }
-        #region combos
 
         public DataTable comboIdioma()
         {
-            comando.Parameters.Clear();
-            conectar();
-            comando.CommandText = "cargarIdiomas";
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            desconectar();
-            return tabla;
+            try
+            {
+                comando.Parameters.Clear();
+                conectar();
+                comando = new SqlCommand("EXEC SP_GET_IDIOMAS", conexion);
+                DataTable tabla = new DataTable();
+                tabla.Load(comando.ExecuteReader());
+                desconectar();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
         public DataTable comboFormato()
         {
-            comando.Parameters.Clear();
-            conectar();
-            comando.CommandText = "cargarFormatos";
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            desconectar();
-            return tabla;
+            try
+            {
+                comando.Parameters.Clear();
+                conectar();
+                comando = new SqlCommand("EXEC SP_GET_FORMATOS", conexion);
+                DataTable tabla = new DataTable();
+                tabla.Load(comando.ExecuteReader());
+                desconectar();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         public DataTable comboGenero()
         {
-            comando.Parameters.Clear();
-            conectar();
-            comando.CommandText = "cargarGeneros";
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            desconectar();
-            return tabla;
+            try
+            {
+                comando.Parameters.Clear();
+                conectar();
+                comando = new SqlCommand("EXEC SP_GET_GENEROS", conexion);
+                DataTable tabla = new DataTable();
+                tabla.Load(comando.ExecuteReader());
+                desconectar();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
         public DataTable comboPeliculas()
         {
-            comando.Parameters.Clear();
-            conectar();
-            comando.CommandText = "cargarPeliculas";
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-            desconectar();
-            return tabla;
+            try
+            {
+                comando.Parameters.Clear();
+                conectar();
+                comando = new SqlCommand("EXEC SP_GET_PELICULAS", conexion);
+                DataTable tabla = new DataTable();
+                tabla.Load(comando.ExecuteReader());
+                desconectar();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
         public bool Login(string user, string password)
         {
-            comando.Parameters.Clear();
-            conectar();
-            comando = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Username = @username AND Password = @password", conexion);
-            comando.Parameters.AddWithValue("@username", user);
-            comando.Parameters.AddWithValue("@password", password);
-            int count = (int)comando.ExecuteScalar();
-            desconectar();
+            try
+            {
+                comando.Parameters.Clear();
+                conectar();
+                comando = new SqlCommand("SELECT COUNT(*) FROM usuarios WHERE usuario = @username AND contraseña = @password", conexion);
+                comando.Parameters.AddWithValue("@username", user);
+                comando.Parameters.AddWithValue("@password", password);
+                int count = (int)comando.ExecuteScalar();
+                desconectar();
 
-            if (count > 0)
-            {
-                return true;
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
+                Console.WriteLine("An error occurred while trying to log in: " + ex.Message);
                 return false;
             }
         }
@@ -101,57 +136,6 @@ namespace CineArtBack.Datos
 
             return tabla;
         }
-        #endregion
-
-        public bool insertFactura(Factura factura)
-        {
-            bool ok = true;
-            SqlTransaction t = null;
-            try
-            {
-                conectar();
-                comando.Parameters.Clear();
-                t = conexion.BeginTransaction();
-                comando.Transaction = t;
-                comando.CommandText = "insert_Factura";
-                comando.Parameters.AddWithValue("@fecha", factura.Fecha);
-                comando.Parameters.AddWithValue("@hora", factura.Hora);
-                comando.Parameters.AddWithValue("@id_cliente", factura.Id_cliente);
-                comando.Parameters.AddWithValue("@id_forma_pago", factura.Id_forma_pago);
-                SqlParameter parametro = new SqlParameter("@id", SqlDbType.Int);
-                parametro.Direction = ParameterDirection.Output;
-                comando.Parameters.Add(parametro);
-                comando.ExecuteNonQuery();
-                int idFactura = (int)parametro.Value;
-                foreach (DetalleFactura detalle in factura.DetalleFactura)
-                {
-                    comando.Parameters.Clear();
-                    comando.CommandText = "insert_Detalle";
-                    comando.Parameters.AddWithValue("@id_factura", idFactura);
-                    comando.Parameters.AddWithValue("@precio", detalle.Precio);
-                    comando.Parameters.AddWithValue("@id_funcion", detalle.Id_Funcion);
-                    comando.Parameters.AddWithValue("@descuento", detalle.Descuento);
-                    comando.Parameters.AddWithValue("@id_butaca", detalle.Id_Butaca);
-                    comando.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
-
-                    comando.ExecuteNonQuery();
-                }
-                t.Commit();
-            }
-            catch (Exception)
-            {
-                t.Rollback();
-                ok = false;
-
-            }
-            finally
-            {
-                desconectar();
-            }
-            return ok;
-        }
-        
-  
        
         public bool insertPelicula(Pelicula pelicula)
         {
@@ -163,18 +147,19 @@ namespace CineArtBack.Datos
                 comando.Parameters.Clear();
                 t = conexion.BeginTransaction();
                 comando.Transaction = t;
-                comando.CommandText = "insertPelicula";
+                comando.CommandText = "SP_INSERT_PELICULA";
                 comando.Parameters.AddWithValue("@titulo", pelicula.pTitulo);
                 comando.Parameters.AddWithValue("@descripcion", pelicula.pDescripcion);
-                comando.Parameters.AddWithValue("@id_genero", pelicula.pGenero);
+                comando.Parameters.AddWithValue("@genero_var", pelicula.pGenero);
                 comando.Parameters.AddWithValue("@fecha_estreno", pelicula.pFechaEstreno);
-                comando.Parameters.AddWithValue("@id_idioma", pelicula.pIdioma);
-                comando.Parameters.AddWithValue("@id_formato", pelicula.pFormato);
+                comando.Parameters.AddWithValue("@idioma_var", pelicula.pIdioma);
+                comando.Parameters.AddWithValue("@formato_var", pelicula.pFormato);
                 comando.ExecuteNonQuery();
                 t.Commit();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 t.Rollback();
                 ok = false;
             }
@@ -194,14 +179,17 @@ namespace CineArtBack.Datos
                 comando.Parameters.Clear();
                 t = conexion.BeginTransaction();
                 comando.Transaction = t;
-                comando.CommandText = "eliminarPelicula";
+                comando.CommandText = "SP_DELETE_PELICULA";
                 comando.Parameters.AddWithValue("@id_pelicula", numero);
                 comando.ExecuteNonQuery();
                 t.Commit();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 t.Rollback();
+                Console.WriteLine(
+                        ex.Message
+                    );
                 ok = false;
             }
             finally
@@ -220,19 +208,20 @@ namespace CineArtBack.Datos
                 comando.Parameters.Clear();
                 t = conexion.BeginTransaction();
                 comando.Transaction = t;
-                comando.CommandText = "editarProducto";
+                comando.CommandText = "SP_UPDATE_PELICULA";
                 comando.Parameters.AddWithValue("@id_pelicula", numero);
                 comando.Parameters.AddWithValue("@titulo", pelicula.pTitulo);
                 comando.Parameters.AddWithValue("@descripcion", pelicula.pDescripcion);
-                comando.Parameters.AddWithValue("@id_genero", pelicula.pGenero);
+                comando.Parameters.AddWithValue("@genero_var", pelicula.pGenero);
                 comando.Parameters.AddWithValue("@fecha_estreno", pelicula.pFechaEstreno);
-                comando.Parameters.AddWithValue("@id_idioma", pelicula.pIdioma);
-                comando.Parameters.AddWithValue("@id_formato", pelicula.pFormato);
+                comando.Parameters.AddWithValue("@idioma_var", pelicula.pIdioma);
+                comando.Parameters.AddWithValue("@formato_var", pelicula.pFormato);
                 comando.ExecuteNonQuery();
                 t.Commit();
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 t.Rollback();
                 ok = false;
             }

@@ -47,7 +47,7 @@ namespace CineArtBack.Dominio
 
         public override string ToString()
         {
-            return id + " " + titulo + " " + genero + " " + fechaEstreno.ToString() + " " + idioma + " " + formato;
+            return titulo + " " + genero + " " + fechaEstreno.ToString() + " " + idioma + " " + formato;
         }
 
     }
