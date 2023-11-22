@@ -1,4 +1,0 @@
-C:\Users\Space\OneDrive\Escritorio\Nueva carpeta\TPI-PII-2023\CineArt\CineArt\obj\Debug\CineArtFront.csproj.AssemblyReference.cache
-C:\Users\Space\OneDrive\Escritorio\Nueva carpeta\TPI-PII-2023\CineArt\CineArt\obj\Debug\CineArtFront.csproj.SuggestedBindingRedirects.cache
-C:\Users\Space\OneDrive\Escritorio\Nueva carpeta\TPI-PII-2023\CineArt\CineArt\obj\Debug\CineArt.exe
-C:\Users\Space\OneDrive\Escritorio\Nueva carpeta\TPI-PII-2023\CineArt\CineArt\obj\Debug\CineArt.pdb

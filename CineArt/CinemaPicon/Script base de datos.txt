@@ -1,0 +1,1196 @@
+CREATE DATABASE CINEMA_PICON
+GO
+USE CINEMA_PICON
+GO
+
+
+
+-- ////////////////////////////////////////////////////TABLAS AUXILIARES///////////////////////////////////////////////////////////////////
+
+CREATE TABLE usuarios (
+id_usuario int identity(1,1),
+nombre varchar(50),
+usuario varchar(50),
+contraseña varchar(50),
+tipo_usuario varchar(50)
+
+CONSTRAINT pk_usuarios PRIMARY KEY (id_usuario)
+)
+
+-- Table: Clientes
+CREATE TABLE Clientes (
+    id_cliente int  identity(1,1),
+    nombre varchar(60)  NOT NULL,
+    apellido varchar(50)  NOT NULL,
+    dni int  NOT NULL,
+    e_mail varchar(50)  NOT NULL,
+	CONSTRAINT Clientes_pk PRIMARY KEY (id_cliente)
+);
+
+
+-- Table: Cines
+CREATE TABLE Cines (
+    id_cine int identity(1,1),
+    nombre varchar(80)  NOT NULL,
+    direccion varchar(120)  NOT NULL,
+    telefono int  NOT NULL,
+    cuit varchar(40)  NOT NULL,
+    CONSTRAINT Cines_pk PRIMARY KEY  (id_cine)
+);
+
+
+
+-- Table: Idiomas
+CREATE TABLE Idiomas (
+    id_idioma int  identity(1,1),
+    idioma varchar(80)  NOT NULL,
+    CONSTRAINT Idiomas_pk PRIMARY KEY  (id_idioma)
+);
+
+-- Table: Generos
+CREATE TABLE Generos (
+    id_genero int  identity(1,1),
+    genero varchar(50)  NOT NULL,
+    CONSTRAINT Generos_pk PRIMARY KEY  (id_genero)
+);
+
+
+-- Table: Formatos_peliculas
+CREATE TABLE Formatos_peliculas (
+    id_formato int  identity(1,1),
+    formato varchar(60)  NOT NULL,
+    CONSTRAINT Formatos_peliculas_pk PRIMARY KEY  (id_formato)
+);
+
+
+-- Table: Formas_ventas
+CREATE TABLE Formas_ventas (
+    id_forma_venta int  identity(1,1),
+    forma_venta varchar(50)  NOT NULL,
+    CONSTRAINT Formas_ventas_pk PRIMARY KEY  (id_forma_venta)
+);
+
+
+
+-- Table: Tipos_salas
+CREATE TABLE Tipos_salas (
+    id_tipo_sala int  identity(1,1),
+    tipo_sala varchar(50)  NOT NULL,
+    CONSTRAINT Tipos_salas_pk PRIMARY KEY  (id_tipo_sala)
+);
+
+-- Table: Tipos_pagos
+CREATE TABLE Tipos_pagos (
+    id_tipo_pago int  identity(1,1),
+    tipo varchar(60)  NOT NULL,
+    CONSTRAINT Tipos_pagos_pk PRIMARY KEY  (id_tipo_pago)
+);
+
+
+
+--- /////////////////////////////////////////////TABLAS NO AUXILARES/////////////////////////////////////////////////////////////////
+
+
+
+
+--select * from Reservas
+
+-- Table: Salas
+CREATE TABLE Salas (
+    id_sala int  identity(1,1),
+    id_tipo_sala int  NOT NULL,
+    cant_butacas int  NOT NULL,
+    id_cine int  NOT NULL,
+    CONSTRAINT Salas_pk PRIMARY KEY  (id_sala),
+    CONSTRAINT tipoSalaD_fk FOREIGN KEY (id_tipo_sala) REFERENCES Tipos_salas (id_tipo_sala),
+    CONSTRAINT CineD_fk FOREIGN KEY (id_cine) REFERENCES Cines(id_cine)
+
+);
+
+
+-- Table: Butacas
+
+CREATE TABLE Butacas (
+    id_butaca int  identity(1,1),
+    fila varchar(50)  NOT NULL,
+    id_sala int  NOT NULL,
+    nro_butaca int  NOT NULL,
+    CONSTRAINT Butacas_pk PRIMARY KEY  (id_butaca),
+	CONSTRAINT SalasA_fk FOREIGN KEY (id_sala) REFERENCES Salas (id_sala)
+);
+--SELECT * FROM BUTACAS
+
+
+
+-- Table: Forma_pagos
+CREATE TABLE Forma_pagos (
+    id_forma_pago int  identity(1,1),
+    forma_pago varchar(80)  NOT NULL,
+    id_tipo_pago int  NOT NULL,
+    CONSTRAINT Forma_pagos_pk PRIMARY KEY  (id_forma_pago),
+	CONSTRAINT tipo_pagosA_fk FOREIGN KEY (id_tipo_pago) REFERENCES tipos_pagos (id_tipo_pago)
+
+);
+
+
+-- Table: Peliculas
+CREATE TABLE Peliculas (
+    id_pelicula int  identity(1,1),
+    titulo varchar(70)  NOT NULL,
+    descripcion varchar(500)  NOT NULL,
+    id_genero int  NOT NULL,
+    fecha_estreno date  NOT NULL,
+    id_idioma int  NOT NULL,
+    id_formato int  NOT NULL,
+    CONSTRAINT Peliculas_pk PRIMARY KEY  (id_pelicula),
+	CONSTRAINT GeneroB_FK FOREIGN KEY (id_genero) REFERENCES generos(id_genero),
+	CONSTRAINT IdiomaB_FK FOREIGN KEY (id_idioma) REFERENCES idiomas(id_idioma),
+	CONSTRAINT formatoB_FK FOREIGN KEY(id_formato) REFERENCES formatos_peliculas(id_formato)
+
+);
+
+-- Table: Funciones
+CREATE TABLE Funciones (
+    id_funcion int  identity(1,1),
+    id_sala int  NOT NULL,
+    id_pelicula int  NOT NULL,
+    horario time  NOT NULL,
+    dia date  NOT NULL,
+    CONSTRAINT Funciones_pk PRIMARY KEY  (id_funcion),
+	CONSTRAINT SalasB_fk FOREIGN KEY (id_sala) REFERENCES Salas(id_sala),
+	CONSTRAINT PeliculaB_fk FOREIGN KEY (id_pelicula) REFERENCES Peliculas(id_pelicula)
+);
+-- Table: Reservas
+CREATE TABLE Reservas (
+    id_reserva int  identity(1,1),
+    id_cliente int  NOT NULL,
+    id_forma_venta int  NOT NULL,
+	id_funcion int NOT NULL,
+    CONSTRAINT Reservas_pk PRIMARY KEY  (id_reserva),
+    CONSTRAINT ClientesD_fk FOREIGN KEY (id_cliente) REFERENCES Clientes (id_cliente),
+    CONSTRAINT FormaVentaD_fk FOREIGN KEY (id_forma_venta) REFERENCES Formas_ventas (id_forma_venta),
+	CONSTRAINT FuncionD_Fk FOREIGN KEY (id_funcion) REFERENCES funciones(id_funcion)
+);
+
+--select * from Funciones
+
+-- Table: Facturas
+CREATE TABLE Facturas (
+    id_factura int  identity(1,1),
+    fecha date  NOT NULL,
+    hora time  NOT NULL,
+    id_cliente int  NOT NULL,
+    id_forma_pago int  NOT NULL,
+    CONSTRAINT Facturas_pk PRIMARY KEY  (id_factura),
+	CONSTRAINT clienteR_fk FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
+	CONSTRAINT formarPagoR_fk FOREIGN KEY (id_forma_pago) REFERENCES Forma_pagos (id_forma_pago)
+);
+
+--SELECT * FROM Facturas
+
+
+-- Table: Detalles
+CREATE TABLE Detalles (
+    id_detalle int  identity(1,1),
+    id_factura int  NOT NULL,
+    precio money  NOT NULL,
+    id_funcion int  NOT NULL,
+    descuento decimal(10,2)  NOT NULL,
+    id_butaca int  NOT NULL,
+    cantidad int  NOT NULL,
+    CONSTRAINT Detalles_pk PRIMARY KEY  (id_detalle),
+    CONSTRAINT facturaB_fk FOREIGN KEY (id_factura) REFERENCES Facturas (id_factura),
+    CONSTRAINT funcionB_fk FOREIGN KEY (id_funcion) REFERENCES Funciones (id_funcion),
+    CONSTRAINT butacaB_fk FOREIGN KEY (id_butaca) REFERENCES Butacas (id_butaca)
+);
+
+--SELECT * FROM detalles
+
+
+--///////////////////////////////////////////////INSERTS////////////////////////////////////////////////////////////////////////////////
+-------------------------------------------------CLIENTES-------------------------------------------------------------------------------
+INSERT [dbo].[Clientes] ( [nombre], [apellido], [dni], [e_mail]) VALUES ( N'Juan Roman', N'Riquelme', 10101010, N'elultimo10@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Pablo Horacio', N'Guinazu', 42568941, N'cholo5@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Roberto', N'Lopez', 21457689, N'lopez12roberto@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Diego', N'Maradona', 12154647, N'diegoarmando@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Maximiliano', N'Rodriguez', 35658954, N'maxrodriguez@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Mirtha', N'Rugeri', 12356932, N'mirtha555@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Lionel', N'Messi', 32365741, N'lio@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Luciana', N'Paz', 42365425, N'luchipaz@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Alex', N'Morgan', 35658412, N'morgan@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Horacio', N'Martinez', 35668941, N'horacio456@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Jordi', N'Elnino', 22859635, N'jordipo@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Mia', N'Khalifa', 33154569, N'mia69@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Sonia', N'Rodriguez', 32858414, N'soniaro@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Romina', N'Caniggia', 38256357, N'romi22@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Carolina', N'Arruabarrena', 22789654, N'arruromina@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Carlos', N'Tren', 4568123, N'carlostren@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Kevin', N'Morgan', 41658357, N'kmorgan@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Carlos', N'Astudillo', 34562315, N'astudillocarlos@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Luciana', N'Bobadilla', 36968852, N'lubobadilla98@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Estefania', N'Perez', 43569852, N'estefi2005@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Franco', N'Racca', 34624098, N'f.racca@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Camila', N'Carabello', 23438568, N'c.carabello@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Emanuel', N'Brizuela', 38742429, N'e.brizuela@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Facundo', N'Luján', 17231850, N'f.lujan@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Romina', N'Gómez', 46092742, N'r.gomez@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Cristian', N'Arroyo', 32434999, N'c.arroyo@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Flavio', N'Piazzi', 24564877, N'f.piazzi@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Dalma', N'García ', 33412655, N'd.garcia@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Brenda', N'González', 25640002, N'b.gonzalez@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Milagros', N'Paez', 44531985, N'm.paez@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Elizabet ', N'Cejas', 38742124, N'e.cejas@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Leandro', N'Marcilli', 41235691, N'l.marcilli@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Juan', N'Gigena', 33532877, N'j.gigena@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Adrian', N'Luedueña', 17322643, N'a.ludueña@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Jeffrey ', N'Enríquez ', 24580765, N'j.enriquez@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Pablo', N'Merlo', 37452900, N'p.merlo@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Julieta', N'Vega', 19345721, N'j.vega@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Joregelina', N'Ordóñez', 38645639, N'j.ordoñez@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Luciana ', N'Paz', 41235623, N'l.paz@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Romeo', N'Santos', 40569866, N'r.santos@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Yamila', N'Hidalgo', 31173944, N'y.hidalgo@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Samuel', N'Heredia', 39171563, N's.heredia@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Ximena', N'Saviola', 19124570, N'j.saviola@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Alberto', N'Einstein', 13423844, N'a.einstein@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Horacio', N'Guaraní', 35632198, N'h.guarani@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Waldo', N'Murua', 43468012, N'w.murua@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Zamir', N'Ventura', 25094478, N'z.ventura@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Enrique ', N'Ortuño', 35578901, N'.ortuño@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Dalila', N'Martín', 44531985, N'd.martin@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Gabriela', N'Mera', 41421360, N'g.mera@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Irene', N'Sánchez', 43901366, N'i.sanchez@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Kevin', N'Córner', 20773854, N'k.corner@hotmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Ulises', N'Malo', 17342093, N'u.malo@gmail.com')
+INSERT [dbo].[Clientes] ([nombre], [apellido], [dni], [e_mail]) VALUES (N'Teodoro', N'Biblia', 44531985, N't.biblia@gmail.com')
+
+--select * from clientes
+----------------------------------------------------CINES---------------------------------------------------------------------
+
+INSERT [dbo].[Cines] ([nombre], [direccion], [telefono], [cuit]) VALUES ('Cines Picon','Las Junturas 328','4721560','30710466430')
+
+--select * from Cines
+
+---------------------------------------------------IDIOMAS----------------------------------------------------------------------
+INSERT [dbo].[Idiomas] ( [idioma]) VALUES ( 'Subtitulada')
+INSERT [dbo].[Idiomas] ( [idioma]) VALUES ( 'Doblada')
+INSERT [dbo].[Idiomas] ( [idioma]) VALUES ( 'Idioma Original')
+
+--SELECT * FROM Idiomas
+
+---------------------------------------------------GENEROS----------------------------------------------------------------------------
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Drama')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Ciencia Ficcion')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Accion')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Horror')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Comedia')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Romance')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Aventura')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Musical')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Animacion')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Suspenso')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Western')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Infantiles')
+INSERT [dbo].[Generos] ( [genero]) VALUES ( 'Fantasia')
+
+--SELECT * FROM GENEROS
+
+-------------------------------------------------FORMATO_PELICULAS-----------------------------------------------------------------------------
+INSERT [dbo].[Formatos_peliculas] ([formato]) VALUES ( N'ATP')
+INSERT [dbo].[Formatos_peliculas] ( [formato]) VALUES ( N'+13')
+INSERT [dbo].[Formatos_peliculas] ( [formato]) VALUES ( N'+16')
+INSERT [dbo].[Formatos_peliculas] ( [formato]) VALUES ( N'+18')
+
+----------------------------------------------FORMAS_VENTAS---------------------------------------------------------------------------------------
+INSERT [dbo].[Formas_ventas] ( [forma_venta]) VALUES ( N'online')
+INSERT [dbo].[Formas_ventas] ( [forma_venta]) VALUES ( N'fisica')
+
+------------------------------------------------TIPOS_SALAS---------------------------------------------------------------------------------------
+INSERT [dbo].[Tipos_salas] ( [tipo_sala]) VALUES ( N'2D')
+INSERT [dbo].[Tipos_salas] ( [tipo_sala]) VALUES ( N'3D')
+INSERT [dbo].[Tipos_salas] ( [tipo_sala]) VALUES ( N'4D')
+INSERT [dbo].[Tipos_salas] ( [tipo_sala]) VALUES ( N'VIP')
+
+-----------------------------------------------TIPOS_PAGOS------------------------------------------------------------------------------------------
+INSERT [dbo].[Tipos_pagos] ([tipo]) VALUES (N'Peso Argentino')
+INSERT [dbo].[Tipos_pagos] ([tipo]) VALUES (N'Dolar')
+INSERT [dbo].[Tipos_pagos] ([tipo]) VALUES (N' 1 Cuota  ')
+INSERT [dbo].[Tipos_pagos] ([tipo]) VALUES (N' 2 Cuotas ')
+INSERT [dbo].[Tipos_pagos] ([tipo]) VALUES (N' 3 Cuota ')
+INSERT [dbo].[Tipos_pagos] ([tipo]) VALUES (N' 6 Cuotas ')
+INSERT [dbo].[Tipos_pagos] ([tipo]) VALUES (N' 12 Cuotas ')
+
+-----------------------------------------------SALAS-------------------------------------------------------------------------------------------
+INSERT [dbo].[Salas] ([id_tipo_sala], [cant_butacas], [id_cine]) VALUES (  1,20, 1)
+INSERT [dbo].[Salas] ( [id_tipo_sala], [cant_butacas], [id_cine]) VALUES ( 2, 20, 1)
+INSERT [dbo].[Salas] ( [id_tipo_sala], [cant_butacas], [id_cine]) VALUES ( 3, 20, 1)
+INSERT [dbo].[Salas] ( [id_tipo_sala], [cant_butacas], [id_cine]) VALUES ( 4, 20, 1)
+
+
+
+----------------------------------------------BUTACAS---------------------------------------------------------------------------------
+-----------------------------------------------SALA 1 2D----------------------------------------------------------------------------------
+
+
+insert  into butacas (fila, id_sala, nro_butaca)
+values (  'a' , 1 , 1)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 1, 2)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 1, 3)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 1, 4 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 1, 5)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 1, 6 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 1 , 7 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 1, 8 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 1 , 9 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 1 , 10 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 1 , 11 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 1 , 12 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 1 , 13 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 1, 14 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 1, 15 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 1 , 16)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 1 , 17)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 1 , 18)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 1 , 19)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 1, 20 )
+
+----------------------------------------------------------SALA 2 3D--------------------------------------------------------------------------------------
+
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 2 , 1)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 2 , 2)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 2 , 3)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 2, 4 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 2, 5 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 2, 6 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 2 , 7)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 2, 8 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 2 , 9)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 2, 10 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 2 , 11)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 2, 12 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 2 , 13)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 2 , 14)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 2 , 15)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 2 , 16)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 2 , 17)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 2, 18 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 2 , 19)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 2 , 20)
+
+----------------------------------------------------SALA 3 4D----------------------------------------------------------------------
+
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 3 , 1)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 3, 2 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 3, 3 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 3 , 4)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 3, 5)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 3 , 6)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 3 , 7)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 3 , 8)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 3 , 9)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 3 , 10)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 3 , 11 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 3 , 12)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 3, 13 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 3 , 14)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 3 , 15)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 3 , 16)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 3 , 17)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 3 , 18)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 3 , 19)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 3 , 20)
+
+------------------------------------------------------------SALA 4 VIP -------------------------------------------------------------------------------
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 4 , 1)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 4 , 2)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 4 , 3)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 4 , 4)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'a' , 4, 5 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 4 , 6)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 4 , 7)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 4 , 8)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 4 , 9)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'b' , 4 , 10)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 4 , 11)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 4 , 12)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 4 , 13)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 4 , 14)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'c' , 4 , 15)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 4 , 16 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 4, 17 )
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 4 , 18)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 4 , 19)
+
+insert  into butacas (fila, id_sala,nro_butaca)
+values (  'd' , 4 , 20)
+
+-----------------------------------------------FORMAS DE PAGO ------------------------------------------------------------------------------
+
+INSERT [dbo].[Forma_pagos] ([forma_pago], [id_tipo_pago]) VALUES (N'Efectivo', 1)
+INSERT [dbo].[Forma_pagos] ([forma_pago], [id_tipo_pago]) VALUES (N'Efectivo', 2)
+INSERT [dbo].[Forma_pagos] ([forma_pago], [id_tipo_pago]) VALUES (N'Tarjeta de Debito', 3)
+INSERT [dbo].[Forma_pagos] ([forma_pago], [id_tipo_pago]) VALUES (N'Tarjeta de Crédito', 3)
+INSERT [dbo].[Forma_pagos] ([forma_pago], [id_tipo_pago]) VALUES (N'Tarjeta de Crédito', 4)
+INSERT [dbo].[Forma_pagos] ([forma_pago], [id_tipo_pago]) VALUES (N'Tarjeta de Crédito', 5)
+INSERT [dbo].[Forma_pagos] ([forma_pago], [id_tipo_pago]) VALUES (N'Tarjeta de Crédito', 6)
+INSERT [dbo].[Forma_pagos] ([forma_pago], [id_tipo_pago]) VALUES (N'Tarjeta de Crédito', 7)
+
+---------------------------------------------PELICULAS---------------------------------------------------------------------------------
+
+--AÑO 2017
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) 
+VALUES ( 'Olmegod VS Dark Aliade', 
+'Un universo menos devastado por el poder oscuro del feminismo, ahora el siguiente es el nuestro... Por suerte nuestro Heroe Electromecanico esta para salvarnos.',
+ 9, CAST('2017-11-12T00:00:00.000' AS DateTime), 2, 1)
+
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) 
+VALUES ( 'Picon, inicio de un negocio', 
+'Una sola clase de 2 horas acerca de politicas de derecha fueron suficientes para convertir a un depravado en un genio de los negocios ilegales PERO economicamente liberales',
+ 9, CAST('2017-12-12T00:00:00.000' AS DateTime), 2, 1)
+
+--- AÑO 2018----
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'El Conjuro', 'A principios de los años 70, Ed y Lorrain Warren, reputados investigadores de fenómenos paranormales, se enfrentan a una entidad demoníaca.', 4, CAST('2018-01-25T00:00:00.000' AS DateTime), 2, 4)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'Toy Story 4', 'Woody siempre ha tenido claro cuál es su labor en el mundo: cuidar a su dueño, ya sea Andy o Bonnie.', 9, CAST(N'2018-02-07T00:00:00.000' AS DateTime), 2, 1)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'Sherk 4', 'Instalado en su vida matrimonial y totalmente domesticado Shrek empieza a extrañar los días en los que él se sentía como un verdadero ogro.', 9, CAST('2018-03-12T00:00:00.000' AS DateTime), 2, 1)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'el gran crossfit', 'un joven de barrios bajos logra ganar el premio mundial de crossfit', 7, CAST('2018-04-23T00:00:00.000' AS DateTime), 2, 1)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'el asesinato del politico picon ', 'un politico muy venerado por la causa de estar metido en trafico de mujeres se involucra con la hija del jefe de la mafia artero ', 3, CAST('2018-05-28T00:00:00.000' AS DateTime), 2, 4)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'la caida del universo 7', 'una gran guerra intergalactica por el feminismo causa la gran destrucion del universo', 10, CAST('2018-06-01T00:00:00.000' AS DateTime), 1, 2)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'El joven manos de tijera de villa union', ' un joven nacido con la manos de tijera con un amor no correspondido hacia una cantante que es adicta a las drogas', 8, CAST('2018-07-30T00:00:00.000' AS DateTime), 2, 3)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'Creo', 'Una historia conmovedora basada en la duda existencial de un profesor universitario el cual posee alzheimer', 1, CAST('2018-08-08T00:00:00.000' AS DateTime), 1, 2)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'Olmegod', 'Profesor de dia, superheroe de noche, se desarrolla la vida de un profesor de ingenieria el cual con su traje a base de leds programados en Assembler lucha por un mundo sin abortos', 5, CAST('2018-09-17T00:00:00.000' AS DateTime), 2, 1)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'GOTO, la perdicion', 'Una palabra silenciada por muchos forma parte del epicentro del terror del nuevo milenio', 4, CAST('2018-10-06T00:00:00.000' AS DateTime), 2, 4)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'Hasta luego Lucas', 'La historia conmovedora de un joven que enfrenta un amor no correspondido a costa del cuidado de una hija la cual no es de el', 5, CAST('2018-11-14T00:00:00.000' AS DateTime), 2, 1)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ( 'Hasta luego Lucas 2: en Canada', 'Despues de sufrir un entrincado en su hogar por una batalla campal con la bruja, idea el plan perfecto par recuperar su libertad... y la nena', 5, CAST('2018-12-22T00:00:00.000' AS DateTime), 2, 1)
+
+
+--AÑO 2019
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('Mmm digame mas...','"Me encanta la dinamica de su clase" fueron las primeras palabras que desencadenaron una trama amorosa y polemica en una universidad estatal. Quieren estar juntes y nada mas', 5, CAST('2019-01-05T00:00:00.000' AS DateTime), 2, 1)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('Fri Faier','Un juego de movil inofensivo de repente se convierte en realidad a causa del retorno de una dictadora que causa el apocalipsis financiero en un tiempo record', 13, CAST('2019-02-27T00:00:00.000' AS DateTime), 1, 1)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('la muerte de gonza','un chico que le gustaba asistir a fiestas electronicas y tiene una muerte tragica por sobredosis drogas ', 7, CAST('2019-03-09T00:00:00.000' AS DateTime), 1, 3)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('Black sheep','Una persona de color oscuro y un "blanquito" de pelo ondulado unen fuerzas para realizar una mision suicida, derribar el imperio ario y acabar con la esclavitud', 3, CAST(N'2019-04-30T00:00:00.000' AS DateTime), 1, 4)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('Hasta luego Lucas 3: 3x1','Con la nena ya libre en una isla paradisiaca, Lucas se enfrenta a su nemesis, la bruja volvio con sus dos mejores amigas por una venganza digna la cual termina de una marea inesperada', 5, CAST('2019-05-12T00:00:00.000' AS DateTime), 2, 4)
+INSERT [dbo].[Peliculas] ([titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('Un flay','Hasta donde llega la imaginacion de la mente? Bruno lo descubre despues de experimentar con una droga psicotropica no apta para niños', 6, CAST('2019-06-14T00:00:00.000' AS DateTime), 1, 3)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('Mataron a Kenny','Lo clavaron a la salida del baile de onduxa', 7, CAST('2019-07-06T00:00:00.000' AS DateTime), 1, 4)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('NANI','Un profesor saca de la clase a dos alumnos porque hablaban de Naruto. Ese acto desencadena una masacre que junta balas, jutsus y aliens y nadie entiende como', 9, CAST('2019-08-02T00:00:00.000' AS DateTime), 2, 1)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('Narc','Cuando el rastro se congela en una investigación de asesinato de un policía, un oficial encubierto de narcóticos es atraído de vuelta a la fuerza para ayudar a resolver el caso.', 3, CAST('2019-09-10T00:00:00.000' AS DateTime), 2, 3)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('Punch-Drunk Love','Un proveedor de novedades psicológicamente problemático es empujado hacia un romance con una mujer inglesa.', 6, CAST('2019-10-01T00:00:00.000' AS DateTime), 1, 1)
+INSERT [dbo].[Peliculas] ( [titulo], [descripcion], [id_genero], [fecha_estreno], [id_idioma], [id_formato]) VALUES ('Confidence','Jake Vig (Burns) es un estafador consumado a punto de sacar su mayor estafa hasta el momento, uno para vengar el asesinato de su amigo.', 3, CAST('2019-11-01T00:00:00.000' AS DateTime), 2, 4)
+
+
+
+--------------------------------------------------------------------FUNCIONES(LUCIANO)---------------------------------------------------------------------------------------------
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 1, 1, CAST('22:30:00' AS Time), CAST(N'2017-11-12T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 2, 2, CAST('22:30:00' AS Time), CAST(N'2017-12-12T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 3, 3, CAST('22:30:00' AS Time), CAST(N'2018-01-25T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 4, 4, CAST('22:30:00' AS Time), CAST(N'2018-02-07T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 2, 5, CAST('22:30:00' AS Time), CAST(N'2018-03-12T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 4, 6, CAST('22:30:00' AS Time), CAST(N'2018-04-23T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 3, 7, CAST('22:30:00' AS Time), CAST(N'2018-05-28T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 1, 8, CAST('22:30:00' AS Time), CAST(N'2018-06-01T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 2, 9, CAST('22:30:00' AS Time), CAST(N'2018-07-30T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 1, 10, CAST('22:30:00' AS Time), CAST(N'2018-08-08T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 1, 11, CAST('22:30:00' AS Time), CAST(N'2018-09-17T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 2, 12, CAST('22:30:00' AS Time), CAST(N'2018-10-06T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 3, 13, CAST('22:30:00' AS Time), CAST(N'2018-11-14T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 4, 14, CAST('22:30:00' AS Time), CAST(N'2018-12-22T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 3, 15, CAST('22:30:00' AS Time), CAST(N'2019-01-05T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 2, 16, CAST('22:30:00' AS Time), CAST(N'2019-02-27T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 1, 17, CAST('22:30:00' AS Time), CAST(N'2019-03-09T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 3, 18, CAST('22:30:00' AS Time), CAST(N'2019-04-30T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 2, 19, CAST('22:30:00' AS Time), CAST(N'2019-05-12T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 2, 20, CAST('22:30:00' AS Time), CAST(N'2019-06-14T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 1, 21, CAST('22:30:00' AS Time), CAST(N'2019-07-06T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 3, 22, CAST('22:30:00' AS Time), CAST(N'2019-08-02T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 4, 23, CAST('22:30:00' AS Time), CAST(N'2019-09-10T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 4, 24, CAST('22:30:00' AS Time), CAST(N'2019-10-01T00:00:00.000' AS DateTime))
+INSERT [dbo].[Funciones] ( [id_sala], [id_pelicula], [horario], [dia]) VALUES ( 4, 25, CAST('22:30:00' AS Time), CAST(N'2019-11-01T00:00:00.000' AS DateTime))
+
+--------------------------------------------------------------------RESERVAS(GONZALO)----------------------------------------------------------------------------------------------
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 2, 2, 1)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 34, 2, 2)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 4, 2, 3)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 41, 2, 4)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 1, 2, 5)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 2, 2, 6)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 15, 2, 7)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 15, 2, 8)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 29, 2, 9)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 12, 2, 10)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 6, 2, 11)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 32, 2, 12)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 47, 2, 13)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 54, 2, 14)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 23, 2, 15)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 3, 2, 16)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 44, 2, 17)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 44, 2, 18)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 12, 2, 19)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 18, 2, 20)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 17, 2, 21)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 52, 2, 22)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 36, 2, 23)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 29, 2, 24)
+
+INSERT [dbo].[Reservas] ([id_cliente], [id_forma_venta], [id_funcion]) 
+VALUES ( 10, 2, 25)
+
+--------------------------------------------------------------------FACTURAS(DECO)---------------------------------------------------------------------------------------------
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2017-11-12T00:00:00.000' AS DateTime), '20:45', 2, 3)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2017-11-12T00:00:00.000' AS DateTime), '21:36', 10, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2017-12-12T00:00:00.000' AS DateTime), '21:04', 34, 6)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2017-12-12T00:00:00.000' AS DateTime), '21:15', 3, 1)
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-01-25T00:00:00.000' AS DateTime), '20:07', 4, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-01-25T00:00:00.000' AS DateTime), '20:32', 11, 5)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-01-25T00:00:00.000' AS DateTime), '20:45', 54, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-01-25T00:00:00.000' AS DateTime), '21:00', 23, 4)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-01-25T00:00:00.000' AS DateTime), '21:15', 09, 1)
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-02-07T00:00:00.000' AS DateTime), '20:15', 41, 7)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-02-07T00:00:00.000' AS DateTime), '20:22', 4, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-02-07T00:00:00.000' AS DateTime), '20:33', 6, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-02-07T00:00:00.000' AS DateTime), '21:07', 8, 3)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-02-07T00:00:00.000' AS DateTime), '21:20', 11, 1)
+
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-03-12T00:00:00.000' AS DateTime), '20:01', 1, 4)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-03-12T00:00:00.000' AS DateTime), '20:15', 15, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-03-12T00:00:00.000' AS DateTime), '20:24', 16, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-03-12T00:00:00.000' AS DateTime), '20:58', 17, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-03-12T00:00:00.000' AS DateTime), '21:10', 19, 2)
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-04-23T00:00:00.000' AS DateTime), '20:03', 2, 5)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-04-23T00:00:00.000' AS DateTime), '20:13', 8, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-04-23T00:00:00.000' AS DateTime), '20:33', 10, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-04-23T00:00:00.000' AS DateTime), '20:47', 15, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-04-23T00:00:00.000' AS DateTime), '21:03', 52, 8)
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-05-28T00:00:00.000' AS DateTime), '20:08', 15, 7)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-05-28T00:00:00.000' AS DateTime), '20:18', 19, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-05-28T00:00:00.000' AS DateTime), '20:28', 33, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-05-28T00:00:00.000' AS DateTime), '20:48', 35, 6)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-05-28T00:00:00.000' AS DateTime), '20:58', 39, 1)
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-06-01T00:00:00.000' AS DateTime), '20:06', 15, 8)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-06-01T00:00:00.000' AS DateTime), '20:16', 27, 5)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-06-01T00:00:00.000' AS DateTime), '20:26', 37, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-06-01T00:00:00.000' AS DateTime), '20:36', 48, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-06-01T00:00:00.000' AS DateTime), '20:56', 32, 1)
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-07-30T00:00:00.000' AS DateTime), '20:05', 29, 4)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-07-30T00:00:00.000' AS DateTime), '20:15', 39, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-07-30T00:00:00.000' AS DateTime), '20:25', 49, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-07-30T00:00:00.000' AS DateTime), '20:35', 14, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-07-30T00:00:00.000' AS DateTime), '20:55', 2, 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-08-08T00:00:00.000' AS DateTime), '20:17', 12, 8)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-08-08T00:00:00.000' AS DateTime), '20:27', 8, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-08-08T00:00:00.000' AS DateTime), '20:37', 5, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-08-08T00:00:00.000' AS DateTime), '20:47', 1, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-08-08T00:00:00.000' AS DateTime), '21:17', 54, 1)
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-09-17T00:00:00.000' AS DateTime), '20:00', 6, 5)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-09-17T00:00:00.000' AS DateTime), '20:10', 53, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-09-17T00:00:00.000' AS DateTime), '20:20', 50, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-09-17T00:00:00.000' AS DateTime), '20:40', 48, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-09-17T00:00:00.000' AS DateTime), '21:10', 45, 1)
+
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-10-06T00:00:00.000' AS DateTime), '20:04', 32, 6)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-10-06T00:00:00.000' AS DateTime), '20:14', 30, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-10-06T00:00:00.000' AS DateTime), '20:24', 36, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-10-06T00:00:00.000' AS DateTime), '20:34', 37, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-10-06T00:00:00.000' AS DateTime), '20:54', 39, 1)
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-11-14T00:00:00.000' AS DateTime), '20:22', 47, 5)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-11-14T00:00:00.000' AS DateTime), '20:32', 40, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-11-14T00:00:00.000' AS DateTime), '20:42', 41, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-11-14T00:00:00.000' AS DateTime), '20:52', 45, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-11-14T00:00:00.000' AS DateTime), '21:22', 48, 3)
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-12-22T00:00:00.000' AS DateTime), '20:04', 54, 8)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-12-22T00:00:00.000' AS DateTime), '20:14', 47, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-12-22T00:00:00.000' AS DateTime), '20:24', 33, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-12-22T00:00:00.000' AS DateTime), '20:34', 21, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2018-12-22T00:00:00.000' AS DateTime), '20:54', 12, 4)
+
+
+
+
+
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-01-05T00:00:00.000' AS DateTime), '20:15', 23, 3)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-01-05T00:00:00.000' AS DateTime), '20:15', 36, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-01-05T00:00:00.000' AS DateTime), '20:15', 4, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-01-05T00:00:00.000' AS DateTime), '20:15', 53, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-01-05T00:00:00.000' AS DateTime), '20:15', 51, 1)
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-02-27T00:00:00.000' AS DateTime), '20:03', 3, 6)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-02-27T00:00:00.000' AS DateTime), '20:13', 38, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-02-27T00:00:00.000' AS DateTime), '20:33', 39, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-02-27T00:00:00.000' AS DateTime), '20:53', 37, 3)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-02-27T00:00:00.000' AS DateTime), '21:13', 13, 1)
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-03-09T00:00:00.000' AS DateTime), '20:05', 44, 7)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-03-09T00:00:00.000' AS DateTime), '20:15', 24, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-03-09T00:00:00.000' AS DateTime), '20:25', 14, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-03-09T00:00:00.000' AS DateTime), '20:55', 4, 1)
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-03-09T00:00:00.000' AS DateTime), '21:05', 54, 1)
+
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-04-30T00:00:00.000' AS DateTime), '20:25', 44, 3)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-04-30T00:00:00.000' AS DateTime), '20:35', 37, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-04-30T00:00:00.000' AS DateTime), '20:57', 33, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-04-30T00:00:00.000' AS DateTime), '21:15', 52, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-04-30T00:00:00.000' AS DateTime), '21:25', 41, 1)
+
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-05-12T00:00:00.000' AS DateTime), '20:07', 12, 4)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-05-12T00:00:00.000' AS DateTime), '20:17', 19, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-05-12T00:00:00.000' AS DateTime), '20:37', 18, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-05-12T00:00:00.000' AS DateTime), '20:47', 14, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-05-12T00:00:00.000' AS DateTime), '20:57', 10, 1)
+
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-06-14T00:00:00.000' AS DateTime), '20:04', 18, 5)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-06-14T00:00:00.000' AS DateTime), '20:14', 17, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-06-14T00:00:00.000' AS DateTime), '20:24', 21, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-06-14T00:00:00.000' AS DateTime), '20:34', 28, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-06-14T00:00:00.000' AS DateTime), '20:54', 50, 1)
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-07-06T00:00:00.000' AS DateTime), '20:23', 17, 7)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-07-06T00:00:00.000' AS DateTime), '20:43', 23, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-07-06T00:00:00.000' AS DateTime), '20:53', 25, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-07-06T00:00:00.000' AS DateTime), '20:57', 35, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-07-06T00:00:00.000' AS DateTime), '21:13', 39, 1)
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-08-02T00:00:00.000' AS DateTime), '20:05', 52, 6)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-08-02T00:00:00.000' AS DateTime), '20:15', 37, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-08-02T00:00:00.000' AS DateTime), '20:25', 30, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-08-02T00:00:00.000' AS DateTime), '20:45', 27, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-08-02T00:00:00.000' AS DateTime), '21:35', 23, 4)
+
+
+
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-09-10T00:00:00.000' AS DateTime), '20:02', 36, 4)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-09-10T00:00:00.000' AS DateTime), '20:12', 4, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-09-10T00:00:00.000' AS DateTime), '20:22', 26, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-09-10T00:00:00.000' AS DateTime), '20:32', 14, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-09-10T00:00:00.000' AS DateTime), '20:52', 34, 1)
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-10-01T00:00:00.000' AS DateTime), '20:15', 29, 5)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-10-01T00:00:00.000' AS DateTime), '20:45', 26, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-10-01T00:00:00.000' AS DateTime), '21:15', 27, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-10-01T00:00:00.000' AS DateTime), '21:25', 39, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-10-01T00:00:00.000' AS DateTime), '21:37', 49, 1)
+
+
+
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-11-01T00:00:00.000' AS DateTime), '20:07', 10, 6)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-11-01T00:00:00.000' AS DateTime), '20:17', 17, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-11-01T00:00:00.000' AS DateTime), '20:17', 24, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-11-01T00:00:00.000' AS DateTime), '20:57', 25, 1)
+INSERT [dbo].[Facturas] ( [fecha], [hora], [id_cliente], [id_forma_pago]) VALUES ( CAST('2019-11-01T00:00:00.000' AS DateTime), '21:07', 38, 1)
+--------------------------------------------------------------------DETALLE(NAHUEL B)-----------------------------------------------------------------------------------------------
+-- FUNCION 1
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (1, 300.0000, 1, CAST(0 AS Decimal(18, 0)), 1, 10)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (2, 300.0000, 1, CAST(0 AS Decimal(18, 0)), 11, 10)
+
+-- FUNCION 2
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (3, 300.0000, 2, CAST(0 AS Decimal(18, 0)), 1, 5)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (4, 300.0000, 2, CAST(0 AS Decimal(18, 0)), 6, 5)
+
+-- FUNCION 3
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (5, 350.0000, 3, CAST(0 AS Decimal(18, 0)), 1, 5)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (6, 350.0000, 3, CAST(0 AS Decimal(18, 0)), 6, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (7, 350.0000, 3, CAST(0 AS Decimal(18, 0)), 8, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (8, 350.0000, 3, CAST(0 AS Decimal(18, 0)), 10, 5)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (9, 350.0000, 3, CAST(0 AS Decimal(18, 0)), 15, 2)
+
+-- FUNCION 4
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (10, 350.0000, 4, CAST(0 AS Decimal(18, 0)), 1, 5)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (11, 350.0000, 4, CAST(0 AS Decimal(18, 0)), 6, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (12, 350.0000, 4, CAST(0 AS Decimal(18, 0)), 8, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (13, 350.0000, 4, CAST(0 AS Decimal(18, 0)), 10, 5)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (14, 350.0000, 4, CAST(0 AS Decimal(18, 0)), 15, 2)
+
+-- FUNCION 5
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (15, 350.0000, 5, CAST(0 AS Decimal(18, 0)), 1, 10)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES (16, 350.0000, 5, CAST(0 AS Decimal(18, 0)), 11, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 17, 350.0000, 5, CAST(0 AS Decimal(18, 0)), 13, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 18, 350.0000, 5, CAST(0 AS Decimal(18, 0)), 15, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 19, 350.0000, 5, CAST(0 AS Decimal(18, 0)), 17, 3)
+
+-- FUNCION 6
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 20, 350.0000, 6, CAST(0 AS Decimal(18, 0)), 1, 15)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 21, 350.0000, 6, CAST(0 AS Decimal(18, 0)), 16, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 22, 350.0000, 6, CAST(0 AS Decimal(18, 0)), 17, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 23, 350.0000, 6, CAST(0 AS Decimal(18, 0)), 18, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 24, 350.0000, 6, CAST(0 AS Decimal(18, 0)), 19, 1)
+
+-- FUNCION 7
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 25, 350.0000, 7, CAST(0 AS Decimal(18, 0)), 1, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 26, 350.0000, 7, CAST(0 AS Decimal(18, 0)), 4, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 27, 350.0000, 7, CAST(0 AS Decimal(18, 0)), 7, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 28, 350.0000, 7, CAST(0 AS Decimal(18, 0)), 10, 5)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 29, 350.0000, 7, CAST(0 AS Decimal(18, 0)), 15, 5)
+
+-- FUNCION 8
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 30, 350.0000, 8, CAST(0 AS Decimal(18, 0)), 1, 5)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 31, 350.0000, 8, CAST(0 AS Decimal(18, 0)), 6, 5)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 32, 350.0000, 8, CAST(0 AS Decimal(18, 0)), 11, 4)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 33, 350.0000, 8, CAST(0 AS Decimal(18, 0)), 15, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 34, 350.0000, 8, CAST(0 AS Decimal(18, 0)), 17, 3)
+
+-- FUNCION 9
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 35, 350.0000, 9, CAST(0 AS Decimal(18, 0)), 1, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 36, 350.0000, 9, CAST(0 AS Decimal(18, 0)), 4, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 37, 350.0000, 9, CAST(0 AS Decimal(18, 0)), 7, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 38, 350.0000, 9, CAST(0 AS Decimal(18, 0)), 10, 5)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 39, 350.0000, 9, CAST(0 AS Decimal(18, 0)), 15, 2)
+
+--ARTERO 
+-- FUNCION 10
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 40, 350.0000, 10, CAST(0 AS Decimal(18, 0)), 1, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 41, 350.0000, 10, CAST(0 AS Decimal(18, 0)), 3, 4)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 42, 350.0000, 10, CAST(0 AS Decimal(18, 0)), 7, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 43, 350.0000, 10, CAST(0 AS Decimal(18, 0)), 8, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 44, 350.0000, 10, CAST(0 AS Decimal(18, 0)), 9, 5)
+
+-- FUNCION 11
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 45, 350.0000, 11, CAST(0 AS Decimal(18, 0)), 1, 10)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 46, 350.0000, 11, CAST(0 AS Decimal(18, 0)), 11, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 47, 350.0000, 11, CAST(0 AS Decimal(18, 0)), 12, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 48, 350.0000, 11, CAST(0 AS Decimal(18, 0)), 14, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 49, 350.0000, 11, CAST(0 AS Decimal(18, 0)), 15, 4)
+
+-- FUNCION 12
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 50, 350.0000, 12, CAST(0 AS Decimal(18, 0)), 1, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 51, 350.0000, 12, CAST(0 AS Decimal(18, 0)), 3, 4)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 52, 350.0000, 12, CAST(0 AS Decimal(18, 0)), 7, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 53, 350.0000, 12, CAST(0 AS Decimal(18, 0)), 8, 6)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 54, 350.0000, 12, CAST(0 AS Decimal(18, 0)), 14, 2)
+
+-- FUNCION 13
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 55, 350.0000, 13, CAST(0 AS Decimal(18, 0)), 1, 6)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 56, 350.0000, 13, CAST(0 AS Decimal(18, 0)), 7, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 57, 350.0000, 13, CAST(0 AS Decimal(18, 0)), 9, 4)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 58, 350.0000, 13, CAST(0 AS Decimal(18, 0)), 13, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 59, 350.0000, 13, CAST(0 AS Decimal(18, 0)), 14, 3)
+
+-- FUNCION 14
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 60, 350.0000, 14, CAST(0 AS Decimal(18, 0)), 1, 6)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 61, 350.0000, 14, CAST(0 AS Decimal(18, 0)), 7, 4)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 62, 350.0000, 14, CAST(0 AS Decimal(18, 0)), 11, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 63, 350.0000, 14, CAST(0 AS Decimal(18, 0)), 13, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 64, 350.0000, 14, CAST(0 AS Decimal(18, 0)), 15, 4)
+
+-- FUNCION 15
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 65, 400.0000, 15, CAST(0 AS Decimal(18, 0)), 1, 9)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 66, 400.0000, 15, CAST(0 AS Decimal(18, 0)), 10, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 67, 400.0000, 15, CAST(0 AS Decimal(18, 0)), 12, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 68, 400.0000, 15, CAST(0 AS Decimal(18, 0)), 14, 6)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 69, 400.0000, 15, CAST(0 AS Decimal(18, 0)), 19, 1)
+
+-- FUNCION 16
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 70, 400.0000, 16, CAST(0 AS Decimal(18, 0)), 1, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 71, 400.0000, 16, CAST(0 AS Decimal(18, 0)), 4, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 72, 400.0000, 16, CAST(0 AS Decimal(18, 0)), 6, 6)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 73, 400.0000, 16, CAST(0 AS Decimal(18, 0)), 12, 4)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 74, 400.0000, 16, CAST(0 AS Decimal(18, 0)), 16, 3)
+
+-- FUNCION 17
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 75, 400.0000, 17, CAST(0 AS Decimal(18, 0)), 1, 6)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 76, 400.0000, 17, CAST(0 AS Decimal(18, 0)), 7, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 77, 400.0000, 17, CAST(0 AS Decimal(18, 0)), 8, 5)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 78, 400.0000, 17, CAST(0 AS Decimal(18, 0)), 13, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 79, 400.0000, 17, CAST(0 AS Decimal(18, 0)), 15, 2)
+
+-- FUNCION 18
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 80, 400.0000, 18, CAST(0 AS Decimal(18, 0)), 1, 7)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 81, 400.0000, 18, CAST(0 AS Decimal(18, 0)), 8, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 82, 400.0000, 18, CAST(0 AS Decimal(18, 0)), 9, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 83, 400.0000, 18, CAST(0 AS Decimal(18, 0)), 12, 4)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 84, 400.0000, 18, CAST(0 AS Decimal(18, 0)), 16, 2)
+
+-- FUNCION 19
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 85, 400.0000, 19, CAST(0 AS Decimal(18, 0)), 1, 6)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 86, 400.0000, 19, CAST(0 AS Decimal(18, 0)), 7, 4)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 87, 400.0000, 19, CAST(0 AS Decimal(18, 0)), 11, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 88, 400.0000, 19, CAST(0 AS Decimal(18, 0)), 14, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 89, 400.0000, 19, CAST(0 AS Decimal(18, 0)), 15, 4)
+
+-- LUCIANO
+-- FUNCION 20
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 90, 400.0000, 20, CAST(0 AS Decimal(18, 0)), 1, 15)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 91, 400.0000, 20, CAST(0 AS Decimal(18, 0)), 16, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 92, 400.0000, 20, CAST(0 AS Decimal(18, 0)), 17, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 93, 400.0000, 20, CAST(0 AS Decimal(18, 0)), 18, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 94, 400.0000, 20, CAST(0 AS Decimal(18, 0)), 20, 1)
+
+-- FUNCION 21
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 95, 400.0000, 21, CAST(0 AS Decimal(18, 0)), 1, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 96, 400.0000, 21, CAST(0 AS Decimal(18, 0)), 2, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 97, 400.0000, 21, CAST(0 AS Decimal(18, 0)), 4, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 98, 400.0000, 21, CAST(0 AS Decimal(18, 0)), 5, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 99, 400.0000, 21, CAST(0 AS Decimal(18, 0)), 8, 1)
+
+-- FUNCION 22
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 100, 400.0000, 22, CAST(0 AS Decimal(18, 0)), 1, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 101, 400.0000, 22, CAST(0 AS Decimal(18, 0)), 2, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 102, 400.0000, 22, CAST(0 AS Decimal(18, 0)), 3, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 103, 400.0000, 22, CAST(0 AS Decimal(18, 0)), 6, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 104, 400.0000, 22, CAST(0 AS Decimal(18, 0)), 9, 1)
+
+-- FUNCION 23
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 105, 400.0000, 23, CAST(0 AS Decimal(18, 0)), 1, 4)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 106, 400.0000, 23, CAST(0 AS Decimal(18, 0)), 5, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 107, 400.0000, 23, CAST(0 AS Decimal(18, 0)), 6, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 108, 400.0000, 23, CAST(0 AS Decimal(18, 0)), 7, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 109, 400.0000, 23, CAST(0 AS Decimal(18, 0)), 9, 5)
+
+-- FUNCION 24
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 110, 400.0000, 24, CAST(0 AS Decimal(18, 0)), 1, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 111, 400.0000, 24, CAST(0 AS Decimal(18, 0)), 4, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 112, 400.0000, 24, CAST(0 AS Decimal(18, 0)), 7, 3)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 113, 400.0000, 24, CAST(0 AS Decimal(18, 0)), 10, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 114, 400.0000, 24, CAST(0 AS Decimal(18, 0)), 11, 2)
+
+-- FUNCION 25
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 115, 400.0000, 25, CAST(0 AS Decimal(18, 0)), 1, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 116, 400.0000, 25, CAST(0 AS Decimal(18, 0)), 2, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 117, 400.0000, 25, CAST(0 AS Decimal(18, 0)), 3, 2)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 118, 400.0000, 25, CAST(0 AS Decimal(18, 0)), 5, 1)
+INSERT [dbo].[Detalles] ([id_factura], [precio], [id_funcion], [descuento], [id_butaca], [cantidad]) VALUES ( 119, 400.0000, 25, CAST(0 AS Decimal(18, 0)), 6, 6)
+
+select * from usuarios
+INSERT INTO USUARIOS(nombre,usuario,contraseña,tipo_usuario) VALUES ('samuel','admin','admin','admin')

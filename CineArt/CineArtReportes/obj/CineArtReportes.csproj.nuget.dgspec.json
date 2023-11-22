@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj": {}
   },
   "projects": {
-    "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj",
         "projectName": "CineArtReportes",
-        "projectPath": "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj",
-        "packagesPath": "C:\\Users\\NC\\.nuget\\packages\\",
-        "outputPath": "H:\\UTN\\Tecnicatura\\Repos\\TPI-PII-2023\\CineArt\\CineArtReportes\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtReportes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\NC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -55,8 +55,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

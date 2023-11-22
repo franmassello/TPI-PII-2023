@@ -1,0 +1,498 @@
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe.config
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.pdb
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csprojAssemblyReference.cache
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Properties.Resources.resources
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.GenerateResource.cache
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CoreCompileInputs.cache
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.exe
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.pdb
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Loguin.resources
+C:\Users\samue\source\repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Principal.resources
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe.config
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.pdb
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csprojAssemblyReference.cache
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Principal.resources
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Properties.Resources.resources
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.GenerateResource.cache
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CoreCompileInputs.cache
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.exe
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.pdb
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CopyComplete
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Login.resources
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.NuevaPelicula.resources
+C:\Users\samue\Desktop\Tecnicatura en programacion\Programacion II\Trabajo practico\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Editar.resources
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe.config
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.pdb
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csprojAssemblyReference.cache
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Editar.resources
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Login.resources
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.NuevaPelicula.resources
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Principal.resources
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Properties.Resources.resources
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.GenerateResource.cache
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CopyComplete
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.exe
+D:\ProyectosVisualStudio\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.pdb
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe.config
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.pdb
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csprojAssemblyReference.cache
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Editar.resources
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Login.resources
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.NuevaPelicula.resources
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Principal.resources
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Properties.Resources.resources
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.GenerateResource.cache
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CoreCompileInputs.cache
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CopyComplete
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.exe
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.pdb
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\EnvDTE.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\stdole.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.MSXML.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Reporte.resources
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\FlashControlV71.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\FVG\Downloads\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csprojAssemblyReference.cache
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Editar.resources
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Login.resources
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.NuevaPelicula.resources
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Principal.resources
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Reporte.resources
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Properties.Resources.resources
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.GenerateResource.cache
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CoreCompileInputs.cache
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.exe
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.pdb
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe.config
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.pdb
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\EnvDTE.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\stdole.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.MSXML.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CopyComplete
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\samue\Desktop\Trabajo practico programacion\CinemaPicon\CinemaPicon\bin\Debug\FlashControlV71.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe.config
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.pdb
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\FlashControlV71.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\EnvDTE.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\stdole.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.MSXML.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csprojAssemblyReference.cache
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Editar.resources
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Login.resources
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.NuevaPelicula.resources
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Principal.resources
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Reporte.resources
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Properties.Resources.resources
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.GenerateResource.cache
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CoreCompileInputs.cache
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CopyComplete
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.exe
+C:\Users\FVG\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.pdb
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe.config
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.pdb
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.Common.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.Design.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.SqlServer.Types.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ShockwaveFlashObjects.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\EnvDTE.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\stdole.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.MSXML.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.AssemblyReference.cache
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.SuggestedBindingRedirects.cache
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Editar.resources
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Login.resources
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.NuevaPelicula.resources
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Principal.resources
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Reporte.resources
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Properties.Resources.resources
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.GenerateResource.cache
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CoreCompileInputs.cache
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CopyComplete
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.exe
+H:\UTN\Tecnicatura\Repos\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.pdb
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe.config
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.exe
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CinemaPicon.pdb
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\EnvDTE.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\stdole.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.MSXML.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.AssemblyReference.cache
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.SuggestedBindingRedirects.cache
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Editar.resources
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Login.resources
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.NuevaPelicula.resources
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Principal.resources
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Reporte.resources
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Properties.Resources.resources
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.GenerateResource.cache
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CoreCompileInputs.cache
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.csproj.CopyComplete
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.exe
+C:\Users\NC\Desktop\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.pdb
