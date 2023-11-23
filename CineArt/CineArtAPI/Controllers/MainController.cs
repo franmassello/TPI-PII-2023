@@ -18,7 +18,14 @@ namespace CineArtAPI.Controllers
         {
             try
             {
-                return Ok(data.postLogin(user,password));
+                if (data.postLogin(user, password))
+                {
+                    return Ok("Login successful");
+                }
+                else
+                {
+                    return StatusCode(401, "Login failed");
+                }   
             }
             catch (Exception)
             {

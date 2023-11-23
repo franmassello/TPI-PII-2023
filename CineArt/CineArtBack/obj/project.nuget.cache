@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F8SGmi2EjgcMKiW/zEBxrak+c+72HANAtK7I1ld0fWUl43cUZ1ZBk0m4uubTYZjzQQ0Ih05MxBs4NELUsvPb1A==",
+  "dgSpecHash": "5igZlLZWfAdYIFLZqAQSaLLuDIWir7p70sT+Tiuae86d/u549nfzlmwzjM/sNjcwsl5K6lMNMMIxoqQ2M1Xh4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.reportingservices.reportviewercontrol.winforms\\140.340.80\\microsoft.reportingservices.reportviewercontrol.winforms.140.340.80.nupkg.sha512",
@@ -31,7 +31,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.ReportingServices.ReportViewerControl.Winforms 140.340.80' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.ReportingServices.ReportViewerControl.Winforms 140.340.80' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.ReportingServices.ReportViewerControl.Winforms",
       "targetGraphs": [
         "net6.0"
@@ -41,7 +41,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.SqlServer.Types 14.0.314.76' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.SqlServer.Types 14.0.314.76' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.SqlServer.Types",
       "targetGraphs": [
         "net6.0"

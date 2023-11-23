@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using CinemaPicon.Formularios;
 using System.Diagnostics;
+using CinemaPicon.Clases;
 
 namespace CinemaPicon {
 
@@ -19,7 +20,7 @@ namespace CinemaPicon {
         string consulta;
         bool banderaFiltro = false;
         AccesoDatos oDato = new AccesoDatos();
-
+        APIMethods APIMethods = new APIMethods();
         public string pConsulta { get => consulta; set => consulta = value; }
 
         public Principal() {
@@ -53,9 +54,9 @@ namespace CinemaPicon {
             try {
                 refrescarDG();
                 deshabilitarEdicionDG(true);
-                cargarCombo(cboFormato, "formatos_peliculas");
-                cargarCombo(cboGenero, "Generos");
-                cargarCombo(cboIdioma, "Idiomas");
+                cargarCombo(cboFormato, "getFormatos");
+                cargarCombo(cboGenero, "getGeneros");
+                cargarCombo(cboIdioma, "getIdiomas");
                 dtpFechaEstreno.Enabled = false;
             }
             catch (Exception ex) {
@@ -66,16 +67,16 @@ namespace CinemaPicon {
         }
 
         //CARGA COMBOBOX
-        private void cargarCombo(ComboBox combo, string nombreTabla) {
+        private async void cargarCombo(ComboBox combo, string nombreTabla) {
             DataTable tabla = new DataTable();
-            tabla = oDato.consultarTabla(nombreTabla);
+            tabla = await APIMethods.consultarTabla(nombreTabla);
             combo.DataSource = tabla;
             combo.DisplayMember = tabla.Columns[1].ColumnName;
             combo.ValueMember = tabla.Columns[0].ColumnName;
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
             combo.SelectedIndex = -1;
 
-
+            
         }
         //VALIDACION PARA QUE NO PUEDA ESCRIBIR EN EL DATAGRID
         private void deshabilitarEdicionDG(bool estado) {
