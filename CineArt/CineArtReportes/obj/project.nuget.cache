@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FV1YFrFrJvWtY9m+cyBlCZmKfFGqKoMQ8Rtj8zmZU1HL0waxlkNM+sbcvyaPrNtrGU44+QPhA4p2V0PUPfpXEg==",
+  "dgSpecHash": "cBp9Lfi0nCIVIH1JEpFKyjVrHo/iAB2039hn6nt7YTM9IXvcjQTDvs7BqfcgGv06xL+SqL/XROwcf/A0gLWf6Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtReportes\\CineArtReportes.csproj",
+  "projectFilePath": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NC\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.2\\microsoft.codeanalysis.analyzers.3.3.2.nupkg.sha512",
     "C:\\Users\\NC\\.nuget\\packages\\microsoft.codeanalysis.common\\4.0.0\\microsoft.codeanalysis.common.4.0.0.nupkg.sha512",

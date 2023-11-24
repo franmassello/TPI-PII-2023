@@ -40,39 +40,6 @@ namespace CinemaPicon.Clases
             }
         }
 
-        /**
-        // i need to do a get to my api like this, i will need to make a get 
-        
-        private void cargarCombo(ComboBox combo, string nombreTabla)
-        {
-            DataTable tabla = new DataTable();
-            tabla = oDato.consultarTabla(nombreTabla);
-            combo.DataSource = tabla;
-            combo.DisplayMember = tabla.Columns[1].ColumnName;
-            combo.ValueMember = tabla.Columns[0].ColumnName;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-            combo.SelectedIndex = -1;
-
-
-        } 
-
-        **/
-
-        // The data the api returns i need to load it to a combobox
-        // it should return a datatable
-        // the method im trying to replace is this one consultarTabla
-        /**
-        public DataTable consultarTabla(string nombreTabla)
-        {
-            DataTable tabla = new DataTable();
-            this.conectar();
-            comando.CommandText = "SELECT * FROM " + nombreTabla;//hay que dejar el espacio en blanco despues del from
-            tabla.Load(comando.ExecuteReader());
-            this.desconectar();
-            return tabla;
-
-        }
-        **/
 
         public async Task<DataTable> consultarTabla(string nombreTabla)
         {
@@ -87,8 +54,21 @@ namespace CinemaPicon.Clases
                 DataTable tabla = JsonConvert.DeserializeObject<DataTable>(responseBody);
                 return tabla;
             }
-            
+        }
 
+        // i need to create a similar method but for a datagridview
+        public async Task<DataGridView> consultarTablaDGV(string nombreTabla)
+        {
+            string url = $"{API_URL}/{nombreTabla}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                string responseBody = await response.Content.ReadAsStringAsync();
+                DataGridView tabla = JsonConvert.DeserializeObject<DataGridView>(responseBody);
+                return tabla;
+            }
         }
         
         

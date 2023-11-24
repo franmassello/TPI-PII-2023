@@ -951,11 +951,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtAPI\\CineArtAPI.csproj",
+      "projectUniqueName": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtAPI\\CineArtAPI.csproj",
       "projectName": "CineArtAPI",
-      "projectPath": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtAPI\\CineArtAPI.csproj",
+      "projectPath": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtAPI\\CineArtAPI.csproj",
       "packagesPath": "C:\\Users\\NC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtAPI\\obj\\",
+      "outputPath": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\NC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -972,8 +972,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtBack\\CineArtBack.csproj": {
-              "projectPath": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtBack\\CineArtBack.csproj"
+            "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj": {
+              "projectPath": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj"
             }
           }
         }

@@ -104,7 +104,7 @@ namespace CinemaPicon {
 
         //BOTON CERRAR SESION
         private void BtnCerrarPrincipal_Click(object sender, EventArgs e) {
-            if (MessageBox.Show("¿Esta Seguro que desea salir?", "SALIENDO", MessageBoxButtons.YesNo,
+            if (MessageBox.Show("¿Esta seguro que desea salir?", "SALIENDO", MessageBoxButtons.YesNo,
             MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
                 Application.Exit();
 
@@ -135,7 +135,7 @@ namespace CinemaPicon {
 
 
         private void BtnSalirse_Click(object sender, EventArgs e) {
-            if (MessageBox.Show("¿Esta Seguro que desea salir?", "SALIENDO", MessageBoxButtons.YesNo,
+            if (MessageBox.Show("¿Esta seguro que desea salir?", "SALIENDO", MessageBoxButtons.YesNo,
 MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
                 Application.Exit();
 
@@ -285,8 +285,14 @@ MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            MenuPeliculas menuV = new MenuPeliculas();
-            menuV.Show();
+            MenuPeliculas menuP = new MenuPeliculas();
+            menuP.Show();
+        }
+
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            MenuFunciones menuF = new MenuFunciones();
+            menuF.Show();
         }
     }
 }

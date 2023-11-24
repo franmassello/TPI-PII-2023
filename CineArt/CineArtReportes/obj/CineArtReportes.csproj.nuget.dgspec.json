@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtReportes\\CineArtReportes.csproj": {}
+    "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtReportes\\CineArtReportes.csproj": {
+    "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtReportes\\CineArtReportes.csproj",
+        "projectUniqueName": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj",
         "projectName": "CineArtReportes",
-        "projectPath": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtReportes\\CineArtReportes.csproj",
+        "projectPath": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtReportes\\CineArtReportes.csproj",
         "packagesPath": "C:\\Users\\NC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtReportes\\obj\\",
+        "outputPath": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtReportes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NC\\AppData\\Roaming\\NuGet\\NuGet.Config",

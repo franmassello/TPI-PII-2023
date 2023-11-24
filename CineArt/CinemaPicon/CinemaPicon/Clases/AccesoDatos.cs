@@ -48,7 +48,7 @@ namespace CinemaPicon {
         public DataTable consultarTabla(string nombreTabla) {
             DataTable tabla = new DataTable();
             this.conectar();
-            comando.CommandText = "SELECT * FROM " + nombreTabla;//hay que dejar el espacio en blanco despues del from
+            comando.CommandText = "SELECT * FROM " + nombreTabla; //hay que dejar el espacio en blanco despues del from
             tabla.Load(comando.ExecuteReader());
             this.desconectar();
             return tabla;

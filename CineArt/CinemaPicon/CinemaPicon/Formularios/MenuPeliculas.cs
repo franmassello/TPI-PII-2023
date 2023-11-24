@@ -128,10 +128,11 @@ namespace CinemaPicon {
         }
 
         //REFRESCAR DATAGRID
-        public void refrescarDG() {
-
-            this.dataGridView1.DataSource = oDato.consultarTabla("Peliculas");
+        public async void refrescarDG() {
+            this.dataGridView1.DataSource = null;
+            this.dataGridView1.DataSource = await APIMethods.consultarTabla("getPeliculas");
             this.dataGridView1.Refresh();
+
 
         }
         private void BtnEliminarPrincipal_Click(object sender, EventArgs e) {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gySFa1+QI2F3yllkBq9F0zKEDDODYHi+fAHS/xOIpcV99np+wgWWjeU6qQI0z7M2/vDv43oLo3SMNVDOGVRBNA==",
+  "dgSpecHash": "AsDB6tT4Efr5WxeMZ4MQfKILsyzt3XJ9h8OzZ6o3o+YQMHVPiEljS73oxGnEh0KFqXRQzhbDdD2h/0lJ1d4PYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtBack\\CineArtBack.csproj",
+  "projectFilePath": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NC\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\NC\\.nuget\\packages\\microsoft.reportingservices.reportviewercontrol.winforms\\140.340.80\\microsoft.reportingservices.reportviewercontrol.winforms.140.340.80.nupkg.sha512",

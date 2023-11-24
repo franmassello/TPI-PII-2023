@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CineArtReportes
-build_property.ProjectDir = C:\Users\NC\Desktop\TPI-PII-2023-develop\CineArt\CineArtReportes\
+build_property.ProjectDir = C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CineArtReportes\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
