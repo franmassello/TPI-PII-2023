@@ -117,7 +117,7 @@ namespace CinemaPicon.Formularios {
                     MessageBox.Show("Su pelicula fue actualizada");
                     this.Close();
                     Principal p = new Principal();
-                    p.refrescarDG();
+                    //p.refrescarDG();
                 }
             }
 

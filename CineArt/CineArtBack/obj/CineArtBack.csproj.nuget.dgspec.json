@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj": {}
+    "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtBack\\CineArtBack.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj": {
+    "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtBack\\CineArtBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
+        "projectUniqueName": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtBack\\CineArtBack.csproj",
         "projectName": "CineArtBack",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\obj\\",
+        "projectPath": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtBack\\CineArtBack.csproj",
+        "packagesPath": "C:\\Users\\NC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\NC\\Desktop\\TPI-PII-2023-develop\\CineArt\\CineArtBack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\NC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

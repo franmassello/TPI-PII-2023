@@ -114,6 +114,12 @@
     <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\MenuVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MenuVentas.Designer.cs">
+      <DependentUpon>MenuVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\NuevaPelicula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,17 +127,17 @@
       <DependentUpon>NuevaPelicula.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Pelicula.cs" />
+    <Compile Include="Formularios\MenuPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MenuPeliculas.Designer.cs">
+      <DependentUpon>MenuPeliculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Reporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Reporte.Designer.cs">
-      <DependentUpon>Reporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,14 +152,17 @@
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MenuVentas.resx">
+      <DependentUpon>MenuVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\NuevaPelicula.resx">
       <DependentUpon>NuevaPelicula.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MenuPeliculas.resx">
+      <DependentUpon>MenuPeliculas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reporte.resx">
-      <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

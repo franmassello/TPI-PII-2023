@@ -12,7 +12,7 @@ namespace CinemaPicon {
         SqlConnection conexion;
         SqlCommand comando;
         SqlDataReader lector;
-        string cadenaConexion = @"Data Source=LAPTOP-UNDAST1G\SQLEXPRESS;Initial Catalog=CINEART3;Integrated Security=True;";
+        string cadenaConexion = @"Data Source=DESKTOP-168KBNT\SQLEXPRESS;Initial Catalog=CINEART3;Integrated Security=True;";
         public string pCadenaConexion {
             set { cadenaConexion = value; }
             get { return cadenaConexion; }
