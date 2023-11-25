@@ -148,12 +148,12 @@ namespace CineArtBack.Datos
                 t = conexion.BeginTransaction();
                 comando.Transaction = t;
                 comando.CommandText = "SP_INSERT_PELICULA";
-                comando.Parameters.AddWithValue("@titulo", pelicula.pTitulo);
-                comando.Parameters.AddWithValue("@descripcion", pelicula.pDescripcion);
-                comando.Parameters.AddWithValue("@genero_var", pelicula.pGenero);
-                comando.Parameters.AddWithValue("@fecha_estreno", pelicula.pFechaEstreno);
-                comando.Parameters.AddWithValue("@idioma_var", pelicula.pIdioma);
-                comando.Parameters.AddWithValue("@formato_var", pelicula.pFormato);
+                comando.Parameters.AddWithValue("@titulo", pelicula.Titulo);
+                comando.Parameters.AddWithValue("@descripcion", pelicula.Descripcion);
+                comando.Parameters.AddWithValue("@genero_var", pelicula.Genero);
+                comando.Parameters.AddWithValue("@fecha_estreno", pelicula.FechaEstreno);
+                comando.Parameters.AddWithValue("@idioma_var", pelicula.Idioma);
+                comando.Parameters.AddWithValue("@formato_var", pelicula.Formato);
                 comando.ExecuteNonQuery();
                 t.Commit();
             }
@@ -210,12 +210,12 @@ namespace CineArtBack.Datos
                 comando.Transaction = t;
                 comando.CommandText = "SP_UPDATE_PELICULA";
                 comando.Parameters.AddWithValue("@id_pelicula", numero);
-                comando.Parameters.AddWithValue("@titulo", pelicula.pTitulo);
-                comando.Parameters.AddWithValue("@descripcion", pelicula.pDescripcion);
-                comando.Parameters.AddWithValue("@genero_var", pelicula.pGenero);
-                comando.Parameters.AddWithValue("@fecha_estreno", pelicula.pFechaEstreno);
-                comando.Parameters.AddWithValue("@idioma_var", pelicula.pIdioma);
-                comando.Parameters.AddWithValue("@formato_var", pelicula.pFormato);
+                comando.Parameters.AddWithValue("@titulo", pelicula.Titulo);
+                comando.Parameters.AddWithValue("@descripcion", pelicula.Descripcion);
+                comando.Parameters.AddWithValue("@genero_var", pelicula.Genero);
+                comando.Parameters.AddWithValue("@fecha_estreno", pelicula.FechaEstreno);
+                comando.Parameters.AddWithValue("@idioma_var", pelicula.Idioma);
+                comando.Parameters.AddWithValue("@formato_var", pelicula.Formato);
                 comando.ExecuteNonQuery();
                 t.Commit();
             }

@@ -96,17 +96,18 @@
   <ItemGroup>
     <Compile Include="Clases\AccesoDatos.cs" />
     <Compile Include="Clases\APIMethods.cs" />
+    <Compile Include="Clases\PeliculaBack.cs" />
     <Compile Include="Formularios\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Formularios\Editar.cs">
+    <Compile Include="Formularios\EditarPelicula.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Editar.Designer.cs">
-      <DependentUpon>Editar.cs</DependentUpon>
+    <Compile Include="Formularios\EditarPelicula.Designer.cs">
+      <DependentUpon>EditarPelicula.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Login.cs">
       <SubType>Form</SubType>
@@ -152,8 +153,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Editar.resx">
-      <DependentUpon>Editar.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\EditarPelicula.resx">
+      <DependentUpon>EditarPelicula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

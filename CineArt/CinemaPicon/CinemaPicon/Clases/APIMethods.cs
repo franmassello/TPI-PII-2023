@@ -56,22 +56,48 @@ namespace CinemaPicon.Clases
             }
         }
 
-        // i need to create a similar method but for a datagridview
-        public async Task<DataGridView> consultarTablaDGV(string nombreTabla)
+        // create a method to do a put 
+
+        public async Task<string> PutPelicula(string nombreRuta, string id, string json)
         {
-            string url = $"{API_URL}/{nombreTabla}";
+            string url = $"{API_URL}/{nombreRuta}?idPelicula={id}";
 
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync(url);
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PutAsync(url, content);
 
-                string responseBody = await response.Content.ReadAsStringAsync();
-                DataGridView tabla = JsonConvert.DeserializeObject<DataGridView>(responseBody);
-                return tabla;
+                if (response.IsSuccessStatusCode)
+                {
+                    return "Update successful";
+                }
+                else
+                {
+                    return "Update failed";
+                }
             }
         }
         
-        
+        // now i need a method to do a delete passing a ID
+
+        public async Task<string> DeletePelicula(string nombreRuta, string id)
+        {
+            string url = $"{API_URL}/{nombreRuta}?idPelicula={id}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.DeleteAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return "Delete successful";
+                }
+                else
+                {
+                    return "Delete failed";
+                }
+            }
+        }
 
 
 

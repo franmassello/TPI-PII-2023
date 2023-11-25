@@ -16,7 +16,7 @@ namespace CinemaPicon {
 
     public partial class MenuFunciones : Form {
 
-        Pelicula p;
+        PeliculaBack p;
         string consulta;
         bool banderaFiltro = false;
         AccesoDatos oDato = new AccesoDatos();
@@ -145,7 +145,7 @@ namespace CinemaPicon {
                     if (MessageBox.Show("Usted esta por eliminar esta pelicula, Esta seguro?", "ELIMINANDO PELICULA",
     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
                         string consulta;
-                        consulta = "DELETE PELICULAS WHERE ID_PELICULA = " + p.pId;
+                        consulta = "DELETE PELICULAS WHERE ID_PELICULA = " + p.Id;
                         oDato.actualizarBD(consulta);
                         MessageBox.Show("Pelicula Eliminada");
                         dataGridView1.DataSource = oDato.consultarTabla("Peliculas");
@@ -171,15 +171,15 @@ namespace CinemaPicon {
 
                 if (row != null) {
 
-                    this.p = new Pelicula();
+                    this.p = new PeliculaBack();
 
-                    p.pId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                    p.pTitulo = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
-                    p.pDescripcion = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
-                    p.pGenero = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value);
-                    p.pFechaEstreno = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
-                    p.pIdioma = Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value);
-                    p.pFormato = Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value);
+                    p.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                    p.Titulo = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
+                    p.Descripcion = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+                    p.Genero = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
+                    p.FechaEstreno = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
+                    p.Idioma = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
+                    p.Formato = Convert.ToString(dataGridView1.CurrentRow.Cells[6].Value);
 
                     //LINEA PARA TESTEO
                     //MessageBox.Show(p.ToString());
@@ -193,8 +193,8 @@ namespace CinemaPicon {
                 MessageBox.Show("Seleccione una pelicula de la lista");
 
             } else {
-                Editar editar = new Editar();
-                editar.recibirDatosDePelicula(p.pId, p.pTitulo, p.pDescripcion, p.pGenero, p.pFechaEstreno, p.pIdioma, p.pFormato);
+                EditarPelicula editar = new EditarPelicula();
+                editar.recibirDatosDePelicula(p.Id, p.Titulo, p.Descripcion, p.Genero, p.FechaEstreno, p.Idioma, p.Formato);
                 editar.ShowDialog();
                 refrescarDG();
 

@@ -343,7 +343,6 @@ C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CineArtFront.csproj.AssemblyReference.cache
-C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.Editar.resources
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Login.resources
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.MenuVentas.resources
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.NuevaPelicula.resources
@@ -356,3 +355,4 @@ C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.exe
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.pdb
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.MenuFunciones.resources
+C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.EditarPelicula.resources
