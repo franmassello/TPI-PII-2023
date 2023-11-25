@@ -246,5 +246,258 @@ namespace CineArtBack.Datos
 
             return (int)pOut.Value;
         }
+
+        public DataTable getFacturas()
+        {
+            try
+            {
+                comando.Parameters.Clear();
+                conectar();
+                comando = new SqlCommand("EXEC SP_GET_FACTURAS", conexion);
+                DataTable tabla = new DataTable();
+                tabla.Load(comando.ExecuteReader());
+                desconectar();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public bool insertFactura(Factura factura)
+        {
+            bool ok = true;
+            SqlTransaction t = null;
+            try
+            {
+                conectar();
+                comando.Parameters.Clear();
+                t = conexion.BeginTransaction();
+                comando.Transaction = t;
+                comando.CommandText = "SP_INSERT_FACTURA";
+
+                comando.Parameters.AddWithValue("@fecha", factura.Fecha);
+                comando.Parameters.AddWithValue("@hora", factura.Hora);
+                comando.Parameters.AddWithValue("@id_cliente", factura.Id_cliente);
+                comando.Parameters.AddWithValue("@id_forma_pago", factura.Id_forma_pago);
+                comando.Parameters.AddWithValue("@precio", factura.DetalleFactura.Precio);
+                comando.Parameters.AddWithValue("@id_funcion", factura.DetalleFactura.Id_Funcion);
+                comando.Parameters.AddWithValue("@descuento", factura.DetalleFactura.Descuento);
+                comando.Parameters.AddWithValue("@id_butaca", factura.DetalleFactura.Id_Butaca);
+                comando.Parameters.AddWithValue("@cantidad", factura.DetalleFactura.Cantidad);
+
+                comando.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                t.Rollback();
+                ok = false;
+            }
+            finally
+            {
+                desconectar();
+            }
+            return ok;
+        }   
+
+        public bool updateFactura(int numero, Factura factura)
+        {
+            bool ok = true;
+            SqlTransaction t = null;
+            try
+            {
+                conectar();
+                comando.Parameters.Clear();
+                t = conexion.BeginTransaction();
+                comando.Transaction = t;
+                comando.CommandText = "SP_UPDATE_FACTURA";
+
+                comando.Parameters.AddWithValue("@id_factura", numero);
+                comando.Parameters.AddWithValue("@fecha", factura.Fecha);
+                comando.Parameters.AddWithValue("@hora", factura.Hora);
+                comando.Parameters.AddWithValue("@id_cliente", factura.Id_cliente);
+                comando.Parameters.AddWithValue("@id_forma_pago", factura.Id_forma_pago);
+                
+                comando.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                t.Rollback();
+                ok = false;
+            }
+            finally
+            {
+                desconectar();
+            }
+            return ok;
+        }
+
+        public bool deleteFactura(int numero)
+        {
+            bool ok = true;
+            SqlTransaction t = null;
+            try
+            {
+                conectar();
+                comando.Parameters.Clear();
+                t = conexion.BeginTransaction();
+                comando.Transaction = t;
+                comando.CommandText = "SP_DELETE_FACTURA";
+                comando.Parameters.AddWithValue("@id_factura", numero);
+                comando.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch (Exception ex)
+            {
+                t.Rollback();
+                Console.WriteLine(ex.Message);
+                ok = false;
+            }
+            finally
+            {
+                desconectar();
+            }
+            return ok;
+        }
+
+        public DataTable getFunciones()
+        {
+            try
+            {
+                comando.Parameters.Clear();
+                conectar();
+                comando = new SqlCommand("EXEC SP_GET_FUNCIONES", conexion);
+                DataTable tabla = new DataTable();
+                tabla.Load(comando.ExecuteReader());
+                desconectar();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public bool insertFuncion(Funcion funcion)
+        {
+            bool ok = true;
+            SqlTransaction t = null;
+            try
+            {
+                conectar();
+                comando.Parameters.Clear();
+                t = conexion.BeginTransaction();
+                comando.Transaction = t;
+                comando.CommandText = "SP_INSERT_FUNCION";
+
+                comando.Parameters.AddWithValue("@id_sala", funcion.Id_sala);
+                comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
+                comando.Parameters.AddWithValue("@horario", funcion.Horario);
+                comando.Parameters.AddWithValue("@dia", funcion.Dia);
+
+                comando.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                t.Rollback();
+                ok = false;
+            }
+            finally
+            {
+                desconectar();
+            }
+            return ok;
+        }
+
+        // i need to update funcion and delete funcion
+
+        public bool updateFuncion(int numero, Funcion funcion)
+        {
+            bool ok = true;
+            SqlTransaction t = null;
+            try
+            {
+                conectar();
+                comando.Parameters.Clear();
+                t = conexion.BeginTransaction();
+                comando.Transaction = t;
+                comando.CommandText = "SP_UPDATE_FUNCION";
+
+                comando.Parameters.AddWithValue("@id_funcion", numero);
+                comando.Parameters.AddWithValue("@id_sala", funcion.Id_sala);
+                comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
+                comando.Parameters.AddWithValue("@horario", funcion.Horario);
+                comando.Parameters.AddWithValue("@dia", funcion.Dia);
+
+                comando.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                t.Rollback();
+                ok = false;
+            }
+            finally
+            {
+                desconectar();
+            }
+            return ok;
+        }
+
+        public bool deleteFuncion(int numero)
+        {
+            bool ok = true;
+            SqlTransaction t = null;
+            try
+            {
+                conectar();
+                comando.Parameters.Clear();
+                t = conexion.BeginTransaction();
+                comando.Transaction = t;
+                comando.CommandText = "SP_DELETE_FUNCION";
+                comando.Parameters.AddWithValue("@id_funcion", numero);
+                comando.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch (Exception ex)
+            {
+                t.Rollback();
+                Console.WriteLine(ex.Message);
+                ok = false;
+            }
+            finally
+            {
+                desconectar();
+            }
+            return ok;
+        }
+
+        // need one to do getSalas
+
+        public DataTable getSalas()
+        {
+            try
+            {
+                comando.Parameters.Clear();
+                conectar();
+                comando = new SqlCommand("EXEC SP_GET_SALAS", conexion);
+                DataTable tabla = new DataTable();
+                tabla.Load(comando.ExecuteReader());
+                desconectar();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

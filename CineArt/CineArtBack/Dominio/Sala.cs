@@ -9,16 +9,17 @@ namespace CineArtBack.Dominio
     public class Sala
     {
         public int IdSala { get; set; }
-        public int Capacidad { get; set; }
-        public int NumeroPeliculas { get; set; }
         public int TipoSalaId { get; set; }
+        public int CantButacas { get; set; }
 
-        public Sala(int idSala, int capacidad, int numeroPeliculas, int tipoSalaId)
+        public string TipoSala { get; set; }
+
+        public Sala(int idSala, int cantButacas, int tipoSalaId, string tipoSala)
         {
             IdSala = idSala;
-            Capacidad = capacidad;
-            NumeroPeliculas = numeroPeliculas;
             TipoSalaId = tipoSalaId;
+            CantButacas = cantButacas;
+            TipoSala = tipoSala;
         }
     }
 }
