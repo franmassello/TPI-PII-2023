@@ -56,12 +56,23 @@ namespace CineArtBack.Datos.Implementaciones
         }
         public bool deleteFuncion(int numero)
         {
-            return DBHelper.obtenerInstancia().deleteFuncion(numero);
-
+            if(numero == null)
+            {
+                return false;
+            } else
+            {
+                return DBHelper.obtenerInstancia().deleteFuncion(numero);
+            }
         }
         public bool updateFuncion(int numero, Funcion funcion)
         {
-            return DBHelper.obtenerInstancia().updateFuncion(numero, funcion);
+            if(numero == null)
+            {
+                return false;
+            } else
+            {
+                return DBHelper.obtenerInstancia().updateFuncion(numero, funcion);
+            }
 
         }
 
