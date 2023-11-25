@@ -182,16 +182,7 @@ namespace CinemaPicon {
         }
 
         private void BtnEditarPrincipal_Click(object sender, EventArgs e) {
-            if (this.p == null) {
-                MessageBox.Show("Seleccione una pelicula de la lista");
-
-            } else {
-                Editar editar = new Editar();
-                editar.recibirDatosDePelicula(p.pId, p.pTitulo, p.pDescripcion, p.pGenero, p.pFechaEstreno, p.pIdioma, p.pFormato);
-                editar.ShowDialog();
-                refrescarDG();
-
-            }
+            
         }
 
 

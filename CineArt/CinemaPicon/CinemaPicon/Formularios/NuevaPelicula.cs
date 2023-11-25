@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CinemaPicon.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,10 @@ using System.Windows.Forms;
 namespace CinemaPicon {
     public partial class NuevaPelicula : Form {
         AccesoDatos oDato = new AccesoDatos();
+        APIMethods APIMethods = new APIMethods();
         List<Pelicula> listaPeliculas = new List<Pelicula>(); 
         public NuevaPelicula() {
             InitializeComponent();
-
-
         }
 
         //DLL PARA MOVER VENTANA
@@ -37,17 +37,26 @@ namespace CinemaPicon {
         }
 
 
-        private void NuevaPelicula_Load(object sender, EventArgs e) {
+        private async void NuevaPelicula_Load(object sender, EventArgs e) {
             try {
-                cargarCombo(cboFormato, "formatos_peliculas");
-                cargarCombo(cboGenero, "Generos");
-                cargarCombo(cboIdioma, "Idiomas");
+                await CargarComboAsync(cboFormato, "getFormatos");
+                await CargarComboAsync(cboGenero, "getGeneros");
+                await CargarComboAsync(cboIdioma, "getIdiomas");
                 cargarPeliculasEnLista("Peliculas");
             }
             catch (Exception ex) {
 
                 MessageBox.Show(ex.Message);
             }
+
+
+        }
+
+        // instead of using cargarPeliculasEnLista, i need to use the get in APIMethods.cs
+        // So i make a get to Peliculas. please do the method cargarPeliculasEnListaAsync
+
+        private async void cargarPeliculasEnListaAsync(string nombreTabla)
+        {
 
 
         }
@@ -87,15 +96,16 @@ namespace CinemaPicon {
             oDato.desconectar();
         }
 
-        private void cargarCombo(ComboBox combo, string nombreTabla) {
+        private async Task CargarComboAsync(ComboBox combo, string methodName)
+        {
+            // Load data into combo box
             DataTable tabla = new DataTable();
-            tabla = oDato.consultarTabla(nombreTabla);
+            tabla = await APIMethods.consultarTabla(methodName);
             combo.DataSource = tabla;
             combo.DisplayMember = tabla.Columns[1].ColumnName;
             combo.ValueMember = tabla.Columns[0].ColumnName;
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
             combo.SelectedIndex = -1;
-
 
         }
 
