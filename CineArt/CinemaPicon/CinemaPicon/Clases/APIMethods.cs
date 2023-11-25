@@ -56,8 +56,6 @@ namespace CinemaPicon.Clases
             }
         }
 
-        // create a method to do a put 
-
         public async Task<string> PutPelicula(string nombreRuta, string id, string json)
         {
             string url = $"{API_URL}/{nombreRuta}?idPelicula={id}";
@@ -77,8 +75,6 @@ namespace CinemaPicon.Clases
                 }
             }
         }
-        
-        // now i need a method to do a delete passing a ID
 
         public async Task<string> DeletePelicula(string nombreRuta, string id)
         {
@@ -95,6 +91,26 @@ namespace CinemaPicon.Clases
                 else
                 {
                     return "Delete failed";
+                }
+            }
+        }
+
+        public async Task<string> PostPelicula(string nombreRuta, string json)
+        {
+            string url = $"{API_URL}/{nombreRuta}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PostAsync(url, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return "Post successful";
+                }
+                else
+                {
+                    return "Post failed";
                 }
             }
         }
