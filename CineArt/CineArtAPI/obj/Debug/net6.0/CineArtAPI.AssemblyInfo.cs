@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CineArtAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b8f6e35ba14a0aeda0e3df2d00b483dbfce849e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7607e22be6f2581525de42ff6777d8551a90f82")]
 [assembly: System.Reflection.AssemblyProductAttribute("CineArtAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CineArtAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

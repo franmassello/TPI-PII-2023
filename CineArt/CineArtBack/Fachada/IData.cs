@@ -30,5 +30,10 @@ namespace CineArtBack.Fachada
         public bool deleteFactura(int numero);
         public bool updateFactura(int numero, Factura factura);
 
+        public List<Butaca> getButacasLibres(int idFuncion);
+        public List<Butaca> getButacasTotales(int idFuncion);
+        public List<Butaca> getButacasOcupadas(int idFuncion);
+
+
     }
 }

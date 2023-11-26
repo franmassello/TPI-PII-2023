@@ -10,12 +10,12 @@ namespace CineArtBack.Dominio
     {
         public int Id_factura { get; set; }
         public DateTime Fecha { get; set; }
-        public TimeSpan Hora { get; set; }
+        public DateTime Hora { get; set; }
         public int Id_cliente { get; set; }
         public int Id_forma_pago { get; set; }
         public DetalleFactura DetalleFactura { get; set; }
 
-        public Factura(int id_factura, DateTime fecha, TimeSpan hora, int id_cliente, int id_forma_pago, DetalleFactura detalleFactura)
+        public Factura(int id_factura, DateTime fecha, DateTime hora, int id_cliente, int id_forma_pago, DetalleFactura detalleFactura)
         {
             this.Id_factura = id_factura;
             this.Fecha = fecha;

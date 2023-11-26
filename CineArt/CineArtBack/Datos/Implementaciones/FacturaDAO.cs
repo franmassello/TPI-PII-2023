@@ -19,9 +19,8 @@ namespace CineArtBack.Datos.Implementaciones
             foreach (DataRow dr in tabla.Rows)
             {
                 int id = int.Parse(dr["id_factura"].ToString());
-                string fechaStr = dr["fecha"].ToString();
-                DateTime fecha = DateTime.Parse(fechaStr);
-                TimeSpan hora = TimeSpan.Parse(dr["hora"].ToString());
+                DateTime fecha = DateTime.Parse(dr["fecha"].ToString());
+                DateTime hora = DateTime.Parse(dr["hora"].ToString());
                 int idCliente = int.Parse(dr["id_cliente"].ToString());
                 int idFormaPago = int.Parse(dr["id_forma_pago"].ToString());
 

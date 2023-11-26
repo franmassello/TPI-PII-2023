@@ -15,11 +15,13 @@ namespace CineArtBack.Fachada
         private IPeliculaDAO daoP;
         private IFuncionDAO daoFu;
         private IFacturaDAO daoFa;
+        private IButacaDAO daoB;
         public DataLib()
         {
             daoP = new PeliculaDAO();
             daoFu = new FuncionDAO();
             daoFa = new FacturaDAO();
+            daoB = new ButacaDAO();
         }
 
         public List<Pelicula> getComboPelicula()
@@ -96,6 +98,21 @@ namespace CineArtBack.Fachada
         public bool updateFactura(int numero, Factura factura)
         {
             return daoFa.updateFactura(numero, factura);
+        }
+
+        public List<Butaca> getButacasLibres(int idFuncion)
+        {
+            return daoB.getButacasLibres(idFuncion);
+        }
+
+        public List<Butaca> getButacasTotales(int idFuncion)
+        {
+            return daoB.getButacasTotales(idFuncion);
+        }
+
+        public List<Butaca> getButacasOcupadas(int idFuncion)
+        {
+            return daoB.getButacasOcupadas(idFuncion);
         }
 
 

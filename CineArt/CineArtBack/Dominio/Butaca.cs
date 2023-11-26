@@ -8,23 +8,23 @@ namespace CineArtBack.Dominio
 {
     public class Butaca
     {
-        public int IdButaca { get; set; }
+        public int IdFuncion { get; set; }
         public int IdSala { get; set; }
         public int NroButaca { get; set; }
-        public int Fila { get; set; } 
+        public string Fila { get; set; } 
 
 
         public Butaca()
         {
-            IdButaca = 0;
+            IdFuncion = 0;
             IdSala = 0;
             NroButaca = 0;
-            Fila = 0;
+            Fila = "";
         }
 
-        public Butaca(int idSala, int idButaca, int numero, int fila)
+        public Butaca(int idSala, int idButaca, int numero, string fila)
         {
-            IdButaca = idButaca;
+            IdFuncion = idButaca;
             IdSala = idSala;
             NroButaca = numero;
             Fila = fila;
