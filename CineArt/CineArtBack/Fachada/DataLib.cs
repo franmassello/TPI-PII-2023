@@ -12,48 +12,109 @@ namespace CineArtBack.Fachada
 {
     public class DataLib : IData
     {
-        private IPeliculaDAO dao;
+        private IPeliculaDAO daoP;
+        private IFuncionDAO daoFu;
+        private IFacturaDAO daoFa;
+        private IButacaDAO daoB;
         public DataLib()
         {
-            dao = new PeliculaDAO();
+            daoP = new PeliculaDAO();
+            daoFu = new FuncionDAO();
+            daoFa = new FacturaDAO();
+            daoB = new ButacaDAO();
         }
 
         public List<Pelicula> getComboPelicula()
         {
-            return dao.getComboPelicula();
+            return daoP.getComboPelicula();
         }
 
         public List<GeneroPelicula> getComboGenero()
         {
-            return dao.getComboGenero();
+            return daoP.getComboGenero();
         }
 
         public List<Idioma> getComboIdioma()
         {
-            return dao.getComboIdioma();
+            return daoP.getComboIdioma();
         }
 
         public List<FormatoPelicula> getComboFormato()
         {
-            return dao.getComboFormato();
+            return daoP.getComboFormato();
         }
 
         public bool getInsertPelicula(Pelicula pelicula)
         {
-            return dao.getInsertPelicula(pelicula);
+            return daoP.getInsertPelicula(pelicula);
         }
         public bool getDeletePelicula(int numero)
         {
-            return dao.getDeletePelicula(numero);
+            return daoP.getDeletePelicula(numero);
         }
         public bool getUpdatePelicula(int numero, Pelicula pelicula)
         {
-            return dao.getUpdatePelicula(numero, pelicula);
+            return daoP.getUpdatePelicula(numero, pelicula);
         }
 
         public bool postLogin(string user, string password)
         {
-            return dao.postLogin(user, password);
+            return daoP.postLogin(user, password);
         }
+
+        public List<Funcion> getFunciones()
+        {
+            return daoFu.getFunciones();
+        }
+        public List<Sala> getSalas()
+        {
+            return daoFu.getSalas();
+        }
+        public bool insertFuncion(Funcion funcion)
+        {
+            return daoFu.insertFuncion(funcion);
+        }
+        public bool deleteFuncion(int numero)
+        {
+            return daoFu.deleteFuncion(numero);
+        }
+        public bool updateFuncion(int numero, Funcion funcion)
+        {
+            return daoFu.updateFuncion(numero, funcion);
+        }
+
+        public List<Factura> getFacturas()
+        {
+            return daoFa.getFacturas();
+        }
+        public bool insertFactura(Factura factura)
+        {
+            return daoFa.insertFactura(factura);
+        }
+        public bool deleteFactura(int numero)
+        {
+            return daoFa.deleteFactura(numero);
+        }
+        public bool updateFactura(int numero, Factura factura)
+        {
+            return daoFa.updateFactura(numero, factura);
+        }
+
+        public List<Butaca> getButacasLibres(int idFuncion)
+        {
+            return daoB.getButacasLibres(idFuncion);
+        }
+
+        public List<Butaca> getButacasTotales(int idFuncion)
+        {
+            return daoB.getButacasTotales(idFuncion);
+        }
+
+        public List<Butaca> getButacasOcupadas(int idFuncion)
+        {
+            return daoB.getButacasOcupadas(idFuncion);
+        }
+
+
     }
 }

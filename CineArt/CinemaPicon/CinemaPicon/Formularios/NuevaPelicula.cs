@@ -1,4 +1,5 @@
 ﻿using CinemaPicon.Clases;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,17 +49,6 @@ namespace CinemaPicon {
 
                 MessageBox.Show(ex.Message);
             }
-
-
-        }
-
-        // instead of using cargarPeliculasEnLista, i need to use the get in APIMethods.cs
-        // So i make a get to Peliculas. please do the method cargarPeliculasEnListaAsync
-
-        private async void cargarPeliculasEnListaAsync(string nombreTabla)
-        {
-
-
         }
 
         private void cargarPeliculasEnLista(string nombreTabla) {
@@ -110,30 +100,30 @@ namespace CinemaPicon {
         }
 
 
-        private void BtnAgregar_Click(object sender, EventArgs e) {
+        private async void BtnAgregar_Click(object sender, EventArgs e) {
 
 
             if (validar()) {
 
-
                 string consultaSQL = "";
-                Pelicula p = new Pelicula();
-                p.pTitulo = txtTitulo.Text;
-                p.pDescripcion = txtDescripcion.Text;
-                p.pGenero = Convert.ToInt32(cboGenero.SelectedValue);
-                p.pFechaEstreno = dtpFechaEstreno.Value;
-                p.pIdioma = Convert.ToInt32(cboIdioma.SelectedValue);
-                p.pFormato = Convert.ToInt32(cboFormato.SelectedValue);
-                try {
-                    if (!existe(p.pTitulo)) {
-                        consultaSQL = "INSERT INTO PELICULAS(TITULO,DESCRIPCION,ID_GENERO,FECHA_ESTRENO,ID_IDIOMA,ID_FORMATO) VALUES("
-                        + "'" + p.pTitulo + "'" + "," + "'" + p.pDescripcion + "'" + "," +
-                        p.pGenero + "," + "'" + p.pFechaEstreno.ToString("yyyy-MM-dd") + "'" + "," + p.pIdioma + "," + p.pFormato + ")";
+                PeliculaBack p = new PeliculaBack();
+                p.Titulo = txtTitulo.Text;
+                p.Descripcion = txtDescripcion.Text;
+                p.Genero = cboGenero.Text;
+                p.FechaEstreno = dtpFechaEstreno.Value;
+                p.Idioma = cboIdioma.Text;
+                p.Formato = cboFormato.Text;
 
-                        
-                        oDato.actualizarBD(consultaSQL);
+                try {
+                    if (!existe(p.Titulo)) {
+
+                        string json = JsonConvert.SerializeObject(p);
+
+                        string response = await APIMethods.PostPelicula("insertPelicula", json);
+
                         MessageBox.Show("Pelicula agregada con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiarCampos();
+                        this.Close();
 
                     } else {
                         MessageBox.Show("Este titulo ya fue ingresado");
