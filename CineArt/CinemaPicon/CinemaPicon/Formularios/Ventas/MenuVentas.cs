@@ -17,6 +17,7 @@ namespace CinemaPicon {
     public partial class MenuVentas : Form {
 
         Pelicula p;
+        FacturaBack f;
         string consulta;
         bool banderaFiltro = false;
         AccesoDatos oDato = new AccesoDatos();
@@ -123,20 +124,15 @@ namespace CinemaPicon {
         }
         private void BtnEliminarPrincipal_Click(object sender, EventArgs e) {
 
-            if (this.p == null) {
-                MessageBox.Show("Seleccione una pelicula de la lista para eliminar");
+            if (this.f == null) {
+                MessageBox.Show("Seleccione una venta de la lista para eliminar");
 
             } else {
 
                 try {
-                    if (MessageBox.Show("Usted esta por eliminar esta pelicula, Esta seguro?", "ELIMINANDO PELICULA",
+                    if (MessageBox.Show("Usted esta por eliminar esta venta, Esta seguro?", "ELIMINANDO VENTA",
     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
-                        string consulta;
-                        consulta = "DELETE PELICULAS WHERE ID_PELICULA = " + p.pId;
-                        oDato.actualizarBD(consulta);
-                        MessageBox.Show("Pelicula Eliminada");
-                        dataGridView1.DataSource = oDato.consultarTabla("Peliculas");
-                        dataGridView1.Refresh();
+                        oDato.BorrarConSP("SP_DELETE_FACTURA", f.Id_factura);
 
                     }
                 }
@@ -145,7 +141,9 @@ namespace CinemaPicon {
                     MessageBox.Show("Esta pelicula no puede ser eliminada para proteger la integridad de la base de datos");
                 }
                 finally {
+                    MessageBox.Show("Venta eliminada con exito");
                     oDato.desconectar();
+                    refrescarDG();
                 }
 
             }
@@ -158,19 +156,8 @@ namespace CinemaPicon {
 
                 if (row != null) {
 
-                    this.p = new Pelicula();
-
-                    /** 
-                    p.pId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                    p.pTitulo = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
-                    p.pDescripcion = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
-                    p.pGenero = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value);
-                    p.pFechaEstreno = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
-                    p.pIdioma = Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value);
-                    p.pFormato = Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value);
-                    **/
-                    //LINEA PARA TESTEO
-                    //MessageBox.Show(p.ToString());
+                    this.f = new FacturaBack();
+                    this.f.Id_factura = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                 }
 
             }

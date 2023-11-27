@@ -150,7 +150,7 @@ EXEC SP_GET_FACTURAS
 
 -- SP_GET_FUNCIONES ---------------------------------------
 
-CREATE PROCEDURE SP_GET_FUNCIONES
+alter PROCEDURE SP_GET_FUNCIONES
 AS
 BEGIN
 	select  
@@ -161,9 +161,10 @@ BEGIN
 		fp.formato,
 		p.titulo as titulo_pelicula,
 		dia,
-		horario,
+		LEFT(RTRIM(horario), 5) as horario,
 		i.idioma,
 		p.id_pelicula,
+		p.titulo  + ' / ' + convert(varchar,dia)  + ' / ' + convert(varchar,horario) + ' / ' + i.idioma+' / ' + fp.formato + ' / ' + ts.tipo_sala      as titulo_promocion,
        (SELECT Count(*)
         FROM   detalles d
         WHERE  d.id_funcion = f.id_funcion) as butacas_ocupadas,
@@ -269,6 +270,7 @@ CREATE PROCEDURE SP_INSERT_FUNCION
     @id_pelicula INT,
     @horario Time,
     @dia DateTime
+
 AS
 BEGIN
     INSERT INTO [dbo].[Funciones] ([id_sala], [id_pelicula], [horario], [dia])
@@ -437,11 +439,11 @@ AS
 
 -- SP_GET_BUTACAS_LIBRES ---------------------------------------
 
-CREATE PROCEDURE SP_BUTACAS_LIBRES
+ALTER PROCEDURE SP_BUTACAS_LIBRES
 	@id_funcion INT
 AS
 BEGIN
-	SELECT tot.* FROM 
+	SELECT tot.*, str(tot.nro_butaca) + ' ' + tot.fila  nombre_butaca FROM 
 	(SELECT * FROM V_BUTACAS_TOTALES where id_funcion=@id_funcion) tot
 	left join
 	(SELECT * FROM V_BUTACAS_OCUPADAS where id_funcion=@id_funcion) ocu

@@ -28,7 +28,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEditarPrincipal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnNuevoPrincipal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEliminarPrincipal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCerrarPrincipal = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -47,7 +46,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnEditarPrincipal);
             this.panel1.Controls.Add(this.btnNuevoPrincipal);
             this.panel1.Controls.Add(this.btnEliminarPrincipal);
             this.panel1.Controls.Add(this.btnCerrarPrincipal);
@@ -58,43 +56,6 @@
             this.panel1.Size = new System.Drawing.Size(250, 720);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
-            // 
-            // btnEditarPrincipal
-            // 
-            this.btnEditarPrincipal.Activecolor = System.Drawing.Color.White;
-            this.btnEditarPrincipal.BackColor = System.Drawing.Color.White;
-            this.btnEditarPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditarPrincipal.BorderRadius = 0;
-            this.btnEditarPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnEditarPrincipal.ButtonText = "EDITAR";
-            this.btnEditarPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarPrincipal.DisabledColor = System.Drawing.Color.Gray;
-            this.btnEditarPrincipal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditarPrincipal.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnEditarPrincipal.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnEditarPrincipal.Iconimage")));
-            this.btnEditarPrincipal.Iconimage_right = null;
-            this.btnEditarPrincipal.Iconimage_right_Selected = null;
-            this.btnEditarPrincipal.Iconimage_Selected = null;
-            this.btnEditarPrincipal.IconMarginLeft = 0;
-            this.btnEditarPrincipal.IconMarginRight = 0;
-            this.btnEditarPrincipal.IconRightVisible = true;
-            this.btnEditarPrincipal.IconRightZoom = 0D;
-            this.btnEditarPrincipal.IconVisible = true;
-            this.btnEditarPrincipal.IconZoom = 60D;
-            this.btnEditarPrincipal.IsTab = false;
-            this.btnEditarPrincipal.Location = new System.Drawing.Point(23, 415);
-            this.btnEditarPrincipal.Name = "btnEditarPrincipal";
-            this.btnEditarPrincipal.Normalcolor = System.Drawing.Color.White;
-            this.btnEditarPrincipal.OnHovercolor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnEditarPrincipal.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnEditarPrincipal.selected = false;
-            this.btnEditarPrincipal.Size = new System.Drawing.Size(200, 50);
-            this.btnEditarPrincipal.TabIndex = 1;
-            this.btnEditarPrincipal.Text = "EDITAR";
-            this.btnEditarPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnEditarPrincipal.Textcolor = System.Drawing.Color.DimGray;
-            this.btnEditarPrincipal.TextFont = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarPrincipal.Click += new System.EventHandler(this.BtnEditarPrincipal_Click);
             // 
             // btnNuevoPrincipal
             // 
@@ -334,7 +295,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuFlatButton btnEditarPrincipal;
         private Bunifu.Framework.UI.BunifuFlatButton btnNuevoPrincipal;
         private Bunifu.Framework.UI.BunifuFlatButton btnEliminarPrincipal;
         private Bunifu.Framework.UI.BunifuFlatButton btnCerrarPrincipal;

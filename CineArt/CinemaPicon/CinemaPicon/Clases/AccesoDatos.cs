@@ -106,5 +106,19 @@ namespace CinemaPicon {
             return tabla;
         }
 
+        // i need to use a SP that deletes a row from a table
+        public void BorrarConSP(string nombreSP, int param)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.CommandText = nombreSP;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_factura", param);
+
+            comando.ExecuteNonQuery();
+
+            desconectar();
+        }
+
     }
 }
