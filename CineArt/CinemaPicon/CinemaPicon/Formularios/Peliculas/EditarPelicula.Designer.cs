@@ -172,6 +172,7 @@
             this.cboIdioma.Name = "cboIdioma";
             this.cboIdioma.Size = new System.Drawing.Size(121, 21);
             this.cboIdioma.TabIndex = 3;
+            this.cboIdioma.SelectedIndexChanged += new System.EventHandler(this.cboIdioma_SelectedIndexChanged);
             // 
             // cboGenero
             // 
@@ -315,7 +316,7 @@
             this.label6.TabIndex = 46;
             this.label6.Text = "TITULO:";
             // 
-            // Editar
+            // EditarPelicula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -343,7 +344,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Editar";
+            this.Name = "EditarPelicula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar";
             this.Load += new System.EventHandler(this.Editar_Load);

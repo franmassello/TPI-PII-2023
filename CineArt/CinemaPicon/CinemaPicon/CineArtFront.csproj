@@ -96,6 +96,8 @@
   <ItemGroup>
     <Compile Include="Clases\AccesoDatos.cs" />
     <Compile Include="Clases\APIMethods.cs" />
+    <Compile Include="Clases\DetalleFacturaBack.cs" />
+    <Compile Include="Clases\FacturaBack.cs" />
     <Compile Include="Clases\FuncionBack.cs" />
     <Compile Include="Clases\PeliculaBack.cs" />
     <Compile Include="Formularios\Funciones\MenuFunciones.cs">

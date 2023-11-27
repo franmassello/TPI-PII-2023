@@ -86,8 +86,8 @@ namespace CinemaPicon {
         }
 
         private void BtnNuevoPrincipal_Click(object sender, EventArgs e) {
-            NuevaPelicula np = new NuevaPelicula();
-            np.ShowDialog();
+            NuevaVenta nv = new NuevaVenta();
+            nv.ShowDialog();
             refrescarDG();
         }
 

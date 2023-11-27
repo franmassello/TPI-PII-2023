@@ -14,8 +14,15 @@ using System.Windows.Forms;
 
 namespace CinemaPicon
 {
-    public partial class NuevaVenta: Form
+    public partial class NuevaVenta : Form
     {
+
+        string pelicula;
+        string horario;
+        string formato;
+        int idSelected;
+        double precio;
+
         AccesoDatos oDato = new AccesoDatos();
         APIMethods APIMethods = new APIMethods();
         public NuevaVenta()
@@ -46,9 +53,12 @@ namespace CinemaPicon
         {
             try
             {
-                await CargarComboAsync(cboSalas, "getSalas");
-                await CargarComboAsync(cboPeliculas, "getPeliculas");
+                //await CargarComboAsync(cboSalas, "getSalas");
+                //await CargarComboAsync(cboPeliculas, "getPeliculas");
                 //cargarPeliculasEnLista("Peliculas");
+                CargarComboSP(cboPeliculas, "SP_GET_FUNCIONES");
+                //CargarComboSPParam(cboButacas, "SP_BUTACAS_LIBRES", idSelected);
+
             }
             catch (Exception ex)
             {
@@ -57,63 +67,33 @@ namespace CinemaPicon
             }
         }
 
-        private void cargarPeliculasEnLista(string nombreTabla)
-        {
-            oDato.leerTabla(nombreTabla);
-            while (oDato.pLector.Read())
-            {
-
-                Pelicula p = new Pelicula();
-
-                if (!oDato.pLector.IsDBNull(0))
-                {
-                    p.pId = oDato.pLector.GetInt32(0);
-                }
-                if (!oDato.pLector.IsDBNull(1))
-                {
-                    p.pTitulo = oDato.pLector.GetString(1);
-                }
-                if (!oDato.pLector.IsDBNull(2))
-                {
-                    p.pDescripcion = oDato.pLector.GetString(2);
-                }
-                if (!oDato.pLector.IsDBNull(3))
-                {
-                    p.pGenero = oDato.pLector.GetInt32(3);
-                }
-                if (!oDato.pLector.IsDBNull(4))
-                {
-                    p.pFechaEstreno = oDato.pLector.GetDateTime(4);
-                }
-                if (!oDato.pLector.IsDBNull(5))
-                {
-                    p.pIdioma = oDato.pLector.GetInt32(5);
-                }
-                if (!oDato.pLector.IsDBNull(6))
-                {
-                    p.pFormato = oDato.pLector.GetInt32(6);
-                }
 
 
-
-            }
-            oDato.pLector.Close();
-            oDato.desconectar();
-        }
-
-        private async Task CargarComboAsync(ComboBox combo, string methodName)
+        private async Task CargarComboSP(ComboBox combo, string methodName)
         {
             // Load data into combo box
             DataTable tabla = new DataTable();
-            tabla = await APIMethods.consultarTabla(methodName);
+            tabla = oDato.ConsultarTablaConSP(methodName);
             combo.DataSource = tabla;
-            combo.DisplayMember = tabla.Columns[1].ColumnName;
+            combo.DisplayMember = tabla.Columns[10].ColumnName;
             combo.ValueMember = tabla.Columns[0].ColumnName;
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
             combo.SelectedIndex = -1;
 
+
         }
 
+        private async Task CargarComboSPParam(ComboBox combo, string methodName, int idFuncion)
+        {
+            // Load data into combo box
+            DataTable tabla = new DataTable();
+            tabla = oDato.ConsultarTablaConSPParam(methodName, idFuncion);
+            combo.DataSource = tabla;
+            combo.DisplayMember = tabla.Columns[7].ColumnName;
+            combo.ValueMember = tabla.Columns[0].ColumnName;
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo.SelectedIndex = -1;
+        }
 
         private async void BtnAgregar_Click(object sender, EventArgs e)
         {
@@ -121,39 +101,40 @@ namespace CinemaPicon
 
             if (validar())
             {
+                FacturaBack f = new FacturaBack();
 
-
-                int idPelicula = int.Parse(cboPeliculas.SelectedValue.ToString());
-                
-                fecha = fecha.Date;
-                string fechaString = fecha.ToString("yyyy-MM-dd");
-               
-                string horarioStr = horario.ToString("yyyy-MM-ddTHH:mm:ssZ");
-                string dia = fecha.ToString("yy-MM-dd");
-
-
-
-                FuncionBack funcion = new FuncionBack(idSala, idPelicula, horario, fechaString);
-
+                f.Fecha = DateTime.Now;
+                f.Hora = DateTime.Now;
+                f.Id_cliente = 1;
+                f.Id_forma_pago = 1;
+                f.DetalleFactura = new DetalleFacturaBack();
+                f.DetalleFactura.Id_Funcion = idSelected;
+                f.DetalleFactura.Id_Butaca = Convert.ToInt32(cboButacas.SelectedValue);
+                f.DetalleFactura.Precio = Convert.ToDouble(numericUpDown1.Value);
+                f.DetalleFactura.PrecioFinal = Convert.ToDouble(numericUpDown1.Value);
+                f.DetalleFactura.Descuento = 0;
+                f.DetalleFactura.Cantidad = 1;
 
                 try
                 {
-                    //string json = JsonConvert.SerializeObject(funcion);
-                    // instead of serializing funcion, let me enter the properties manually
-                    string json = "{\"id_sala\":" + idSala + ",\"id_pelicula\":" + idPelicula + ",\"horario\":\"" + horarioStr + "\",\"dia\":\"" + dia + "\"}";
 
+                    string json = JsonConvert.SerializeObject(f);
 
-                    string response = await APIMethods.PostFuncion("postFuncion", json);
+                    string response = await APIMethods.PostPelicula("insertFactura", json);
 
-                    if (response == "Post successful")
+                    if(response == "Post successful")
                     {
-                        MessageBox.Show("Funcion agregada con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        limpiarCampos();
+                        MessageBox.Show("Venta agregada con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
-                    } else
-                    {
-                        MessageBox.Show("Error al agregar funcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    //MessageBox.Show("Venta agregada con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+
                 }
                 catch (Exception ex)
                 {
@@ -172,29 +153,21 @@ namespace CinemaPicon
         {
             if (cboPeliculas.SelectedIndex == -1)
             {
-                MessageBox.Show("Seleccione un genero");
+                MessageBox.Show("Seleccione una funcion");
                 cboPeliculas.Focus();
                 return false;
             }
 
+            /**
             if (cboSalas.SelectedIndex == -1)
             {
                 MessageBox.Show("Seleccione un idioma");
                 cboSalas.Focus();
                 return false;
             }
-
+            **/
             return true;
 
-        }
-
-        private void limpiarCampos()
-        {
-            //txtDescripcion.Clear();
-            //txtTitulo.Clear();
-            cboPeliculas.SelectedIndex = -1;
-            dtpFechaEstreno.Value = DateTime.Today;
-            cboSalas.SelectedIndex = -1;
         }
 
 
@@ -223,62 +196,19 @@ namespace CinemaPicon
 
         }
 
-        private void cboGenero_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cboGenero_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cboPeliculas.SelectedIndex != -1)
+            {
+                DataRowView selectedRow = (DataRowView)cboPeliculas.SelectedItem;
+                this.idSelected = Convert.ToInt32(selectedRow["id_funcion"]);
+                //this.precio = Convert.ToDouble(selectedRow["precio"]);
+                await CargarComboSPParam(cboButacas, "SP_BUTACAS_LIBRES", idSelected);
+            }
 
         }
 
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboIdioma_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboFormato_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpFechaEstreno_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
         {
 
         }
@@ -288,9 +218,10 @@ namespace CinemaPicon
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            //pelicula = textBox1.Text;
         }
+
     }
 }

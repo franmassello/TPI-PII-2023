@@ -188,5 +188,10 @@ namespace CinemaPicon.Formularios {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void cboIdioma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

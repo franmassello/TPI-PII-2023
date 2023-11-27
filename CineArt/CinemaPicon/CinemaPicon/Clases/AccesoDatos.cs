@@ -81,7 +81,7 @@ namespace CinemaPicon {
         {
             DataTable tabla = new DataTable();
             conectar();
-
+            comando.Parameters.Clear();
             comando.CommandText = nombreSP;
             comando.CommandType = CommandType.StoredProcedure;
 
@@ -90,5 +90,21 @@ namespace CinemaPicon {
             desconectar();
             return tabla;
         }
+
+        public DataTable ConsultarTablaConSPParam(string nombreSP, int param)
+        {
+            DataTable tabla = new DataTable();
+            conectar();
+            comando.Parameters.Clear();
+            comando.CommandText = nombreSP;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_funcion", param);
+
+            tabla.Load(comando.ExecuteReader());
+
+            desconectar();
+            return tabla;
+        }
+
     }
 }
