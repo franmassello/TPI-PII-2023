@@ -5,7 +5,6 @@ using CineArtBack.Dominio;
 namespace CineArtAPI.Controllers
 {
 
-
     [Route("api/[controller]")]
     [ApiController]
     public class ButacaController : ControllerBase
