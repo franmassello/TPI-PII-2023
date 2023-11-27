@@ -9,12 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using CinemaPicon.Clases;
 
 namespace CinemaPicon {
     public partial class Login : Form {
 
         AccesoDatos oDato = new AccesoDatos();
-        
+        APIMethods api = new APIMethods();
+
         public Login() {
             InitializeComponent();
             
@@ -28,43 +30,24 @@ namespace CinemaPicon {
 
 
 
-        public void loguear(string usuario, string contraseña) {
-
+        public async void loguear(string usuario, string contraseña) {
             try {
+                string response = await api.Login(usuario, contraseña);
 
-
-                DataTable dt = new DataTable();
-                DataTable dtUsuarios = new DataTable();
-                dtUsuarios = oDato.consultarTabla("usuarios");
-
-                oDato.conectar();
-                oDato.pComando.CommandText = "SELECT nombre,tipo_usuario FROM usuarios WHERE usuario = @usuario AND contraseña = @contraseña";
-                oDato.pComando.Parameters.AddWithValue("usuario", usuario);
-                oDato.pComando.Parameters.AddWithValue("contraseña", contraseña);
-                dt.Load(oDato.pComando.ExecuteReader());
-
-                string usuarioBD = dtUsuarios.Rows[0][3].ToString();
-                string contraseñaBD = dtUsuarios.Rows[0][2].ToString() ;
-
-
-                if (dt.Rows.Count != 0 && contraseñaBD.Equals(contraseña) && usuarioBD.ToLower().Equals(usuario.ToLower())) {
-
-                   
-                        this.Hide();
-                        Principal principal = new Principal();
-                        principal.ShowDialog();
-                        this.Close();
-                    
-
-                } else {
+                if (response.Equals("Login successful"))
+                {
+                    this.Hide();
+                    Principal principal = new Principal();
+                    principal.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
                     MessageBox.Show("Usuario o contraseña incorrectos");
                     oDato.pComando.Parameters.Clear();
                 }
-
-                
             }
             catch (Exception ex) {
-
                 MessageBox.Show(ex.Message);
             }
             finally {
@@ -72,9 +55,6 @@ namespace CinemaPicon {
             }
 
         }
-
-       
-
 
         private void BtnAcceder_Click(object sender, EventArgs e) {
             loguear(txtUsuario.Text,txtContraseña.Text);

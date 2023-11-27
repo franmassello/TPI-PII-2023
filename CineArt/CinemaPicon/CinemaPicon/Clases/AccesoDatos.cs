@@ -12,7 +12,7 @@ namespace CinemaPicon {
         SqlConnection conexion;
         SqlCommand comando;
         SqlDataReader lector;
-        string cadenaConexion = @"Data Source=LAPTOP-UNDAST1G\SQLEXPRESS;Initial Catalog=CINEART3;Integrated Security=True;";
+        string cadenaConexion = @"Data Source=DESKTOP-168KBNT\SQLEXPRESS;Initial Catalog=CINEART5;Integrated Security=True;";
         public string pCadenaConexion {
             set { cadenaConexion = value; }
             get { return cadenaConexion; }
@@ -48,7 +48,7 @@ namespace CinemaPicon {
         public DataTable consultarTabla(string nombreTabla) {
             DataTable tabla = new DataTable();
             this.conectar();
-            comando.CommandText = "SELECT * FROM " + nombreTabla;//hay que dejar el espacio en blanco despues del from
+            comando.CommandText = "SELECT * FROM " + nombreTabla; //hay que dejar el espacio en blanco despues del from
             tabla.Load(comando.ExecuteReader());
             this.desconectar();
             return tabla;
@@ -77,6 +77,48 @@ namespace CinemaPicon {
             this.desconectar();
         }
 
+        public DataTable ConsultarTablaConSP(string nombreSP)
+        {
+            DataTable tabla = new DataTable();
+            conectar();
+            comando.Parameters.Clear();
+            comando.CommandText = nombreSP;
+            comando.CommandType = CommandType.StoredProcedure;
+
+            tabla.Load(comando.ExecuteReader());
+
+            desconectar();
+            return tabla;
+        }
+
+        public DataTable ConsultarTablaConSPParam(string nombreSP, int param)
+        {
+            DataTable tabla = new DataTable();
+            conectar();
+            comando.Parameters.Clear();
+            comando.CommandText = nombreSP;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_funcion", param);
+
+            tabla.Load(comando.ExecuteReader());
+
+            desconectar();
+            return tabla;
+        }
+
+        // i need to use a SP that deletes a row from a table
+        public void BorrarConSP(string nombreSP, int param)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.CommandText = nombreSP;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_factura", param);
+
+            comando.ExecuteNonQuery();
+
+            desconectar();
+        }
 
     }
 }

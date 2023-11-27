@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineArtAPI", "CineArtAPI\Ci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineArtBack", "CineArtBack\CineArtBack.csproj", "{8EB059B2-A914-4263-89DC-76A679F1DF31}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineArtReportes", "CineArtReportes\CineArtReportes.csproj", "{462F9482-72E6-490D-9EC9-58746F2D6398}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineArtFront", "CinemaPicon\CinemaPicon\CineArtFront.csproj", "{CCB81B58-4295-4AA0-AAF7-ED0CBB991780}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{8EB059B2-A914-4263-89DC-76A679F1DF31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EB059B2-A914-4263-89DC-76A679F1DF31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EB059B2-A914-4263-89DC-76A679F1DF31}.Release|Any CPU.Build.0 = Release|Any CPU
-		{462F9482-72E6-490D-9EC9-58746F2D6398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{462F9482-72E6-490D-9EC9-58746F2D6398}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{462F9482-72E6-490D-9EC9-58746F2D6398}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{462F9482-72E6-490D-9EC9-58746F2D6398}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CCB81B58-4295-4AA0-AAF7-ED0CBB991780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CCB81B58-4295-4AA0-AAF7-ED0CBB991780}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCB81B58-4295-4AA0-AAF7-ED0CBB991780}.Release|Any CPU.ActiveCfg = Release|Any CPU

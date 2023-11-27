@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj": {}
+    "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj": {
+    "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
+        "projectUniqueName": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
         "projectName": "CineArtBack",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\TPI_PROG2\\TPI-PII-2023\\CineArt\\CineArtBack\\obj\\",
+        "projectPath": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\CineArtBack.csproj",
+        "packagesPath": "C:\\Users\\NC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\NC\\Desktop\\NuevaEntregaTPI\\TPI-PII-2023\\CineArt\\CineArtBack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\NC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
