@@ -77,6 +77,18 @@ namespace CinemaPicon {
             this.desconectar();
         }
 
+        public DataTable ConsultarTablaConSP(string nombreSP)
+        {
+            DataTable tabla = new DataTable();
+            conectar();
 
+            comando.CommandText = nombreSP;
+            comando.CommandType = CommandType.StoredProcedure;
+
+            tabla.Load(comando.ExecuteReader());
+
+            desconectar();
+            return tabla;
+        }
     }
 }

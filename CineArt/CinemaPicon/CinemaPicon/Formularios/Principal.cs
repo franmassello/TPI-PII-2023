@@ -205,16 +205,6 @@ MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
 
             return sb.ToString();
         }
-        /**
-        private void cbxFecha_CheckStateChanged(object sender, EventArgs e) {
-            if (cbxFecha.Checked) {
-                dtpFechaEstreno.Enabled = true;
-            } else {
-                dtpFechaEstreno.Enabled = false;
-            }
-        }
-        **/
-
 
         private void BtnFiltrar_Click(object sender, EventArgs e) {
 

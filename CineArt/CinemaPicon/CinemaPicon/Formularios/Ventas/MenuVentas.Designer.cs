@@ -24,9 +24,9 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditarPrincipal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnNuevoPrincipal = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -34,23 +34,12 @@
             this.btnCerrarPrincipal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnFiltrar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.cbxFecha = new System.Windows.Forms.CheckBox();
-            this.txtSinopsis = new System.Windows.Forms.TextBox();
-            this.lblCodigoPeli = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.lblSinopsis = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblTitutloPeli = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.dtpFechaEstreno = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.lblFechaEstreno = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnMinimizarse = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnSalirse = new Bunifu.Framework.UI.BunifuImageButton();
-            this.cboIdioma = new System.Windows.Forms.ComboBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalirse)).BeginInit();
             this.SuspendLayout();
@@ -236,191 +225,43 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.MenuHighlight;
             this.dataGridView1.Location = new System.Drawing.Point(276, 253);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(973, 443);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cboIdioma);
-            this.groupBox1.Controls.Add(this.btnFiltrar);
-            this.groupBox1.Controls.Add(this.cbxFecha);
-            this.groupBox1.Controls.Add(this.txtSinopsis);
-            this.groupBox1.Controls.Add(this.lblCodigoPeli);
-            this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Controls.Add(this.lblSinopsis);
-            this.groupBox1.Controls.Add(this.lblTitutloPeli);
-            this.groupBox1.Controls.Add(this.dtpFechaEstreno);
-            this.groupBox1.Controls.Add(this.lblFechaEstreno);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(276, 41);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(979, 196);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "FILTROS";
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnFiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFiltrar.BorderRadius = 0;
-            this.btnFiltrar.ButtonText = "FILTRAR";
-            this.btnFiltrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltrar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnFiltrar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnFiltrar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Iconimage")));
-            this.btnFiltrar.Iconimage_right = null;
-            this.btnFiltrar.Iconimage_right_Selected = null;
-            this.btnFiltrar.Iconimage_Selected = null;
-            this.btnFiltrar.IconMarginLeft = 0;
-            this.btnFiltrar.IconMarginRight = 0;
-            this.btnFiltrar.IconRightVisible = true;
-            this.btnFiltrar.IconRightZoom = 0D;
-            this.btnFiltrar.IconVisible = true;
-            this.btnFiltrar.IconZoom = 60D;
-            this.btnFiltrar.IsTab = false;
-            this.btnFiltrar.Location = new System.Drawing.Point(816, 50);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnFiltrar.OnHovercolor = System.Drawing.Color.GreenYellow;
-            this.btnFiltrar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnFiltrar.selected = false;
-            this.btnFiltrar.Size = new System.Drawing.Size(117, 64);
-            this.btnFiltrar.TabIndex = 13;
-            this.btnFiltrar.Text = "FILTRAR";
-            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnFiltrar.Textcolor = System.Drawing.Color.DimGray;
-            this.btnFiltrar.TextFont = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
-            // 
-            // cbxFecha
-            // 
-            this.cbxFecha.AutoSize = true;
-            this.cbxFecha.Location = new System.Drawing.Point(816, 23);
-            this.cbxFecha.Name = "cbxFecha";
-            this.cbxFecha.Size = new System.Drawing.Size(111, 20);
-            this.cbxFecha.TabIndex = 8;
-            this.cbxFecha.Text = "Filtrar por Fecha";
-            this.cbxFecha.UseVisualStyleBackColor = true;
-            this.cbxFecha.CheckStateChanged += new System.EventHandler(this.cbxFecha_CheckStateChanged);
-            // 
-            // txtSinopsis
-            // 
-            this.txtSinopsis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.txtSinopsis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSinopsis.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSinopsis.Location = new System.Drawing.Point(602, 88);
-            this.txtSinopsis.Name = "txtSinopsis";
-            this.txtSinopsis.Size = new System.Drawing.Size(162, 21);
-            this.txtSinopsis.TabIndex = 7;
-            // 
-            // lblCodigoPeli
-            // 
-            this.lblCodigoPeli.AutoSize = true;
-            this.lblCodigoPeli.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoPeli.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCodigoPeli.Location = new System.Drawing.Point(15, 34);
-            this.lblCodigoPeli.Name = "lblCodigoPeli";
-            this.lblCodigoPeli.Size = new System.Drawing.Size(160, 21);
-            this.lblCodigoPeli.TabIndex = 62;
-            this.lblCodigoPeli.Text = "Código de factura:";
-            this.lblCodigoPeli.Click += new System.EventHandler(this.lblCodigoPeli_Click);
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigo.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCodigo.Location = new System.Drawing.Point(226, 34);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(162, 21);
-            this.txtCodigo.TabIndex = 5;
-            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
-            // 
-            // lblSinopsis
-            // 
-            this.lblSinopsis.AutoSize = true;
-            this.lblSinopsis.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSinopsis.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSinopsis.Location = new System.Drawing.Point(482, 86);
-            this.lblSinopsis.Name = "lblSinopsis";
-            this.lblSinopsis.Size = new System.Drawing.Size(62, 21);
-            this.lblSinopsis.TabIndex = 64;
-            this.lblSinopsis.Text = "Monto";
-            this.lblSinopsis.Click += new System.EventHandler(this.lblSinopsis_Click);
-            // 
-            // lblTitutloPeli
-            // 
-            this.lblTitutloPeli.AutoSize = true;
-            this.lblTitutloPeli.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitutloPeli.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTitutloPeli.Location = new System.Drawing.Point(32, 88);
-            this.lblTitutloPeli.Name = "lblTitutloPeli";
-            this.lblTitutloPeli.Size = new System.Drawing.Size(135, 21);
-            this.lblTitutloPeli.TabIndex = 63;
-            this.lblTitutloPeli.Text = "Forma de pago:";
-            // 
-            // dtpFechaEstreno
-            // 
-            this.dtpFechaEstreno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.dtpFechaEstreno.BorderRadius = 0;
-            this.dtpFechaEstreno.ForeColor = System.Drawing.Color.DimGray;
-            this.dtpFechaEstreno.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpFechaEstreno.FormatCustom = null;
-            this.dtpFechaEstreno.Location = new System.Drawing.Point(634, 22);
-            this.dtpFechaEstreno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtpFechaEstreno.Name = "dtpFechaEstreno";
-            this.dtpFechaEstreno.Size = new System.Drawing.Size(162, 21);
-            this.dtpFechaEstreno.TabIndex = 9;
-            this.dtpFechaEstreno.Value = new System.DateTime(2019, 11, 14, 0, 0, 0, 0);
-            // 
-            // lblFechaEstreno
-            // 
-            this.lblFechaEstreno.AutoSize = true;
-            this.lblFechaEstreno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEstreno.ForeColor = System.Drawing.Color.DimGray;
-            this.lblFechaEstreno.Location = new System.Drawing.Point(478, 22);
-            this.lblFechaEstreno.Name = "lblFechaEstreno";
-            this.lblFechaEstreno.Size = new System.Drawing.Size(140, 21);
-            this.lblFechaEstreno.TabIndex = 60;
-            this.lblFechaEstreno.Text = "Fecha de venta:";
-            this.lblFechaEstreno.Click += new System.EventHandler(this.lblFechaEstreno_Click);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnMinimizarse
             // 
@@ -450,15 +291,16 @@
             this.btnSalirse.Zoom = 10;
             this.btnSalirse.Click += new System.EventHandler(this.BtnSalirse_Click);
             // 
-            // cboIdioma
+            // richTextBox1
             // 
-            this.cboIdioma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.cboIdioma.ForeColor = System.Drawing.Color.DimGray;
-            this.cboIdioma.FormattingEnabled = true;
-            this.cboIdioma.Location = new System.Drawing.Point(226, 90);
-            this.cboIdioma.Name = "cboIdioma";
-            this.cboIdioma.Size = new System.Drawing.Size(162, 24);
-            this.cboIdioma.TabIndex = 65;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(542, 27);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(429, 64);
+            this.richTextBox1.TabIndex = 31;
+            this.richTextBox1.Text = "GESTION VENTAS";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // MenuVentas
             // 
@@ -466,9 +308,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnMinimizarse);
             this.Controls.Add(this.btnSalirse);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -481,8 +323,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalirse)).EndInit();
             this.ResumeLayout(false);
@@ -493,7 +333,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuFlatButton btnEditarPrincipal;
         private Bunifu.Framework.UI.BunifuFlatButton btnNuevoPrincipal;
@@ -501,15 +340,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnCerrarPrincipal;
         private Bunifu.Framework.UI.BunifuImageButton btnMinimizarse;
         private Bunifu.Framework.UI.BunifuImageButton btnSalirse;
-        private System.Windows.Forms.TextBox txtSinopsis;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblCodigoPeli;
-        private System.Windows.Forms.TextBox txtCodigo;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblSinopsis;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblTitutloPeli;
-        private Bunifu.Framework.UI.BunifuDatepicker dtpFechaEstreno;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblFechaEstreno;
-        private System.Windows.Forms.CheckBox cbxFecha;
-        private Bunifu.Framework.UI.BunifuFlatButton btnFiltrar;
-        private System.Windows.Forms.ComboBox cboIdioma;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

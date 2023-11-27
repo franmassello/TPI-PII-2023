@@ -56,6 +56,22 @@ namespace CinemaPicon.Clases
             }
         }
 
+        public async Task<DataTable> consultarFacturas(string nombreTabla)
+        {
+            string url = $"{API_URL}/{nombreTabla}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                // the endpoint returns an array of objects, so we need to deserialize it
+                string responseBody = await response.Content.ReadAsStringAsync();
+                DataTable tabla = JsonConvert.DeserializeObject<DataTable>(responseBody);
+                return tabla;
+            }
+        }
+
+
         public async Task<string> PutPelicula(string nombreRuta, string id, string json)
         {
             string url = $"{API_URL}/{nombreRuta}?idPelicula={id}";

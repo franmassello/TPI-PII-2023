@@ -76,7 +76,7 @@ namespace CineArtBack.Datos
         public DataTable comboPeliculas()
         {
             try
-            {
+                {
                 comando.Parameters.Clear();
                 conectar();
                 comando = new SqlCommand("EXEC SP_GET_PELICULAS", conexion);

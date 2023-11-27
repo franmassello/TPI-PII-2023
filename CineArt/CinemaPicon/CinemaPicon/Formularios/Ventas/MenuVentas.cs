@@ -50,16 +50,10 @@ namespace CinemaPicon {
 
 
 
-        private void Principal_Load(object sender, EventArgs e) {
+        private async void Principal_Load(object sender, EventArgs e) {
             try {
                 refrescarDG();
-                deshabilitarEdicionDG(true);
-                /**
-                cargarCombo(cboFormato, "getFormatos");
-                cargarCombo(cboGenero, "getGeneros");
-                cargarCombo(cboIdioma, "getIdiomas");
-                **/
-                dtpFechaEstreno.Enabled = false;
+                //deshabilitarEdicionDG(true);
             }
             catch (Exception ex) {
 
@@ -121,11 +115,11 @@ namespace CinemaPicon {
         }
 
         //REFRESCAR DATAGRID
-        public void refrescarDG() {
+        public async void refrescarDG()
+        {
 
-            this.dataGridView1.DataSource = oDato.consultarTabla("Peliculas");
+            this.dataGridView1.DataSource = oDato.ConsultarTablaConSP("SP_GET_FACTURAS");
             this.dataGridView1.Refresh();
-
         }
         private void BtnEliminarPrincipal_Click(object sender, EventArgs e) {
 
@@ -166,6 +160,7 @@ namespace CinemaPicon {
 
                     this.p = new Pelicula();
 
+                    /** 
                     p.pId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                     p.pTitulo = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
                     p.pDescripcion = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
@@ -173,7 +168,7 @@ namespace CinemaPicon {
                     p.pFechaEstreno = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
                     p.pIdioma = Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value);
                     p.pFormato = Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value);
-
+                    **/
                     //LINEA PARA TESTEO
                     //MessageBox.Show(p.ToString());
                 }
@@ -203,52 +198,7 @@ namespace CinemaPicon {
 
             string[] arrayFiltros = new string[7];
             int contI = 0;
-            /** 
-            if (!string.IsNullOrEmpty(txtCodigo.Text)) {
-                condicion = " id_pelicula = " + txtCodigo.Text;
-                arrayFiltros[contI] = condicion;
-                contI++;
-            }
-
-            if (txtTitulo.Text != string.Empty) {
-                condicion = " titulo like '" + txtTitulo.Text + "%'";
-                arrayFiltros[contI] = condicion;
-                contI++;
-            }
-
-            if (txtSinopsis.Text != string.Empty) {
-                condicion = " descripcion like '" + txtSinopsis.Text + "%'";
-                arrayFiltros[contI] = condicion;
-                contI++;
-            }
-
-            if (dtpFechaEstreno.Enabled) {
-                condicion = " fecha_estreno = '" + dtpFechaEstreno.Value.ToString("yyyy-MM-dd") + "'";
-                arrayFiltros[contI] = condicion;
-                contI++;
-            }
-
-            if (cboIdioma.SelectedIndex != -1) {
-                condicion = " id_idioma = " + cboIdioma.SelectedValue;
-                arrayFiltros[contI] = condicion;
-                contI++;
-            }
-
-            if (cboGenero.SelectedIndex != -1) {
-                condicion = " id_genero = " + cboGenero.SelectedValue;
-                arrayFiltros[contI] = condicion;
-                contI++;
-            }
-
-            if (cboFormato.SelectedIndex != -1) {
-                condicion = " id_formato = " + cboFormato.SelectedValue;
-                arrayFiltros[contI] = condicion;
-                contI++;
-
-            }
-
-            **/
-
+           
             var sb = new System.Text.StringBuilder();
 
             if (contI == 0) {
@@ -266,16 +216,6 @@ namespace CinemaPicon {
 
             return sb.ToString();
         }
-
-        private void cbxFecha_CheckStateChanged(object sender, EventArgs e) {
-            if (cbxFecha.Checked) {
-                dtpFechaEstreno.Enabled = true;
-            } else {
-                dtpFechaEstreno.Enabled = false;
-            }
-        }
-
-
 
         private void BtnFiltrar_Click(object sender, EventArgs e) {
 
@@ -308,42 +248,17 @@ namespace CinemaPicon {
             cboFormato.SelectedIndex = -1;
             cboGenero.SelectedIndex = -1;
             **/
-            dtpFechaEstreno.Value = DateTime.Today.AddDays(1);
 
             //validacion para el crystal report
             banderaFiltro = true;
         }
 
-        private void BtnReporte_Click(object sender, EventArgs e) {
-
-            
-
-
-
-        }
-
-        private void TxtCodigo_KeyPress(object sender, KeyPressEventArgs e) {
-            if (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)) {
-                e.Handled = true;
-            }
-        }
-
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://0112-186-138-214-149.ngrok-free.app/");
-        }
-
-        private void lblCodigoPeli_Click(object sender, EventArgs e)
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void lblFechaEstreno_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSinopsis_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
