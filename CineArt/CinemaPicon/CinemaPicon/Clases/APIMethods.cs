@@ -159,5 +159,27 @@ namespace CinemaPicon.Clases
             }
         }
 
+        // putFuncion
+
+        public async Task<string> PutFuncion(string nombreRuta, int id, string json)
+        {
+            string url = $"{API_URL}/{nombreRuta}?idFuncion={id}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PutAsync(url, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return "Update successful";
+                }
+                else
+                {
+                    return "Update failed";
+                }
+            }
+        }
+
     }
 }

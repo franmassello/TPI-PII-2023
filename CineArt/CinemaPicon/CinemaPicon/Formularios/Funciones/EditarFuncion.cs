@@ -20,7 +20,7 @@ namespace CinemaPicon
         int id_funcion;
         int id_sala;
         int id_pelicula;
-        string horario;
+        DateTime horario;
         string dia;
         int cant_butacas;
         int cant_butacas_ocupadas;
@@ -127,8 +127,7 @@ namespace CinemaPicon
             cboPeliculas.SelectedValue = this.id_pelicula;
             cboSalas.SelectedValue = this.id_sala;
             dtpFechaEstreno.Value = DateTime.Parse(this.dia);
-            dateTimePicker1.Value = DateTime.Parse(this.horario);
-            numericUpDown1.Value = this.cant_butacas;
+            dateTimePicker1.Value = DateTime.Parse(this.horario.ToString());
         }
 
         private async void BtnAgregar_Click(object sender, EventArgs e)
@@ -137,43 +136,34 @@ namespace CinemaPicon
 
             if (validar())
             {
-
-
                 int idPelicula = int.Parse(cboPeliculas.SelectedValue.ToString());
                 int idSala = int.Parse(cboSalas.SelectedValue.ToString());
+                int idFuncion = this.id_funcion;
                 DateTime fecha = dtpFechaEstreno.Value;
-                // filter fecha to only have day,month and year
                 fecha = fecha.Date;
-                // convert fecha to string
                 string fechaString = fecha.ToString("yyyy-MM-dd");
-
                 DateTime horario = dateTimePicker1.Value;
-                // how to remove the date of horario?
-                string hour = horario.ToString("HH:mm");
-
-                string dia = fecha.DayOfWeek.ToString();
-          
+                string horarioStr = horario.ToString("yyyy-MM-ddTHH:mm:ssZ");
+                string dia = fecha.ToString("yy-MM-dd");
 
 
-                FuncionBack funcion = new FuncionBack(idSala, idPelicula, hour, fechaString);
-                
+
+                FuncionBack funcion = new FuncionBack(idSala, idPelicula, horario, fechaString);
+
                 try
                 {
-                    //string json = JsonConvert.SerializeObject(funcion);
-                    // instead of serializing funcion, let me enter the properties manually
-                    string json = "{\"id_sala\":" + idSala + ",\"id_pelicula\":" + idPelicula + ",\"horario\":\"" + hour + "\",\"dia\":\"" + dia + "\"}";
+                    string json = "{\"id_sala\":" + idSala + ",\"id_pelicula\":" + idPelicula + ",\"horario\":\"" + horarioStr + "\",\"dia\":\"" + dia + "\"}";
+                    string response = await APIMethods.PutFuncion("updateFuncion", idFuncion, json);
 
-
-                    string response = await APIMethods.PostFuncion("postFuncion", json);
-
-                    if (response == "Post successful")
+                    if (response == "Update successful")
                     {
-                        MessageBox.Show("Funcion agregada con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Funcion editada con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiarCampos();
                         this.Close();
-                    } else
+                    }
+                    else
                     {
-                        MessageBox.Show("Error al agregar funcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error al editar funcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
@@ -236,7 +226,7 @@ namespace CinemaPicon
 
         }
         // modify recibirDatosDePelicula to recieve this parameters f.id_funcion, f.id_sala, f.id_pelicula, f.horario, f.dia, f.cant_butacas, f.cant_butacas_ocupadas
-        public void recibirDatosDePelicula( int idFuncion, int idSala, int idPelicula, string horario, string dia, int cantButacas, int cantButacasOcupadas)
+        public void recibirDatosDePelicula(int idFuncion, int idSala, int idPelicula, DateTime horario, string dia, int cantButacas, int cantButacasOcupadas)
         {
             this.id_funcion = idFuncion;
             this.id_sala = idSala;

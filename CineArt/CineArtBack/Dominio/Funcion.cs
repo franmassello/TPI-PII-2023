@@ -8,14 +8,7 @@ namespace CineArtBack.Dominio
 {
     public class Funcion
     {
-        public Funcion(int id_funcion, int id_sala, int id_pelicula, DateTime horario, string dia)
-        {
-            this.Id_funcion = id_funcion;
-            this.Id_sala = id_sala;
-            this.Id_pelicula = id_pelicula;
-            this.Horario = horario;
-            this.Dia = dia;
-        }
+        
         public Funcion(int id_funcion, int id_sala, int id_pelicula, DateTime horario, string dia, int cant_butacas, int cant_butacas_ocupadas)
         {
             this.Id_funcion = id_funcion;

@@ -218,7 +218,7 @@ namespace CinemaPicon
                     this.f.id_funcion = int.Parse(row.Cells[baseColValue].Value.ToString());
                     this.f.id_sala = int.Parse(row.Cells[baseColValue + 1].Value.ToString());
                     this.f.id_pelicula = int.Parse(row.Cells[baseColValue + 8].Value.ToString());
-                    this.f.horario = row.Cells[baseColValue + 6].Value.ToString();
+                    this.f.horario = DateTime.Parse(row.Cells[baseColValue + 6].Value.ToString());
                     this.f.dia = row.Cells[baseColValue + 5].Value.ToString();
                     this.f.cant_butacas = int.Parse(row.Cells[baseColValue + 10].Value.ToString());
                     this.f.cant_butacas_ocupadas = int.Parse(row.Cells[baseColValue + 9].Value.ToString());

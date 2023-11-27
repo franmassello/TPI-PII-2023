@@ -126,26 +126,22 @@ namespace CinemaPicon
                 int idPelicula = int.Parse(cboPeliculas.SelectedValue.ToString());
                 int idSala = int.Parse(cboSalas.SelectedValue.ToString());
                 DateTime fecha = dtpFechaEstreno.Value;
-                // filter fecha to only have day,month and year
                 fecha = fecha.Date;
-                // convert fecha to string
                 string fechaString = fecha.ToString("yyyy-MM-dd");
-
                 DateTime horario = dateTimePicker1.Value;
-                // how to remove the date of horario?
-                string hour = horario.ToString("HH:mm");
-
-                string dia = fecha.DayOfWeek.ToString();
-          
+                string horarioStr = horario.ToString("yyyy-MM-ddTHH:mm:ssZ");
+                string dia = fecha.ToString("yy-MM-dd");
 
 
-                FuncionBack funcion = new FuncionBack(idSala, idPelicula, hour, fechaString);
-                
+
+                FuncionBack funcion = new FuncionBack(idSala, idPelicula, horario, fechaString);
+
+
                 try
                 {
                     //string json = JsonConvert.SerializeObject(funcion);
                     // instead of serializing funcion, let me enter the properties manually
-                    string json = "{\"id_sala\":" + idSala + ",\"id_pelicula\":" + idPelicula + ",\"horario\":\"" + hour + "\",\"dia\":\"" + dia + "\"}";
+                    string json = "{\"id_sala\":" + idSala + ",\"id_pelicula\":" + idPelicula + ",\"horario\":\"" + horarioStr + "\",\"dia\":\"" + dia + "\"}";
 
 
                     string response = await APIMethods.PostFuncion("postFuncion", json);
