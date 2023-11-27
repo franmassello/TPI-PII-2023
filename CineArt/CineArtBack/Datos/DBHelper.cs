@@ -156,6 +156,7 @@ namespace CineArtBack.Datos
                 comando.Parameters.AddWithValue("@formato_var", pelicula.Formato);
                 comando.ExecuteNonQuery();
                 t.Commit();
+
             }
             catch (Exception ex)
             {
@@ -400,9 +401,9 @@ namespace CineArtBack.Datos
                 comando.Parameters.AddWithValue("@horario", funcion.Horario);
                 comando.Parameters.AddWithValue("@dia", funcion.Dia);
 
+
                 comando.ExecuteNonQuery();
                 t.Commit();
-                desconectar();
             }
             catch (Exception ex)
             {
@@ -509,79 +510,20 @@ namespace CineArtBack.Datos
             SqlTransaction t = null;
             try
             {
-                DataTable tablaTotales = new DataTable();
+                DataTable tablaLibres = new DataTable();
                 conectar();
                 comando.Parameters.Clear();
                 t = conexion.BeginTransaction();
                 comando.Transaction = t;
-                comando.CommandText = "SP_GET_BUTACAS_TOTALES";
+                comando.CommandText = "SP_BUTACAS_LIBRES";
                 comando.Parameters.AddWithValue("@id_funcion", idFuncion);
                 comando.ExecuteNonQuery();
-                tablaTotales.Load(comando.ExecuteReader());
+                tablaLibres.Load(comando.ExecuteReader());
                 t.Commit();
                 desconectar();
 
-                DataTable tablaOcupadas = new DataTable();
-                conectar();
-                comando.Parameters.Clear();
-                t = conexion.BeginTransaction();
-                comando.Transaction = t;
-                comando.CommandText = "SP_GET_BUTACAS_OCUPADAS";
-                comando.Parameters.AddWithValue("@id_funcion", idFuncion);
-                comando.ExecuteNonQuery();
-                tablaOcupadas.Load(comando.ExecuteReader());
-                t.Commit();
-                desconectar();
 
-                DataTable tabla = new DataTable();
-                tabla.PrimaryKey = new DataColumn[] { tabla.Columns["id_butaca"] };
-                tabla.Columns.Add("id_butaca");
-                tabla.Columns.Add("id_sala");
-                tabla.Columns.Add("nro_butaca");
-                tabla.Columns.Add("fila");
-
-                tablaTotales.PrimaryKey = new DataColumn[] { tablaTotales.Columns["id_butaca"] };
-
-                tablaOcupadas.PrimaryKey = new DataColumn[] { tablaOcupadas.Columns["id_butaca"] };
-                // i want to go through all of the butacas in the tablaTotales, and if the butaca is not in the tablaOcupadas, then add it to the tabla
-                // i need to do this because i want to show the butacas that are free, not the ones that are occupied
-
-
-                var totalesRows = tablaTotales.AsEnumerable();
-                var ocupadasRows = tablaOcupadas.AsEnumerable();
-
-                // Find the rows in TablaTotales that are not present in TablaOcupadas
-                var butacasLibres = totalesRows
-                    .Where(t => !ocupadasRows.Any(o => t.Field<int>("id_butaca") == o.Field<int>("id_butaca")))
-                    .CopyToDataTable();
-
-                foreach (DataRow dr in tablaTotales.Rows)
-                {
-                    int id = int.Parse(dr["id_butaca"].ToString());
-                    int idSala = int.Parse(dr["id_sala"].ToString());
-                    int nroButaca = int.Parse(dr["nro_butaca"].ToString());
-                    string fila = dr["fila"].ToString();
-
-                    Butaca aux = new Butaca(id, idSala, nroButaca, fila);
-                    
-                    foreach (DataRow dr2 in tablaOcupadas.Rows)
-                    {
-                        int id2 = int.Parse(dr2["id_butaca"].ToString());
-                        int idSala2 = int.Parse(dr2["id_sala"].ToString());
-                        int nroButaca2 = int.Parse(dr2["nro_butaca"].ToString());
-                        string fila2 = dr2["fila"].ToString();
-
-                        Butaca aux2 = new Butaca(id2, idSala2, nroButaca2, fila2);
-
-                        if (aux.IdFuncion != id2)
-                        {
-                            tabla.Rows.Add(aux.IdFuncion, aux.IdSala, aux.NroButaca, aux.Fila);
-                        }
-                    }
-                }
-
-
-                return tabla;
+                return tablaLibres;
             }
             catch (Exception ex)
             {

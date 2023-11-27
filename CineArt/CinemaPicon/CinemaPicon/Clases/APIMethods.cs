@@ -116,6 +116,48 @@ namespace CinemaPicon.Clases
         }
 
 
+        // post Funcion
+
+        public async Task<string> PostFuncion(string nombreRuta, string json)
+        {
+            string url = $"{API_URL}/{nombreRuta}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PostAsync(url, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return "Post successful";
+                }
+                else
+                {
+                    return "Post failed";
+                }
+            }
+        }
+
+        // deleteFuncion
+
+        public async Task<string> DeleteFuncion(string nombreRuta, int id)
+        {
+            string url = $"{API_URL}/{nombreRuta}?idFuncion={id}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.DeleteAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return "Delete successful";
+                }
+                else
+                {
+                    return "Delete failed";
+                }
+            }
+        }
 
     }
 }

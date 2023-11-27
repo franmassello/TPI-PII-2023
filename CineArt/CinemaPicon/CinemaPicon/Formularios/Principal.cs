@@ -264,10 +264,6 @@ MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
             }
         }
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://0112-186-138-214-149.ngrok-free.app/");
-        }
 
         private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
         {
@@ -285,6 +281,11 @@ MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
         {
             MenuFunciones menuF = new MenuFunciones();
             menuF.Show();
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://0112-186-138-214-149.ngrok-free.app/");
         }
     }
 }

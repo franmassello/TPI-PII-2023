@@ -356,3 +356,5 @@ C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.pdb
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.MenuFunciones.resources
 C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.Formularios.EditarPelicula.resources
+C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.NuevaFuncion.resources
+C:\Users\NC\Desktop\NuevaEntregaTPI\TPI-PII-2023\CineArt\CinemaPicon\CinemaPicon\obj\Debug\CinemaPicon.EditarFuncion.resources

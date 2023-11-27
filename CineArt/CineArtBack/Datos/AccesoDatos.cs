@@ -10,7 +10,7 @@ namespace CineArtBack.Datos
 {
     public class AccesoDatos
     {
-        protected SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-168KBNT\SQLEXPRESS;Initial Catalog=CINEART4;Integrated Security=True;");
+        protected SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-168KBNT\SQLEXPRESS;Initial Catalog=CINEART5;Integrated Security=True;");
         protected SqlCommand comando = new SqlCommand();
         protected void conectar()
         {
