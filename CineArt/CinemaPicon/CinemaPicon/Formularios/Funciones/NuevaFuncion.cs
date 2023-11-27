@@ -12,12 +12,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace CinemaPicon {
-    public partial class NuevaFuncion : Form {
+namespace CinemaPicon
+{
+    public partial class NuevaFuncion : Form
+    {
         AccesoDatos oDato = new AccesoDatos();
         APIMethods APIMethods = new APIMethods();
-        List<Pelicula> listaPeliculas = new List<Pelicula>(); 
-        public NuevaFuncion() {
+        public NuevaFuncion()
+        {
             InitializeComponent();
         }
 
@@ -27,59 +29,72 @@ namespace CinemaPicon {
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
         //MOVER VENTANA CON CLICK
-        private void NuevaPelicula_MouseDown(object sender, MouseEventArgs e) {
+        private void NuevaPelicula_MouseDown(object sender, MouseEventArgs e)
+        {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         //MOVER VENTANA CON CLICK
-        private void Panel1_MouseDown(object sender, MouseEventArgs e) {
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
 
-        private async void NuevaPelicula_Load(object sender, EventArgs e) {
-            try {
-                await CargarComboAsync(cboFormato, "getFormatos");
-                await CargarComboAsync(cboGenero, "getGeneros");
-                await CargarComboAsync(cboIdioma, "getIdiomas");
-                cargarPeliculasEnLista("Peliculas");
+        private async void NuevaPelicula_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                await CargarComboAsync(cboSalas, "getSalas");
+                await CargarComboAsync(cboPeliculas, "getPeliculas");
+                //cargarPeliculasEnLista("Peliculas");
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
 
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void cargarPeliculasEnLista(string nombreTabla) {
+        private void cargarPeliculasEnLista(string nombreTabla)
+        {
             oDato.leerTabla(nombreTabla);
-            while (oDato.pLector.Read()) {
+            while (oDato.pLector.Read())
+            {
 
                 Pelicula p = new Pelicula();
 
-                if (!oDato.pLector.IsDBNull(0)) {
+                if (!oDato.pLector.IsDBNull(0))
+                {
                     p.pId = oDato.pLector.GetInt32(0);
                 }
-                if (!oDato.pLector.IsDBNull(1)) {
+                if (!oDato.pLector.IsDBNull(1))
+                {
                     p.pTitulo = oDato.pLector.GetString(1);
                 }
-                if (!oDato.pLector.IsDBNull(2)) {
+                if (!oDato.pLector.IsDBNull(2))
+                {
                     p.pDescripcion = oDato.pLector.GetString(2);
                 }
-                if (!oDato.pLector.IsDBNull(3)) {
+                if (!oDato.pLector.IsDBNull(3))
+                {
                     p.pGenero = oDato.pLector.GetInt32(3);
                 }
-                if (!oDato.pLector.IsDBNull(4)) {
+                if (!oDato.pLector.IsDBNull(4))
+                {
                     p.pFechaEstreno = oDato.pLector.GetDateTime(4);
                 }
-                if (!oDato.pLector.IsDBNull(5)) {
+                if (!oDato.pLector.IsDBNull(5))
+                {
                     p.pIdioma = oDato.pLector.GetInt32(5);
                 }
-                if (!oDato.pLector.IsDBNull(6)) {
+                if (!oDato.pLector.IsDBNull(6))
+                {
                     p.pFormato = oDato.pLector.GetInt32(6);
                 }
 
-                listaPeliculas.Add(p);
+
 
             }
             oDato.pLector.Close();
@@ -100,38 +115,53 @@ namespace CinemaPicon {
         }
 
 
-        private async void BtnAgregar_Click(object sender, EventArgs e) {
+        private async void BtnAgregar_Click(object sender, EventArgs e)
+        {
 
 
-            if (validar()) {
+            if (validar())
+            {
 
-                string consultaSQL = "";
-                PeliculaBack p = new PeliculaBack();
-                p.Titulo = txtTitulo.Text;
-                p.Descripcion = txtDescripcion.Text;
-                p.Genero = cboGenero.Text;
-                p.FechaEstreno = dtpFechaEstreno.Value;
-                p.Idioma = cboIdioma.Text;
-                p.Formato = cboFormato.Text;
 
-                try {
-                    if (!existe(p.Titulo)) {
+                int idPelicula = int.Parse(cboPeliculas.SelectedValue.ToString());
+                int idSala = int.Parse(cboSalas.SelectedValue.ToString());
+                DateTime fecha = dtpFechaEstreno.Value;
+                // filter fecha to only have day,month and year
+                fecha = fecha.Date;
+                // convert fecha to string
+                string fechaString = fecha.ToString("yyyy-MM-dd");
 
-                        string json = JsonConvert.SerializeObject(p);
+                DateTime horario = dateTimePicker1.Value;
+                // how to remove the date of horario?
+                string hour = horario.ToString("HH:mm");
 
-                        string response = await APIMethods.PostPelicula("insertPelicula", json);
+                string dia = fecha.DayOfWeek.ToString();
+          
 
-                        MessageBox.Show("Pelicula agregada con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                FuncionBack funcion = new FuncionBack(idSala, idPelicula, hour, fechaString);
+                
+                try
+                {
+                    //string json = JsonConvert.SerializeObject(funcion);
+                    // instead of serializing funcion, let me enter the properties manually
+                    string json = "{\"id_sala\":" + idSala + ",\"id_pelicula\":" + idPelicula + ",\"horario\":\"" + hour + "\",\"dia\":\"" + dia + "\"}";
+
+
+                    string response = await APIMethods.PostFuncion("postFuncion", json);
+
+                    if (response == "Post successful")
+                    {
+                        MessageBox.Show("Funcion agregada con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiarCampos();
                         this.Close();
-
-                    } else {
-                        MessageBox.Show("Este titulo ya fue ingresado");
+                    } else
+                    {
+                        MessageBox.Show("Error al agregar funcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
 
                     MessageBox.Show(ex.Message);
 
@@ -143,72 +173,119 @@ namespace CinemaPicon {
 
         }
 
-        private bool existe(string titulo) {
-
-            foreach (Pelicula p in listaPeliculas) {
-                if (p.pTitulo.ToUpper().Equals(titulo.ToUpper())) { 
-                    return true;
-                }
-            }
-            return false;
-
-        }
-
-        private bool validar() {
-            if (string.IsNullOrEmpty(txtTitulo.Text)) {
-                MessageBox.Show("Complete el campo titulo");
-                txtTitulo.Focus();
-                return false;
-            }
-            if (string.IsNullOrEmpty(txtDescripcion.Text)) {
-                MessageBox.Show("Complete el campo Descripcion");
-                txtDescripcion.Focus();
-                return false;
-            }
-            if (cboGenero.SelectedIndex == -1) {
+        private bool validar()
+        {
+            if (cboPeliculas.SelectedIndex == -1)
+            {
                 MessageBox.Show("Seleccione un genero");
-                cboGenero.Focus();
+                cboPeliculas.Focus();
                 return false;
             }
 
-            if (cboIdioma.SelectedIndex == -1) {
+            if (cboSalas.SelectedIndex == -1)
+            {
                 MessageBox.Show("Seleccione un idioma");
-                cboIdioma.Focus();
+                cboSalas.Focus();
                 return false;
             }
-            if (cboFormato.SelectedIndex == -1) {
-                MessageBox.Show("Seleccione un formato");
-                cboFormato.Focus();
-                return false;
-            }
+
             return true;
 
         }
 
-        private void limpiarCampos() {
-            txtDescripcion.Clear();
-            txtTitulo.Clear();
-            cboGenero.SelectedIndex = -1;
+        private void limpiarCampos()
+        {
+            //txtDescripcion.Clear();
+            //txtTitulo.Clear();
+            cboPeliculas.SelectedIndex = -1;
             dtpFechaEstreno.Value = DateTime.Today;
-            cboIdioma.SelectedIndex = -1;
-            cboFormato.SelectedValue = -1;
+            cboSalas.SelectedIndex = -1;
         }
 
 
-        private void BtnCancelar_Click(object sender, EventArgs e) {
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
 
-        private void BtnMinimizarse_Click(object sender, EventArgs e) {
+        private void BtnMinimizarse_Click(object sender, EventArgs e)
+        {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void BtnSalirse_Click(object sender, EventArgs e) {
-            if (MessageBox.Show("¿Desea Salir sin guardar?","SALIENDO",MessageBoxButtons.YesNo,MessageBoxIcon.Warning,
-                MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
+        private void BtnSalirse_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea Salir sin guardar?", "SALIENDO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
                 this.Close();
             }
-            
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboGenero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboIdioma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboFormato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpFechaEstreno_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

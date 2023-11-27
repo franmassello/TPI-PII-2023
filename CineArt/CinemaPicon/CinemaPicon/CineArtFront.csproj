@@ -96,12 +96,19 @@
   <ItemGroup>
     <Compile Include="Clases\AccesoDatos.cs" />
     <Compile Include="Clases\APIMethods.cs" />
+    <Compile Include="Clases\FuncionBack.cs" />
     <Compile Include="Clases\PeliculaBack.cs" />
     <Compile Include="Formularios\Funciones\MenuFunciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Funciones\MenuFunciones.designer.cs">
       <DependentUpon>MenuFunciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Funciones\EditarFuncion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Funciones\EditarFuncion.Designer.cs">
+      <DependentUpon>EditarFuncion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Funciones\NuevaFuncion.cs">
       <SubType>Form</SubType>
@@ -151,6 +158,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Formularios\Funciones\MenuFunciones.resx">
       <DependentUpon>MenuFunciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Funciones\EditarFuncion.resx">
+      <DependentUpon>EditarFuncion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Funciones\NuevaFuncion.resx">
       <DependentUpon>NuevaFuncion.cs</DependentUpon>

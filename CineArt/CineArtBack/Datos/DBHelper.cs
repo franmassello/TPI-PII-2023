@@ -401,6 +401,7 @@ namespace CineArtBack.Datos
                 comando.Parameters.AddWithValue("@horario", funcion.Horario);
                 comando.Parameters.AddWithValue("@dia", funcion.Dia);
 
+
                 comando.ExecuteNonQuery();
                 t.Commit();
             }

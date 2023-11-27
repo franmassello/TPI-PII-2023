@@ -12,18 +12,22 @@ using CinemaPicon.Formularios;
 using System.Diagnostics;
 using CinemaPicon.Clases;
 
-namespace CinemaPicon {
+namespace CinemaPicon
+{
 
-    public partial class MenuFunciones : Form {
+    public partial class MenuFunciones : Form
+    {
 
-        PeliculaBack p;
+
+        FuncionBack f;
         string consulta;
         bool banderaFiltro = false;
         AccesoDatos oDato = new AccesoDatos();
         APIMethods APIMethods = new APIMethods();
         public string pConsulta { get => consulta; set => consulta = value; }
 
-        public MenuFunciones() {
+        public MenuFunciones()
+        {
             InitializeComponent();
         }
 
@@ -36,12 +40,14 @@ namespace CinemaPicon {
         // ACA TERMINA EL DLL
 
         //EVENTOS PARA MOVER LA VENTANA
-        private void Panel1_MouseDown(object sender, MouseEventArgs e) {
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void Principal_MouseDown(object sender, MouseEventArgs e) {
+        private void Principal_MouseDown(object sender, MouseEventArgs e)
+        {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
@@ -91,7 +97,8 @@ namespace CinemaPicon {
             combo.SelectedIndex = -1;
         }
         //CARGA COMBOBOX
-        private async void cargarCombo(ComboBox combo, string nombreTabla) {
+        private async void cargarCombo(ComboBox combo, string nombreTabla)
+        {
             DataTable tabla = new DataTable();
             tabla = await APIMethods.consultarTabla(nombreTabla);
             combo.DataSource = tabla;
@@ -100,10 +107,11 @@ namespace CinemaPicon {
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
             combo.SelectedIndex = -1;
 
-            
+
         }
         //VALIDACION PARA QUE NO PUEDA ESCRIBIR EN EL DATAGRID
-        private void deshabilitarEdicionDG(bool estado) {
+        private void deshabilitarEdicionDG(bool estado)
+        {
             dataGridView1.Columns[0].ReadOnly = estado;
             dataGridView1.Columns[1].ReadOnly = estado;
             dataGridView1.Columns[2].ReadOnly = estado;
@@ -113,21 +121,25 @@ namespace CinemaPicon {
             dataGridView1.Columns[6].ReadOnly = estado;
         }
 
-        private void BtnNuevoPrincipal_Click(object sender, EventArgs e) {
-            NuevaPelicula np = new NuevaPelicula();
-            np.ShowDialog();
+        private void BtnNuevoPrincipal_Click(object sender, EventArgs e)
+        {
+            NuevaFuncion nf = new NuevaFuncion();
+            nf.ShowDialog();
             refrescarDG();
         }
 
         //BOTON MINIMIZAR
-        private void BtnMinimizarse_Click(object sender, EventArgs e) {
+        private void BtnMinimizarse_Click(object sender, EventArgs e)
+        {
             this.WindowState = FormWindowState.Minimized;
         }
 
         //BOTON CERRAR SESION
-        private void BtnCerrarPrincipal_Click(object sender, EventArgs e) {
+        private void BtnCerrarPrincipal_Click(object sender, EventArgs e)
+        {
             if (MessageBox.Show("¿Esta Seguro que desea salir?", "SALIENDO", MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
+            MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
                 Application.Exit();
 
             }
@@ -136,44 +148,56 @@ namespace CinemaPicon {
         }
 
         //CRUZ SUPERIOR DERECHA
-        private void BtnCerrarSesion_Click(object sender, EventArgs e) {
+        private void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
             this.Close();
             Login log = new Login();
             log.Show();
         }
 
         //REFRESCAR DATAGRID
-        public async void refrescarDG() {
+        public async void refrescarDG()
+        {
             string consultaBase = "select f.id_funcion, s.id_sala, ts.tipo_sala, fp.formato, p.titulo as titulo_pelicula, dia, horario, i.idioma, p.id_pelicula, (SELECT Count(*) FROM detalles d WHERE d.id_funcion = f.id_funcion) as butacas_ocupadas, s.cant_butacas from Funciones f join peliculas p on p.id_pelicula=f.id_pelicula join salas s on s.id_sala=f.id_sala join Idiomas i on i.id_idioma=p.id_idioma join Formatos_peliculas fp on fp.id_formato=p.id_formato join Tipos_salas ts on ts.id_tipo_sala=s.id_tipo_sala";
             this.dataGridView1.DataSource = oDato.consultar(consultaBase);
             this.dataGridView1.Refresh();
 
 
         }
-        private void BtnEliminarPrincipal_Click(object sender, EventArgs e) {
+        private async void BtnEliminarPrincipal_Click(object sender, EventArgs e)
+        {
 
-            if (this.p == null) {
-                MessageBox.Show("Seleccione una pelicula de la lista para eliminar");
+            if (this.f == null)
+            {
+                MessageBox.Show("Seleccione una funcion de la lista para eliminar");
 
-            } else {
+            }
+            else
+            {
 
-                try {
-                    if (MessageBox.Show("Usted esta por eliminar esta pelicula, Esta seguro?", "ELIMINANDO PELICULA",
-    MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes) {
-                        string consulta;
-                        consulta = "DELETE PELICULAS WHERE ID_PELICULA = " + p.Id;
-                        oDato.actualizarBD(consulta);
-                        MessageBox.Show("Pelicula Eliminada");
-                        dataGridView1.DataSource = oDato.consultarTabla("Peliculas");
-                        dataGridView1.Refresh();
+                try
+                {
+                    if (MessageBox.Show("Usted esta por eliminar esta funcion, Esta seguro?", "ELIMINANDO PELICULA",
+    MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    {
+
+
+                        // use deleteFuncion from APIMethods.cs\
+                        string response = await APIMethods.DeleteFuncion("deleteFuncion", f.id_funcion);
+
+
+                        MessageBox.Show("Funcion Eliminada");
+                        refrescarDG();
 
                     }
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     //MessageBox.Show(ex.Message);
-                    MessageBox.Show("Esta pelicula no puede ser eliminada para proteger la integridad de la base de datos");
+                    MessageBox.Show("Esta funcion no puede ser eliminada para proteger la integridad de la base de datos");
                 }
-                finally {
+                finally
+                {
                     oDato.desconectar();
                 }
 
@@ -181,33 +205,39 @@ namespace CinemaPicon {
         }
 
 
-        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) {
-            if (dataGridView1.SelectedRows.Count > 0) {
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
                 DataGridViewRow row = dataGridView1.CurrentRow;
 
-                if (row != null) {
-
-                    this.p = new PeliculaBack();
-
-                    p.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                    p.Titulo = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
-                    p.Descripcion = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
-                    p.Genero = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
-                    p.FechaEstreno = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
-                    p.Idioma = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
-                    p.Formato = Convert.ToString(dataGridView1.CurrentRow.Cells[6].Value);
+                if (row != null)
+                {
+                    this.f = new FuncionBack();
+                    int baseColValue = 7;
+                    this.f.id_funcion = int.Parse(row.Cells[baseColValue].Value.ToString());
+                    this.f.id_sala = int.Parse(row.Cells[baseColValue + 1].Value.ToString());
+                    this.f.id_pelicula = int.Parse(row.Cells[baseColValue + 8].Value.ToString());
+                    this.f.horario = row.Cells[baseColValue + 6].Value.ToString();
+                    this.f.dia = row.Cells[baseColValue + 5].Value.ToString();
+                    this.f.cant_butacas = int.Parse(row.Cells[baseColValue + 10].Value.ToString());
+                    this.f.cant_butacas_ocupadas = int.Parse(row.Cells[baseColValue + 9].Value.ToString());
                 }
 
             }
         }
 
-        private void BtnEditarPrincipal_Click(object sender, EventArgs e) {
-            if (this.p == null) {
-                MessageBox.Show("Seleccione una pelicula de la lista");
+        private void BtnEditarPrincipal_Click(object sender, EventArgs e)
+        {
+            if (this.f == null)
+            {
+                MessageBox.Show("Seleccione una funcion de la lista");
 
-            } else {
-                EditarPelicula editar = new EditarPelicula();
-                editar.recibirDatosDePelicula(p.Id, p.Titulo, p.Descripcion, p.Genero, p.FechaEstreno, p.Idioma, p.Formato);
+            }
+            else
+            {
+                EditarFuncion editar = new EditarFuncion();
+                editar.recibirDatosDePelicula( f.id_funcion, f.id_sala, f.id_pelicula, f.horario, f.dia, f.cant_butacas, f.cant_butacas_ocupadas);
                 editar.ShowDialog();
                 refrescarDG();
 
@@ -215,7 +245,8 @@ namespace CinemaPicon {
         }
 
 
-        private void BtnSalirse_Click(object sender, EventArgs e) {
+        private void BtnSalirse_Click(object sender, EventArgs e)
+        {
             if (MessageBox.Show("¿Esta Seguro que desea cerrar la pestaña Funciones?", "Salir", MessageBoxButtons.YesNo,
             MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
@@ -226,19 +257,22 @@ namespace CinemaPicon {
 
         //FILTROS
 
-        public string filtrar() {
+        public string filtrar()
+        {
             string condicion = "";
 
             string[] arrayFiltros = new string[7];
             int contI = 0;
 
-            if (!string.IsNullOrEmpty(txtCodigo.Text)) {
+            if (!string.IsNullOrEmpty(txtCodigo.Text))
+            {
                 condicion = "f.id_funcion = " + txtCodigo.Text;
                 arrayFiltros[contI] = condicion;
                 contI++;
-            }       
+            }
 
-            if (dtpFecha.Enabled) {
+            if (dtpFecha.Enabled)
+            {
 
                 //string dia = dtpFecha.Value.ToString("yyyy-MM-dd");
 
@@ -249,19 +283,21 @@ namespace CinemaPicon {
                 // convert dia to int 
                 int dia = Convert.ToInt32(dtpFecha.Value.ToString("yyyyMMdd"));
 
-                string final = "'"+dia+"'";
+                string final = "'" + dia + "'";
                 condicion = " dia = " + final;
                 arrayFiltros[contI] = condicion;
                 contI++;
             }
 
-            if (cboPeliculas.SelectedIndex != -1) {
+            if (cboPeliculas.SelectedIndex != -1)
+            {
                 condicion = "p.id_pelicula = " + cboPeliculas.SelectedValue;
                 arrayFiltros[contI] = condicion;
                 contI++;
             }
 
-            if (cboSalas.SelectedIndex != -1) {
+            if (cboSalas.SelectedIndex != -1)
+            {
                 condicion = "s.id_sala = " + cboSalas.SelectedValue;
                 arrayFiltros[contI] = condicion;
                 contI++;
@@ -271,13 +307,19 @@ namespace CinemaPicon {
 
             var sb = new System.Text.StringBuilder();
 
-            if (contI == 0) {
+            if (contI == 0)
+            {
                 return null;
-            } else if (contI == 1) {
+            }
+            else if (contI == 1)
+            {
                 sb.Append(arrayFiltros[0]);
-            } else {
+            }
+            else
+            {
                 sb.Append(arrayFiltros[0]);
-                for (int i = 1; i < contI; i++) {
+                for (int i = 1; i < contI; i++)
+                {
                     sb.Append(" and");
                     sb.Append(arrayFiltros[i]);
 
@@ -287,30 +329,38 @@ namespace CinemaPicon {
             return sb.ToString();
         }
 
-        private void cbxFecha_CheckStateChanged(object sender, EventArgs e) {
-            if (cbxFecha.Checked) {
+        private void cbxFecha_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (cbxFecha.Checked)
+            {
                 dtpFecha.Enabled = true;
-            } else {
+            }
+            else
+            {
                 dtpFecha.Enabled = false;
             }
         }
 
 
 
-        private void BtnFiltrar_Click(object sender, EventArgs e) {
+        private void BtnFiltrar_Click(object sender, EventArgs e)
+        {
 
             this.consulta = filtrar();
 
-            if (this.consulta == null) {
+            if (this.consulta == null)
+            {
 
                 string consultaBase = "select f.id_funcion, s.id_sala, ts.tipo_sala, fp.formato, p.titulo as titulo_pelicula, dia, horario, i.idioma, p.id_pelicula, (SELECT Count(*) FROM detalles d WHERE d.id_funcion = f.id_funcion) as butacas_ocupadas, s.cant_butacas from Funciones f join peliculas p on p.id_pelicula=f.id_pelicula join salas s on s.id_sala=f.id_sala join Idiomas i on i.id_idioma=p.id_idioma join Formatos_peliculas fp on fp.id_formato=p.id_formato join Tipos_salas ts on ts.id_tipo_sala=s.id_tipo_sala";
                 this.dataGridView1.DataSource = oDato.consultar(consultaBase);
                 this.dataGridView1.Refresh();
                 // refrescarDG();
-            } else {
+            }
+            else
+            {
                 //this.consulta = "SELECT * FROM Funciones WHERE " + filtrar();
 
-                this.consulta = "select f.id_funcion, s.id_sala, ts.tipo_sala, fp.formato, p.titulo as titulo_pelicula, dia, horario, i.idioma, p.id_pelicula, (SELECT Count(*) FROM detalles d WHERE d.id_funcion = f.id_funcion) as butacas_ocupadas, s.cant_butacas from Funciones f join peliculas p on p.id_pelicula=f.id_pelicula join salas s on s.id_sala=f.id_sala join Idiomas i on i.id_idioma=p.id_idioma join Formatos_peliculas fp on fp.id_formato=p.id_formato join Tipos_salas ts on ts.id_tipo_sala=s.id_tipo_sala WHERE " + filtrar() +';';
+                this.consulta = "select f.id_funcion, s.id_sala, ts.tipo_sala, fp.formato, p.titulo as titulo_pelicula, dia, horario, i.idioma, p.id_pelicula, (SELECT Count(*) FROM detalles d WHERE d.id_funcion = f.id_funcion) as butacas_ocupadas, s.cant_butacas from Funciones f join peliculas p on p.id_pelicula=f.id_pelicula join salas s on s.id_sala=f.id_sala join Idiomas i on i.id_idioma=p.id_idioma join Formatos_peliculas fp on fp.id_formato=p.id_formato join Tipos_salas ts on ts.id_tipo_sala=s.id_tipo_sala WHERE " + filtrar() + ';';
 
                 this.dataGridView1.DataSource = oDato.consultar(consulta);
                 this.dataGridView1.Refresh();
@@ -327,16 +377,19 @@ namespace CinemaPicon {
             banderaFiltro = true;
         }
 
-        private void BtnReporte_Click(object sender, EventArgs e) {
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
 
-           
+
 
 
 
         }
 
-        private void TxtCodigo_KeyPress(object sender, KeyPressEventArgs e) {
-            if (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)) {
+        private void TxtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
+            {
                 e.Handled = true;
             }
         }
