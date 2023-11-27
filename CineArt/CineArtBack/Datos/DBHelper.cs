@@ -156,6 +156,7 @@ namespace CineArtBack.Datos
                 comando.Parameters.AddWithValue("@formato_var", pelicula.Formato);
                 comando.ExecuteNonQuery();
                 t.Commit();
+
             }
             catch (Exception ex)
             {
@@ -402,7 +403,6 @@ namespace CineArtBack.Datos
 
                 comando.ExecuteNonQuery();
                 t.Commit();
-                desconectar();
             }
             catch (Exception ex)
             {

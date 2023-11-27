@@ -25,17 +25,18 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrarPrincipal = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMinimizarse = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnSalirse = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnCerrarPrincipal = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalirse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,6 +50,53 @@
             this.panel1.Size = new System.Drawing.Size(250, 720);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
+            // 
+            // btnCerrarPrincipal
+            // 
+            this.btnCerrarPrincipal.Activecolor = System.Drawing.Color.White;
+            this.btnCerrarPrincipal.BackColor = System.Drawing.Color.White;
+            this.btnCerrarPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarPrincipal.BorderRadius = 0;
+            this.btnCerrarPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnCerrarPrincipal.ButtonText = "CERRAR SESIÓN";
+            this.btnCerrarPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarPrincipal.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCerrarPrincipal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCerrarPrincipal.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCerrarPrincipal.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCerrarPrincipal.Iconimage")));
+            this.btnCerrarPrincipal.Iconimage_right = null;
+            this.btnCerrarPrincipal.Iconimage_right_Selected = null;
+            this.btnCerrarPrincipal.Iconimage_Selected = null;
+            this.btnCerrarPrincipal.IconMarginLeft = 0;
+            this.btnCerrarPrincipal.IconMarginRight = 0;
+            this.btnCerrarPrincipal.IconRightVisible = true;
+            this.btnCerrarPrincipal.IconRightZoom = 0D;
+            this.btnCerrarPrincipal.IconVisible = true;
+            this.btnCerrarPrincipal.IconZoom = 70D;
+            this.btnCerrarPrincipal.IsTab = false;
+            this.btnCerrarPrincipal.Location = new System.Drawing.Point(23, 405);
+            this.btnCerrarPrincipal.Name = "btnCerrarPrincipal";
+            this.btnCerrarPrincipal.Normalcolor = System.Drawing.Color.White;
+            this.btnCerrarPrincipal.OnHovercolor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnCerrarPrincipal.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCerrarPrincipal.selected = false;
+            this.btnCerrarPrincipal.Size = new System.Drawing.Size(200, 45);
+            this.btnCerrarPrincipal.TabIndex = 4;
+            this.btnCerrarPrincipal.Text = "CERRAR SESIÓN";
+            this.btnCerrarPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCerrarPrincipal.Textcolor = System.Drawing.Color.DimGray;
+            this.btnCerrarPrincipal.TextFont = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarPrincipal.Click += new System.EventHandler(this.BtnCerrarPrincipal_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(23, 41);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 196);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // bunifuFlatButton3
             // 
@@ -73,7 +121,7 @@
             this.bunifuFlatButton3.IconVisible = true;
             this.bunifuFlatButton3.IconZoom = 65D;
             this.bunifuFlatButton3.IsTab = false;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(589, 436);
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(350, 436);
             this.bunifuFlatButton3.Name = "bunifuFlatButton3";
             this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.White;
             this.bunifuFlatButton3.OnHovercolor = System.Drawing.SystemColors.MenuHighlight;
@@ -189,52 +237,42 @@
             this.btnSalirse.Zoom = 10;
             this.btnSalirse.Click += new System.EventHandler(this.BtnSalirse_Click);
             // 
-            // btnCerrarPrincipal
+            // bunifuFlatButton4
             // 
-            this.btnCerrarPrincipal.Activecolor = System.Drawing.Color.White;
-            this.btnCerrarPrincipal.BackColor = System.Drawing.Color.White;
-            this.btnCerrarPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCerrarPrincipal.BorderRadius = 0;
-            this.btnCerrarPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnCerrarPrincipal.ButtonText = "CERRAR SESIÓN";
-            this.btnCerrarPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarPrincipal.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCerrarPrincipal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCerrarPrincipal.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCerrarPrincipal.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCerrarPrincipal.Iconimage")));
-            this.btnCerrarPrincipal.Iconimage_right = null;
-            this.btnCerrarPrincipal.Iconimage_right_Selected = null;
-            this.btnCerrarPrincipal.Iconimage_Selected = null;
-            this.btnCerrarPrincipal.IconMarginLeft = 0;
-            this.btnCerrarPrincipal.IconMarginRight = 0;
-            this.btnCerrarPrincipal.IconRightVisible = true;
-            this.btnCerrarPrincipal.IconRightZoom = 0D;
-            this.btnCerrarPrincipal.IconVisible = true;
-            this.btnCerrarPrincipal.IconZoom = 70D;
-            this.btnCerrarPrincipal.IsTab = false;
-            this.btnCerrarPrincipal.Location = new System.Drawing.Point(23, 405);
-            this.btnCerrarPrincipal.Name = "btnCerrarPrincipal";
-            this.btnCerrarPrincipal.Normalcolor = System.Drawing.Color.White;
-            this.btnCerrarPrincipal.OnHovercolor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnCerrarPrincipal.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCerrarPrincipal.selected = false;
-            this.btnCerrarPrincipal.Size = new System.Drawing.Size(200, 45);
-            this.btnCerrarPrincipal.TabIndex = 4;
-            this.btnCerrarPrincipal.Text = "CERRAR SESIÓN";
-            this.btnCerrarPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCerrarPrincipal.Textcolor = System.Drawing.Color.DimGray;
-            this.btnCerrarPrincipal.TextFont = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarPrincipal.Click += new System.EventHandler(this.BtnCerrarPrincipal_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 196);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.White;
+            this.bunifuFlatButton4.BackColor = System.Drawing.Color.White;
+            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton4.BorderRadius = 0;
+            this.bunifuFlatButton4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.bunifuFlatButton4.ButtonText = "METABASE";
+            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton4.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton4.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton4.Iconimage")));
+            this.bunifuFlatButton4.Iconimage_right = null;
+            this.bunifuFlatButton4.Iconimage_right_Selected = null;
+            this.bunifuFlatButton4.Iconimage_Selected = null;
+            this.bunifuFlatButton4.IconMarginLeft = 0;
+            this.bunifuFlatButton4.IconMarginRight = 0;
+            this.bunifuFlatButton4.IconRightVisible = true;
+            this.bunifuFlatButton4.IconRightZoom = 0D;
+            this.bunifuFlatButton4.IconVisible = true;
+            this.bunifuFlatButton4.IconZoom = 65D;
+            this.bunifuFlatButton4.IsTab = false;
+            this.bunifuFlatButton4.Location = new System.Drawing.Point(817, 436);
+            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
+            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton4.OnHovercolor = System.Drawing.SystemColors.MenuHighlight;
+            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuFlatButton4.selected = false;
+            this.bunifuFlatButton4.Size = new System.Drawing.Size(353, 110);
+            this.bunifuFlatButton4.TabIndex = 34;
+            this.bunifuFlatButton4.Text = "METABASE";
+            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.DimGray;
+            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton4.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
             // 
             // Principal
             // 
@@ -242,6 +280,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.bunifuFlatButton4);
             this.Controls.Add(this.bunifuFlatButton3);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.bunifuFlatButton2);
@@ -256,9 +295,9 @@
             this.Load += new System.EventHandler(this.Principal_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseDown);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalirse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,5 +312,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
     }
 }

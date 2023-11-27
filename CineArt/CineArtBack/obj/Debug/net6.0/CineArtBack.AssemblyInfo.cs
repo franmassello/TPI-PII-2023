@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CineArtBack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1cb9270512e117515a299cefd0d60d44a52f62b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aef742debb5c90f9fbc04ac26f50bcff25de7a2f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CineArtBack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CineArtBack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
